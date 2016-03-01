@@ -1,0 +1,1 @@
+Theme.jQuery = jQuery.noConflict();

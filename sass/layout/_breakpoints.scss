@@ -1,0 +1,62 @@
+$viewport-small: 500px;
+$viewport-medium: 950px;
+$viewport-large: 1300px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: $viewport-small){
+      @content;
+    }
+  }
+  @else if $breakpoint == "medium" {
+    @media (min-width: $viewport-small) and (max-width: $viewport-medium){
+      @content;
+    }
+  }
+  @else if $breakpoint == "large" {
+    @media (min-width: $viewport-medium) and (max-width: $viewport-large){
+      @content;
+    }
+  }
+  @else {
+    @media (max-width: $breakpoint){
+      @content;
+    }
+  }
+}
+
+@mixin scale-down($breakpoint) {
+  @if $breakpoint == "medium" {
+    @media (max-width: $viewport-medium) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "large" {
+    @media (max-width: $viewport-large){
+      @content;
+    }
+  }
+  @else {
+    @media (max-width: $breakpoint){
+      @content;
+    }
+  }
+}
+
+@mixin scale-up($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (min-width: $viewport-small){
+      @content;
+    }
+  }
+  @else if $breakpoint == "medium" {
+    @media (min-width: $viewport-medium) {
+      @content;
+    }
+  }
+  @else {
+    @media (min-width: $breakpoint){
+      @content;
+    }
+  }
+}

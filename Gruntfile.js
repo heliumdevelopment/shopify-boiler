@@ -2,29 +2,15 @@ module.exports = function(grunt) {
   // The order of JS files that get loaded
   var build_files = ['scripts/app/app.js', 
         'scripts/lib/*.js',
-        'scripts/helpers/*.js',
         'scripts/models/*.js',
         'scripts/plugins/*.js',
-        'scripts/controllers/*.js',
-        'scripts/views/*.js'
+        'scripts/controllers/*.js'
         ];
   
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    compass: {
-      dist: {
-        options: {
-          watch: true,
-          config: 'config/compass.rb'
-        }
-      }
-    },
     watch: {
-      css: {
-        files: ['sass/**/*.scss', 'sass/**/*.sass'],
-        tasks: ['compass']
-      },
       scripts: {
         files: ['scripts/**/*.js'],
         tasks: ['concat'],
@@ -39,7 +25,7 @@ module.exports = function(grunt) {
       },
       build: {
         src: build_files,
-        dest: 'assets/<%= pkg.name %>.min.js'
+        dest: 'assets/<%= pkg.name %>.js'
       }
     },
     concat: {
@@ -52,16 +38,13 @@ module.exports = function(grunt) {
       },
       build: {
         src: build_files,
-        dest: 'assets/<%= pkg.name %>.min.js'
+        dest: 'assets/<%= pkg.name %>.js'
       }
     }
   });
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  
-  // Compass module
-  grunt.loadNpmTasks('grunt-contrib-compass');
   
   // Concat
   grunt.loadNpmTasks('grunt-contrib-concat');
