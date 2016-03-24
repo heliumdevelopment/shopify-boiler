@@ -44,7 +44,7 @@
 {% comment %}
   Listing all tags within the current collection.
   Shopify uses product tags to manage subcategories inside collections.
-  See 'How do I create subcategories of products?' at 
+  See 'How do I create subcategories of products?' at
   http://bit.ly/1j1Dti4 for details.
 {% endcomment %}
 
@@ -63,7 +63,7 @@
     {{ tag | link_to_tag: tag }}
   </li>
   {% endif %}
-  {% endfor %}  
+  {% endfor %}
 </ul>
 {% endif %}
 
@@ -96,7 +96,7 @@
 jQuery('.sort-by')
   .val('{{ collection.sort_by | default: collection.default_sort_by }}')
   .on('change', function() {
-    Shopify.queryParams.sort_by = jQuery(this).val();
-    location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
+    Shopify.urlParam.sort_by = jQuery(this).val();
+    location.search = jQuery.param(Shopify.urlParam).replace(/\+/g, '%20');
   });
 </script>
