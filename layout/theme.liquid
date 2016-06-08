@@ -2,17 +2,31 @@
   <head>
     <meta charset="utf-8" />
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
+
+    <!-- Site Title Tag -->
     <title>
     {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
     </title>
+
+    <!-- Snippet: Head Content -->
     {{ content_for_header }}
     {% include 'head' %}
+
   </head>
+
+  <!-- Body -->
   <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
-    {% include 'header' %}
+
+    <!-- Snippet: site-header -->
+    {% include 'site-header' %}
+
+    <!-- Main div to wrap all the page's content -->
     <main>
       {{ content_for_layout }}
     </main>
-    {% include 'footer' %}
+
+    <!-- Snippet: site-footer -->
+    {% include 'site-footer' %}
+
   </body>
 </html>

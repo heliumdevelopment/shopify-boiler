@@ -1,22 +1,22 @@
 <header class="row">
-  
+
   <div class="social-links half column left-aligned">
   {% include 'social-links' %}
-  </div>      
-  
+  </div>
+
   {% comment %}
-    Note on checkout link: it is a good idea to avoid linking to /checkout directly because shops that use 
+    Note on checkout link: it is a good idea to avoid linking to /checkout directly because shops that use
     Paypal Express Checkout and/or Google Checkout have special checkout buttons on the /cart page. Also,
-    special instructions for the seller are entered on the /cart page. Finally, the universal tracking code 
+    special instructions for the seller are entered on the /cart page. Finally, the universal tracking code
     of Google Analytics may not work if linking directly to the /checkout page.
   {% endcomment %}
-  
+
   <div class="half column right-aligned">
-          
+
     <div class="cart-link">
       <a href="/cart"><img src="{{ 'cart.svg' | asset_url }}" /> {{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})</a>
     </div>
-        
+
     {% if shop.customer_accounts_enabled %}
     <div class="customer-links">
       {% if customer %}
@@ -29,9 +29,9 @@
       {% endif %}
     </div>
     {% endif %}
-    
+
   </div>
-  
+
   {% comment %}
     It would be nice if the logo was a shop setting, rather than a theme setting.
     But for now, it is a theme setting. The shop logo is uploaded on the theme settings page.
@@ -60,24 +60,24 @@
     <h1 class="hidden">{{ shop.name }}</h1>
     {% endif %}
   </div>
-  
+
   <div class="clear full column">
-  
+
     {% comment %}
-      Main Navigation 
+      Main Navigation
     {% endcomment %}
     {% include 'site-nav' %}
-  
+
     {% comment %}
       IE8 and IE9 don't support the HTML5 placeholder attribute, so it's a good idea to use JavaScript
       to show and hide the placeholder text.
       Have a look in assets/shop.js.liquid to see sample JavaScript for this.
-    {% endcomment %}      
+    {% endcomment %}
     <form action="/search" method="get" class="search-form right" role="search">
       <input name="q" type="search" id="search-field" placeholder="Search store..." value="{{ search.terms | escape }}" />
       <input type="submit" id="search-submit" value="Search" />
     </form>
 
   </div>
-  
+
 </header>

@@ -1,0 +1,12 @@
+[
+  {
+    "name":"Theme Settings",
+    "settings":[
+      {
+          "type":"image",
+          "id":"logo.png",
+          "label":"Main Logo (png)"
+       }
+    ]
+  }
+]
