@@ -42,15 +42,7 @@
   {% endcomment %}
 
   <div class="masthead full column clear centered" role="banner">
-    {% if settings.use_logo %}
-    <a id="logo" href="/">
-      {{ 'logo.png' | asset_url | img_tag: shop.name }}
-    </a>
-    {% else %}
-    <a id="site-title" href="/">
-      {{ shop.name }}
-    </a>
-    {% endif %}
+    <a id="logo" href="/"> {{ 'logo.png' | asset_url | img_tag: shop.name }}</a>
     {% if template == 'index' %}
     {% comment %}
       Many SEO audit tools look for a h1 tag on the home page. Let's give 'em one.

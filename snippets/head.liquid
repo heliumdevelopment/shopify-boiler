@@ -1,12 +1,12 @@
 {% if page_description %}
-<meta name="description" content="{{ page_description | escape }}" />
+  <meta name="description" content="{{ page_description | escape }}" />
 {% endif %}
 <link rel="canonical" href="{{ canonical_url }}" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 {% include 'open-graph-tags' %}
 {% include 'twitter-card' %}
-{{ 'styles.css' | asset_url | stylesheet_tag }}  
+{{ 'styles.css' | asset_url | stylesheet_tag }}
 
 <!--[if lt IE 9]>
 {{ '//html5shiv.googlecode.com/svn/trunk/html5.js' | script_tag }}
