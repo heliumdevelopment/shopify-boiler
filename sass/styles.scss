@@ -1,20 +1,14 @@
-/* Normalize */
-@import "base/normalize";
+/* RESET */
+@import "utils/normalize";
 
-/* Variables*/
-@import "base/colors";
-@import "base/variables";
-
-/* Mixins */
+/* Kickoff */
 @import "bourbon/bourbon";
-@import "layout/breakpoints";
-@import "base/mixins";
+@import "variables";
+@import "mixins";
+@import "typography";
 
-/* Fonts */
-@import "base/fonts";
-
-/* Base */
-@import "base/base";
+/* Theme Specific Styles */
+@import "base";
 @import "layout/*";
-@import "modules/*";
 @import "views/*";
+@import "modules/*";

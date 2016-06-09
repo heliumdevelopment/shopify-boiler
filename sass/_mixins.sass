@@ -1,0 +1,149 @@
+=align-middle
+  &:before
+    content: ''
+    display: inline-block
+    height: 100%
+    vertical-align: middle
+
+  >*
+    vertical-align: middle
+
+
+
+
+=upcase
+  text-transform: uppercase
+
+
+
+
+=aspect-ratio($x, $y, $percentage)
+  @media (min-aspect-ratio: $x"/"$y)
+    width: $percentage
+    height: auto
+
+  @media (max-aspect-ratio: $x"/"$y)
+    width: auto
+    height: $percentage
+
+
+
+
+=scale-as-ratio($percentage)
+  padding-top: $percentage
+
+  > *:nth-child(1)
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+
+
+=border-box
+  box-sizing: border-box
+
+
+
+
+=fadeIn
+  @include keyframes(fadeIn)
+    from
+      opacity: 0
+    to
+      opacity: 1
+
+  -webkit-animation: fadeIn 1s
+  -moz-animation: fadeIn 1s
+  animation: fadeIn 1s
+
+
+
+
+
+=background-4-3
+  background-size: 100% auto
+
+  @media (max-aspect-ratio: 4/3)
+    background-size: auto 100%
+
+
+
+
+=border-radius($size)
+  @include border-top-radius($size)
+  @include border-bottom-radius($size)
+
+
+
+
+=button
+  outline: none
+  background: lighten($white, 10%)
+  padding: 11px 18px
+  color: $black
+  font-weight: 500
+  cursor: pointer
+  @include border-radius(4px)
+  font-size: 0.9rem
+  border: none
+  text-align: center
+
+
+
+
+=scale-as-ratio($percentage)
+  position: relative
+  padding-top: $percentage
+
+  > *:nth-child(1)
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+
+
+
+
+=text-field
+  padding: 17px
+  @include border-radius(3px)
+  border: 1px solid darken($primary, 30%)
+  color: $black
+  outline: none
+  font-family: "Lato"
+  background: transparent
+  transition: border-color 0.2s ease
+  @include appearance(none)
+
+  &:hover
+    border-color: darken($primary, 70%)
+
+  &:focus
+    color: black
+    border-color: $primary
+
+
+
+
+
+=product-point-static
+  padding-top: 0
+
+  > *:nth-child(1)
+    position: static
+
+
+  .product-point-content
+    height: auto
+    position: static
+
+    section
+      position: static
+      margin: auto
+
+  .hero
+    position: static
