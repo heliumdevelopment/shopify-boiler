@@ -8,5 +8,35 @@
           "label":"Main Logo (png)"
        }
     ]
+  },
+  {
+    "name":"Social Network Links",
+    "settings":[
+      {
+        "type":"text",
+        "id":"facebook_url",
+        "label":"Facebook"
+      },
+      {
+        "type":"text",
+        "id":"twitter_url",
+        "label":"Twitter"
+      },
+      {
+        "type":"text",
+        "id":"pinterest_url",
+        "label":"Pinterest"
+      },
+      {
+        "type":"text",
+        "id":"instagram_url",
+        "label":"Instagram"
+      },
+      {
+        "type":"text",
+        "id":"linkedin_url",
+        "label":"LinkedIn"
+      }
+    ]
   }
 ]
