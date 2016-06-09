@@ -487,59 +487,81 @@ body {
 }
 
 /* Theme Specific Styles */
-/* Basic elements */
 /* line 2, ../sass/_base.sass */
+html {
+  box-sizing: border-box;
+}
+
+/* line 5, ../sass/_base.sass */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* line 8, ../sass/_base.sass */
+* {
+  -webkit-font-smoothing: antialiased;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 14, ../sass/_base.sass */
 ::selection {
   background: #ff33ff;
   color: white;
 }
 
-/* line 5, ../sass/_base.sass */
+/* line 18, ../sass/_base.sass */
 ::-moz-selection {
   background: #ff33ff;
   color: white;
 }
 
-/* line 8, ../sass/_base.sass */
+/* line 23, ../sass/_base.sass */
 body {
   color: black;
 }
 
-/* line 11, ../sass/_base.sass */
-a:link, a:visited, .link {
-  text-decoration: none;
-  color: magenta;
-  cursor: pointer;
+/* line 26, ../sass/_base.sass */
+main {
+  max-width: 2200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-/* line 16, ../sass/_base.sass */
-h1 {
-  font-weight: 400;
-}
-
-/* line 19, ../sass/_base.sass */
-a.play-button {
-  color: white;
-  display: inline-block;
-  padding: 1px 30px 3px 0;
-  text-decoration: none;
-  border: none;
-  background: url('{{ "play-outlined.svg" | asset_url }}') no-repeat right center;
-  background-size: auto 100%;
-  opacity: 0.8;
-  font-weight: 300;
-  -webkit-transition: opacity 0.3s ease;
-  -moz-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
-}
-/* line 31, ../sass/_base.sass */
-a.play-button:hover {
-  opacity: 1;
-  color: white;
+/* line 32, ../sass/_base.sass */
+.section {
+  position: relative;
 }
 
 /* line 35, ../sass/_base.sass */
-a.button, button, input[type=submit], input[type=button] {
+.width-restrict {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* line 40, ../sass/_base.sass */
+.pad {
+  padding: 60px 0;
+}
+
+/* line 43, ../sass/_base.sass */
+.extra-pad {
+  padding: 120px 0;
+}
+
+/* line 47, ../sass/_base.sass */
+.errors {
+  color: red;
+  text-align: left;
+}
+
+/* line 1, ../sass/layout/_header.sass */
+header {
+  border: 5px solid red;
+}
+
+/* line 1, ../sass/shared/_buttons.sass */
+.btn {
   outline: none;
   background: white;
   padding: 11px 18px;
@@ -556,71 +578,71 @@ a.button, button, input[type=submit], input[type=button] {
   display: inline-block;
   transition: all 0.3s ease;
 }
-/* line 40, ../sass/_base.sass */
-a.button.fixed-width, button.fixed-width, input[type=submit].fixed-width, input[type=button].fixed-width {
+/* line 15, ../sass/shared/_buttons.sass */
+.btn.fixed-width {
   width: 180px;
   padding-right: 0;
   padding-left: 0;
 }
-/* line 45, ../sass/_base.sass */
-a.button.padded-button, button.padded-button, input[type=submit].padded-button, input[type=button].padded-button {
+/* line 20, ../sass/shared/_buttons.sass */
+.btn.padded-button {
   width: auto;
 }
-/* line 48, ../sass/_base.sass */
-a.button.cta-button, button.cta-button, input[type=submit].cta-button, input[type=button].cta-button {
+/* line 23, ../sass/shared/_buttons.sass */
+.btn.cta-button {
   background: magenta;
   color: white;
 }
-/* line 52, ../sass/_base.sass */
-a.button.cta-button:enabled:hover, button.cta-button:enabled:hover, input[type=submit].cta-button:enabled:hover, input[type=button].cta-button:enabled:hover {
+/* line 27, ../sass/shared/_buttons.sass */
+.btn.cta-button:enabled:hover {
   background: #ff33ff;
   color: white;
 }
-/* line 56, ../sass/_base.sass */
-a.button.secondary-button, button.secondary-button, input[type=submit].secondary-button, input[type=button].secondary-button {
+/* line 31, ../sass/shared/_buttons.sass */
+.btn.secondary-button {
   background: cyan;
   color: white;
 }
-/* line 60, ../sass/_base.sass */
-a.button.secondary-button:hover, button.secondary-button:hover, input[type=submit].secondary-button:hover, input[type=button].secondary-button:hover {
+/* line 35, ../sass/shared/_buttons.sass */
+.btn.secondary-button:hover {
   background: black;
 }
-/* line 63, ../sass/_base.sass */
-a.button.link-button, button.link-button, input[type=submit].link-button, input[type=button].link-button {
+/* line 38, ../sass/shared/_buttons.sass */
+.btn.link-button {
   background: transparent;
   border-color: black;
   color: black;
 }
-/* line 68, ../sass/_base.sass */
-a.button.link-button:hover, button.link-button:hover, input[type=submit].link-button:hover, input[type=button].link-button:hover {
+/* line 43, ../sass/shared/_buttons.sass */
+.btn.link-button:hover {
   border-color: magenta;
   color: magenta;
 }
-/* line 72, ../sass/_base.sass */
-a.button.link-button.light-button, button.link-button.light-button, input[type=submit].link-button.light-button, input[type=button].link-button.light-button {
+/* line 47, ../sass/shared/_buttons.sass */
+.btn.link-button.light-button {
   border-color: white;
   color: white;
 }
-/* line 76, ../sass/_base.sass */
-a.button.link-button.light-button:hover, button.link-button.light-button:hover, input[type=submit].link-button.light-button:hover, input[type=button].link-button.light-button:hover {
+/* line 51, ../sass/shared/_buttons.sass */
+.btn.link-button.light-button:hover {
   border-color: magenta;
 }
-/* line 79, ../sass/_base.sass */
-a.button:disabled, button:disabled, input[type=submit]:disabled, input[type=button]:disabled {
+/* line 54, ../sass/shared/_buttons.sass */
+.btn:disabled {
   opacity: 0.6;
 }
-/* line 82, ../sass/_base.sass */
-a.button.good, button.good, input[type=submit].good, input[type=button].good {
+/* line 57, ../sass/shared/_buttons.sass */
+.btn.good {
   border-color: magenta;
   color: magenta;
 }
-/* line 86, ../sass/_base.sass */
-a.button.bad, button.bad, input[type=submit].bad, input[type=button].bad {
+/* line 61, ../sass/shared/_buttons.sass */
+.btn.bad {
   border-color: cyan;
   color: cyan;
 }
 
-/* line 90, ../sass/_base.sass */
+/* line 1, ../sass/shared/_input.sass */
 textarea {
   border: 2px solid #660066;
   color: black;
@@ -629,17 +651,17 @@ textarea {
   padding: 10px;
   transition: border-color 0.2s ease;
 }
-/* line 98, ../sass/_base.sass */
+/* line 9, ../sass/shared/_input.sass */
 textarea:hover {
   border-color: black;
 }
-/* line 100, ../sass/_base.sass */
+/* line 11, ../sass/shared/_input.sass */
 textarea:focus {
   color: black;
   border-color: magenta;
 }
 
-/* line 105, ../sass/_base.sass */
+/* line 16, ../sass/shared/_input.sass */
 input[type=text], input[type=search], input[type=email], input[type=password], input[type=number], input[type=tel] {
   padding: 17px;
   border-top-left-radius: 3px;
@@ -657,17 +679,17 @@ input[type=text], input[type=search], input[type=email], input[type=password], i
   -o-appearance: none;
   appearance: none;
 }
-/* line 121, ../sass/_mixins.sass */
+/* line 105, ../sass/_mixins.sass */
 input[type=text]:hover, input[type=search]:hover, input[type=email]:hover, input[type=password]:hover, input[type=number]:hover, input[type=tel]:hover {
   border-color: black;
 }
-/* line 124, ../sass/_mixins.sass */
+/* line 108, ../sass/_mixins.sass */
 input[type=text]:focus, input[type=search]:focus, input[type=email]:focus, input[type=password]:focus, input[type=number]:focus, input[type=tel]:focus {
   color: black;
   border-color: magenta;
 }
 
-/* line 108, ../sass/_base.sass */
+/* line 19, ../sass/shared/_input.sass */
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -689,28 +711,17 @@ select {
   background-position: center right;
   background-size: auto 50%;
 }
-/* line 122, ../sass/_base.sass */
+/* line 33, ../sass/shared/_input.sass */
 select:invalid {
   box-shadow: none;
 }
 
-/* line 125, ../sass/_base.sass */
-.errors {
-  color: red;
-  text-align: left;
-}
-
-/* line 130, ../sass/_base.sass */
+/* line 2, ../sass/shared/_rte.sass */
 .rte img {
   max-width: 100%;
 }
-/* line 133, ../sass/_base.sass */
+/* line 5, ../sass/shared/_rte.sass */
 .rte iframe {
   max-width: 100%;
   height: 0;
-}
-
-/* line 1, ../sass/layout/_header.sass */
-header {
-  border: 5px solid red;
 }

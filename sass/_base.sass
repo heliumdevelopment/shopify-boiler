@@ -1,135 +1,49 @@
-/* Basic elements */
+// border box and font smoothing
+html
+  box-sizing: border-box
+
+*, *:before, *:after
+  box-sizing: inherit
+
+*
+  -webkit-font-smoothing: antialiased
+  -ms-interpolation-mode: bicubic
+
+
+// selection
 ::selection
   background: lighten($primary, 10%)
   color: white
+
 ::-moz-selection
   background: lighten($primary, 10%)
   color: white
+
+
 body
   color: $black
 
-a:link, a:visited, .link
-  text-decoration: none
-  color: $primary
-  cursor: pointer
-
-h1
-  font-weight: 400
-
-a.play-button
-  color: white
-  display: inline-block
-  padding: 1px 30px 3px 0
-  text-decoration: none
-  border: none
-  background: url('{{ "play-outlined.svg" | asset_url }}') no-repeat right center
-  background-size: auto 100%
-  opacity: 0.8
-  font-weight: 300
-  +transition(opacity 0.3s ease)
-
-  &:hover
-    opacity: 1
-    color: white
-
-a.button, button, input[type=submit], input[type=button]
-  +button
-  display: inline-block
-  transition: all 0.3s ease
-
-  &.fixed-width
-    width: 180px
-    padding-right: 0
-    padding-left: 0
-
-  &.padded-button
-    width: auto
-
-  &.cta-button
-    background: $primary
-    color: white
-
-    &:enabled:hover
-      background: lighten($primary, 10%)
-      color: white
-
-  &.secondary-button
-    background: $secondary
-    color: white
-
-    &:hover
-      background: black
-
-  &.link-button
-    background: transparent
-    border-color: $black
-    color: $black
-
-    &:hover
-      border-color: $primary
-      color: $primary
-
-    &.light-button
-      border-color: lighten($white, 10%)
-      color: lighten($white, 10%)
-
-      &:hover
-        border-color: $primary
-
-  &:disabled
-    opacity: 0.6
-
-  &.good
-    border-color: $primary
-    color: $primary
-
-  &.bad
-    border-color: $secondary
-    color: $secondary
-
-textarea
-  border: 2px solid darken($primary, 30%)
-  color: $black
-  outline: none
-  background: transparent
-  padding: 10px
-  transition: border-color 0.2s ease
-
-  &:hover
-    border-color: darken($primary, 70%)
-  &:focus
-    color: black
-    border-color: $primary
+main
+  max-width: $max-width-large
+  width: 100%
+  margin: 0 auto
 
 
-input[type=text], input[type=search], input[type=email], input[type=password], input[type=number], input[type=tel]
-  +text-field
+.section
+  position: relative
 
-select
-  +appearance(none)
-  padding: 12px 30px 12px 14px
-  background: lighten($secondary, 10%)
-  border: 1px solid $primary
-  outline: none
-  font-size: 1.2em
-  color: lighten($black, 20%)
-  +border-radius(5px)
-  background-image: url('{{ "select.svg" | asset_url }}')
-  background-repeat: no-repeat
-  background-position: center right
-  background-size: auto 50%
+.width-restrict
+  max-width: $max-width
+  width: 90%
+  margin: 0 auto
 
-  &:invalid
-    box-shadow: none
+.pad
+  padding: 60px 0
+
+.extra-pad
+  padding: 120px 0
+
 
 .errors
   color: red
   text-align: left
-
-.rte
-  img
-    max-width: 100%
-
-  iframe
-    max-width: 100%
-    height: 0

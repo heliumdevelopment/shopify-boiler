@@ -1,0 +1,34 @@
+textarea
+  border: 2px solid darken($primary, 30%)
+  color: $black
+  outline: none
+  background: transparent
+  padding: 10px
+  transition: border-color 0.2s ease
+
+  &:hover
+    border-color: darken($primary, 70%)
+  &:focus
+    color: black
+    border-color: $primary
+
+
+input[type=text], input[type=search], input[type=email], input[type=password], input[type=number], input[type=tel]
+  +text-field
+
+select
+  +appearance(none)
+  padding: 12px 30px 12px 14px
+  background: lighten($secondary, 10%)
+  border: 1px solid $primary
+  outline: none
+  font-size: 1.2em
+  color: lighten($black, 20%)
+  +border-radius(5px)
+  background-image: url('{{ "select.svg" | asset_url }}')
+  background-repeat: no-repeat
+  background-position: center right
+  background-size: auto 50%
+
+  &:invalid
+    box-shadow: none

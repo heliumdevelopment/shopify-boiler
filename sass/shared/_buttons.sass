@@ -1,0 +1,63 @@
+.btn
+  outline: none
+  background: lighten($white, 10%)
+  padding: 11px 18px
+  color: $black
+  font-weight: 500
+  cursor: pointer
+  @include border-radius(4px)
+  font-size: 0.9rem
+  border: none
+  text-align: center
+  display: inline-block
+  transition: all 0.3s ease
+
+  &.fixed-width
+    width: 180px
+    padding-right: 0
+    padding-left: 0
+
+  &.padded-button
+    width: auto
+
+  &.cta-button
+    background: $primary
+    color: white
+
+    &:enabled:hover
+      background: lighten($primary, 10%)
+      color: white
+
+  &.secondary-button
+    background: $secondary
+    color: white
+
+    &:hover
+      background: black
+
+  &.link-button
+    background: transparent
+    border-color: $black
+    color: $black
+
+    &:hover
+      border-color: $primary
+      color: $primary
+
+    &.light-button
+      border-color: lighten($white, 10%)
+      color: lighten($white, 10%)
+
+      &:hover
+        border-color: $primary
+
+  &:disabled
+    opacity: 0.6
+
+  &.good
+    border-color: $primary
+    color: $primary
+
+  &.bad
+    border-color: $secondary
+    color: $secondary
