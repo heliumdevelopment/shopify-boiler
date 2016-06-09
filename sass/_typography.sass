@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,700italic,400italic,300italic)
+
+$font: 'Roboto'
+
+=webfont
+  font-family: $font, sans-serif
+
+
+h1, h2, h3, h4, h5
+  @include webfont
+  font-weight: 700
+
+body
+  @include webfont
+  font-weight: 400

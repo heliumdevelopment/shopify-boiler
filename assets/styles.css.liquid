@@ -16,6 +16,7 @@
  * 3. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
  *  `em` units.
  */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,700italic,400italic,300italic);
 /* line 23, ../sass/utils/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -473,50 +474,18 @@ th {
 }
 */
 /* Kickoff */
-@font-face {
-  font-family: 'University Oldstyle';
-  src: url('{{ "UniversityOldstyle-Book.woff" | asset_url }}') format("woff"), url("UniversityOldstyle-Book.eot") format("eot");
-  font-weight: 300;
+/* line 9, ../sass/_typography.sass */
+h1, h2, h3, h4, h5 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
 }
-@font-face {
-  font-family: 'University Oldstyle';
-  src: url('{{ "UniversityOldstyle-BookIt.woff" | asset_url }}') format("woff"), url("UniversityOldstyle-BookIt.eot") format("eot");
-  font-weight: 300;
-  font-style: italic;
+
+/* line 13, ../sass/_typography.sass */
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
-@font-face {
-  font-family: 'University Oldstyle';
-  src: url('{{ "UniversityOldstyle-Medium.woff" | asset_url }}') format("woff"), url("UniversityOldstyle-Medium.eot") format("eot");
-  font-weight: normal;
-}
-@font-face {
-  font-family: 'University Oldstyle';
-  src: url('{{ "UniversityOldstyle-MediumIt.woff" | asset_url }}') format("woff"), url("UniversityOldstyle-MediumIt.eot") format("eot");
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'University Oldstyle';
-  src: url('{{ "UniversityOldstyle-Bold.woff" | asset_url }}') format("woff"), url("UniversityOldstyle-Bold.eot") format("eot");
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'University Oldstyle';
-  src: url('{{ "UniversityOldstyle-BoldIt.woff" | asset_url }}') format("woff"), url("UniversityOldstyle-BoldIt.eot") format("eot");
-  font-weight: bold;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'University Oldstyle';
-  src: url('{{ "UniversityOldstyle-Black.woff" | asset_url }}') format("woff"), url("UniversityOldstyle-Black.eot") format("eot");
-  font-weight: 800;
-}
-@font-face {
-  font-family: 'University Oldstyle';
-  src: url('{{ "UniversityOldstyle-BlackIt.woff" | asset_url }}') format("woff"), url("UniversityOldstyle-BlackIt.eot") format("eot");
-  font-weight: 800;
-  font-style: italic;
-}
+
 /* Theme Specific Styles */
 /* Basic elements */
 /* line 2, ../sass/_base.sass */
@@ -533,24 +502,22 @@ th {
 
 /* line 8, ../sass/_base.sass */
 body {
-  font-family: "Lato", Tahoma;
   color: black;
 }
 
-/* line 12, ../sass/_base.sass */
+/* line 11, ../sass/_base.sass */
 a:link, a:visited, .link {
-  font-family: "Lato";
   text-decoration: none;
   color: magenta;
   cursor: pointer;
 }
 
-/* line 18, ../sass/_base.sass */
+/* line 16, ../sass/_base.sass */
 h1 {
   font-weight: 400;
 }
 
-/* line 21, ../sass/_base.sass */
+/* line 19, ../sass/_base.sass */
 a.play-button {
   color: white;
   display: inline-block;
@@ -565,13 +532,13 @@ a.play-button {
   -moz-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
-/* line 33, ../sass/_base.sass */
+/* line 31, ../sass/_base.sass */
 a.play-button:hover {
   opacity: 1;
   color: white;
 }
 
-/* line 37, ../sass/_base.sass */
+/* line 35, ../sass/_base.sass */
 a.button, button, input[type=submit], input[type=button] {
   outline: none;
   background: white;
@@ -589,91 +556,90 @@ a.button, button, input[type=submit], input[type=button] {
   display: inline-block;
   transition: all 0.3s ease;
 }
-/* line 42, ../sass/_base.sass */
+/* line 40, ../sass/_base.sass */
 a.button.fixed-width, button.fixed-width, input[type=submit].fixed-width, input[type=button].fixed-width {
   width: 180px;
   padding-right: 0;
   padding-left: 0;
 }
-/* line 47, ../sass/_base.sass */
+/* line 45, ../sass/_base.sass */
 a.button.padded-button, button.padded-button, input[type=submit].padded-button, input[type=button].padded-button {
   width: auto;
 }
-/* line 50, ../sass/_base.sass */
+/* line 48, ../sass/_base.sass */
 a.button.cta-button, button.cta-button, input[type=submit].cta-button, input[type=button].cta-button {
   background: magenta;
   color: white;
 }
-/* line 54, ../sass/_base.sass */
+/* line 52, ../sass/_base.sass */
 a.button.cta-button:enabled:hover, button.cta-button:enabled:hover, input[type=submit].cta-button:enabled:hover, input[type=button].cta-button:enabled:hover {
   background: #ff33ff;
   color: white;
 }
-/* line 58, ../sass/_base.sass */
+/* line 56, ../sass/_base.sass */
 a.button.secondary-button, button.secondary-button, input[type=submit].secondary-button, input[type=button].secondary-button {
   background: cyan;
   color: white;
 }
-/* line 62, ../sass/_base.sass */
+/* line 60, ../sass/_base.sass */
 a.button.secondary-button:hover, button.secondary-button:hover, input[type=submit].secondary-button:hover, input[type=button].secondary-button:hover {
   background: black;
 }
-/* line 65, ../sass/_base.sass */
+/* line 63, ../sass/_base.sass */
 a.button.link-button, button.link-button, input[type=submit].link-button, input[type=button].link-button {
   background: transparent;
   border-color: black;
   color: black;
 }
-/* line 70, ../sass/_base.sass */
+/* line 68, ../sass/_base.sass */
 a.button.link-button:hover, button.link-button:hover, input[type=submit].link-button:hover, input[type=button].link-button:hover {
   border-color: magenta;
   color: magenta;
 }
-/* line 74, ../sass/_base.sass */
+/* line 72, ../sass/_base.sass */
 a.button.link-button.light-button, button.link-button.light-button, input[type=submit].link-button.light-button, input[type=button].link-button.light-button {
   border-color: white;
   color: white;
 }
-/* line 78, ../sass/_base.sass */
+/* line 76, ../sass/_base.sass */
 a.button.link-button.light-button:hover, button.link-button.light-button:hover, input[type=submit].link-button.light-button:hover, input[type=button].link-button.light-button:hover {
   border-color: magenta;
 }
-/* line 81, ../sass/_base.sass */
+/* line 79, ../sass/_base.sass */
 a.button:disabled, button:disabled, input[type=submit]:disabled, input[type=button]:disabled {
   opacity: 0.6;
 }
-/* line 84, ../sass/_base.sass */
+/* line 82, ../sass/_base.sass */
 a.button.good, button.good, input[type=submit].good, input[type=button].good {
   border-color: magenta;
   color: magenta;
 }
-/* line 88, ../sass/_base.sass */
+/* line 86, ../sass/_base.sass */
 a.button.bad, button.bad, input[type=submit].bad, input[type=button].bad {
   border-color: cyan;
   color: cyan;
 }
 
-/* line 92, ../sass/_base.sass */
+/* line 90, ../sass/_base.sass */
 textarea {
   border: 2px solid #660066;
   color: black;
   outline: none;
-  font-family: "Lato";
   background: transparent;
   padding: 10px;
   transition: border-color 0.2s ease;
 }
-/* line 101, ../sass/_base.sass */
+/* line 98, ../sass/_base.sass */
 textarea:hover {
   border-color: black;
 }
-/* line 103, ../sass/_base.sass */
+/* line 100, ../sass/_base.sass */
 textarea:focus {
   color: black;
   border-color: magenta;
 }
 
-/* line 108, ../sass/_base.sass */
+/* line 105, ../sass/_base.sass */
 input[type=text], input[type=search], input[type=email], input[type=password], input[type=number], input[type=tel] {
   padding: 17px;
   border-top-left-radius: 3px;
@@ -683,7 +649,6 @@ input[type=text], input[type=search], input[type=email], input[type=password], i
   border: 1px solid #660066;
   color: black;
   outline: none;
-  font-family: "Lato";
   background: transparent;
   transition: border-color 0.2s ease;
   -webkit-appearance: none;
@@ -692,17 +657,17 @@ input[type=text], input[type=search], input[type=email], input[type=password], i
   -o-appearance: none;
   appearance: none;
 }
-/* line 122, ../sass/_mixins.sass */
+/* line 121, ../sass/_mixins.sass */
 input[type=text]:hover, input[type=search]:hover, input[type=email]:hover, input[type=password]:hover, input[type=number]:hover, input[type=tel]:hover {
   border-color: black;
 }
-/* line 125, ../sass/_mixins.sass */
+/* line 124, ../sass/_mixins.sass */
 input[type=text]:focus, input[type=search]:focus, input[type=email]:focus, input[type=password]:focus, input[type=number]:focus, input[type=tel]:focus {
   color: black;
   border-color: magenta;
 }
 
-/* line 111, ../sass/_base.sass */
+/* line 108, ../sass/_base.sass */
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -724,22 +689,22 @@ select {
   background-position: center right;
   background-size: auto 50%;
 }
-/* line 125, ../sass/_base.sass */
+/* line 122, ../sass/_base.sass */
 select:invalid {
   box-shadow: none;
 }
 
-/* line 128, ../sass/_base.sass */
+/* line 125, ../sass/_base.sass */
 .errors {
   color: red;
   text-align: left;
 }
 
-/* line 133, ../sass/_base.sass */
+/* line 130, ../sass/_base.sass */
 .rte img {
   max-width: 100%;
 }
-/* line 136, ../sass/_base.sass */
+/* line 133, ../sass/_base.sass */
 .rte iframe {
   max-width: 100%;
   height: 0;

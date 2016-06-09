@@ -14,42 +14,16 @@ won't be compressed for debugging purposes. By search to uncomment
 `output_style = :compressed` from within `config/compass.rb` when pushing to
 production.
 
-### Breakpoints
-These variables will change based on the theme, but generally there will be three
-major breakpoints: `$large`, `$medium`, and `$small`.
 
-### Breakpoint Mixins
-There are three major breakpoint Sass mixins we use for responsive design.
 
-`respond-to($breakpoint)`
-
-Used for targeting a specific breakpoints area. Eg:
-
-`scale-up($breakpoint)`
-
-Media query for anything larger than a breakpoint
-
-`scale-down($breakpoint)`
-
-Media query for anything smaller than a breakpoint
-
-Example:
-```
-+respond-to("small")
-  background: red
-  
-// @media max-width(500px) {
-//   background: red; 
-// }
-```
 ---
 ## JavaScript
-This theme uses [Grunt](http://gruntjs.com/) to compile all the JavaScript files 
-into one file to be used by theme theme. You'll need [npm](https://www.npmjs.com/) 
+This theme uses [Grunt](http://gruntjs.com/) to compile all the JavaScript files
+into one file to be used by theme theme. You'll need [npm](https://www.npmjs.com/)
 installed in order to use Grunt. Once installed, run `npm install`. This will
 install Grunt and ready run the compressor.
 
-Run `grunt watch` to watch all the files within the `scripts` folder. When a 
+Run `grunt watch` to watch all the files within the `scripts` folder. When a
 change is detected, Grunt will combine all the files into `assets/application.js`.
 By default the file will be annotated with source references for debugging. When
 you want to run the product compression, just run `grunt` without watch and
@@ -64,7 +38,7 @@ just output the data directly from any template into a JS object. Eg.
 <script type="text/javascript">
   // Assign an object based on Shopify product
   Shopify.current_product = {{ product | json }};
-  
+
   // Later in your scripts you then have access to this liquidated object
   alert(Shopify.current_product.title);
 </script>
