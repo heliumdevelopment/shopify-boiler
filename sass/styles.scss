@@ -15,19 +15,6 @@
 
 /* Base */
 @import "base/base";
-
-/* Layout */
-@import "layout/layout";
-@import "layout/header";
-@import "layout/footer";
-
-/* Modules */
-@import "modules/modules";
-
-/* Views */
-@import "views/customer";
-@import "views/cart";
-@import "views/search";
-@import "views/product";
-@import "views/collection";
-@import "views/404";
+@import "layout/*";
+@import "modules/*";
+@import "views/*";
