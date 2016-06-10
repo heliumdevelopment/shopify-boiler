@@ -487,72 +487,127 @@ body {
 }
 
 /* Theme Specific Styles */
-/* line 2, ../sass/_base.sass */
+/* line 5, ../sass/_base.sass */
 html {
   box-sizing: border-box;
 }
 
-/* line 5, ../sass/_base.sass */
+/* line 8, ../sass/_base.sass */
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/* line 8, ../sass/_base.sass */
+/* line 11, ../sass/_base.sass */
 * {
   -webkit-font-smoothing: antialiased;
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 14, ../sass/_base.sass */
-::selection {
-  background: #ff33ff;
-  color: white;
-}
-
-/* line 18, ../sass/_base.sass */
-::-moz-selection {
-  background: #ff33ff;
-  color: white;
-}
-
-/* line 23, ../sass/_base.sass */
+/* line 15, ../sass/_base.sass */
 body {
   color: black;
+  letter-spacing: 0.5px;
 }
 
-/* line 26, ../sass/_base.sass */
+/* line 19, ../sass/_base.sass */
 main {
   max-width: 2200px;
   width: 100%;
   margin: 0 auto;
 }
 
-/* line 32, ../sass/_base.sass */
+/* line 30, ../sass/_base.sass */
 .section {
   position: relative;
 }
 
-/* line 35, ../sass/_base.sass */
+/* line 33, ../sass/_base.sass */
 .width-restrict {
   max-width: 1100px;
   width: 90%;
   margin: 0 auto;
 }
 
-/* line 40, ../sass/_base.sass */
+/* line 38, ../sass/_base.sass */
 .pad {
   padding: 60px 0;
 }
 
-/* line 43, ../sass/_base.sass */
+/* line 41, ../sass/_base.sass */
 .extra-pad {
   padding: 120px 0;
 }
 
-/* line 47, ../sass/_base.sass */
+/* line 45, ../sass/_base.sass */
 .errors {
   color: red;
   text-align: left;
+}
+
+/* line 55, ../sass/_base.sass */
+p, li {
+  color: #1a1a1a;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/* line 60, ../sass/_base.sass */
+a {
+  color: #b300b3;
+  text-decoration: none;
+}
+
+/* line 68, ../sass/_base.sass */
+::selection {
+  background: #e600e6;
+  color: white;
+}
+
+/* line 72, ../sass/_base.sass */
+::-moz-selection {
+  background: #e600e6;
+  color: white;
+}
+
+/* line 1, ../sass/layout/_footer.sass */
+footer {
+  text-align: center;
+  background-color: #1a1a1a;
+  padding: 40px;
+}
+/* line 6, ../sass/layout/_footer.sass */
+footer p.small {
+  font-size: 11px;
+  margin: 10px 0;
+  color: #e6e6e6;
+}
+/* line 11, ../sass/layout/_footer.sass */
+footer .footer-nav {
+  margin: 30px auto;
+}
+/* line 14, ../sass/layout/_footer.sass */
+footer .footer-nav a {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 15px;
+  background-color: #333333;
+  color: #e6e6e6;
+  text-transform: uppercase;
+}
+/* line 24, ../sass/layout/_footer.sass */
+footer .social {
+  margin-top: 15px;
+}
+/* line 27, ../sass/layout/_footer.sass */
+footer .social a {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 16px;
+  transition: all 150ms ease-out;
+}
+/* line 33, ../sass/layout/_footer.sass */
+footer .social a:hover {
+  color: #e6e6e6;
 }
 
 /* line 1, ../sass/layout/_header.sass */
@@ -590,12 +645,12 @@ header {
 }
 /* line 23, ../sass/shared/_buttons.sass */
 .btn.cta-button {
-  background: magenta;
+  background: #b300b3;
   color: white;
 }
 /* line 27, ../sass/shared/_buttons.sass */
 .btn.cta-button:enabled:hover {
-  background: #ff33ff;
+  background: #e600e6;
   color: white;
 }
 /* line 31, ../sass/shared/_buttons.sass */
@@ -615,8 +670,8 @@ header {
 }
 /* line 43, ../sass/shared/_buttons.sass */
 .btn.link-button:hover {
-  border-color: magenta;
-  color: magenta;
+  border-color: #b300b3;
+  color: #b300b3;
 }
 /* line 47, ../sass/shared/_buttons.sass */
 .btn.link-button.light-button {
@@ -625,7 +680,7 @@ header {
 }
 /* line 51, ../sass/shared/_buttons.sass */
 .btn.link-button.light-button:hover {
-  border-color: magenta;
+  border-color: #b300b3;
 }
 /* line 54, ../sass/shared/_buttons.sass */
 .btn:disabled {
@@ -633,8 +688,8 @@ header {
 }
 /* line 57, ../sass/shared/_buttons.sass */
 .btn.good {
-  border-color: magenta;
-  color: magenta;
+  border-color: #b300b3;
+  color: #b300b3;
 }
 /* line 61, ../sass/shared/_buttons.sass */
 .btn.bad {
@@ -644,7 +699,7 @@ header {
 
 /* line 1, ../sass/shared/_input.sass */
 textarea {
-  border: 2px solid #660066;
+  border: 2px solid #1a001a;
   color: black;
   outline: none;
   background: transparent;
@@ -658,7 +713,7 @@ textarea:hover {
 /* line 11, ../sass/shared/_input.sass */
 textarea:focus {
   color: black;
-  border-color: magenta;
+  border-color: #b300b3;
 }
 
 /* line 16, ../sass/shared/_input.sass */
@@ -668,7 +723,7 @@ input[type=text], input[type=search], input[type=email], input[type=password], i
   border-top-right-radius: 3px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  border: 1px solid #660066;
+  border: 1px solid #1a001a;
   color: black;
   outline: none;
   background: transparent;
@@ -686,7 +741,7 @@ input[type=text]:hover, input[type=search]:hover, input[type=email]:hover, input
 /* line 108, ../sass/_mixins.sass */
 input[type=text]:focus, input[type=search]:focus, input[type=email]:focus, input[type=password]:focus, input[type=number]:focus, input[type=tel]:focus {
   color: black;
-  border-color: magenta;
+  border-color: #b300b3;
 }
 
 /* line 19, ../sass/shared/_input.sass */
@@ -698,7 +753,7 @@ select {
   appearance: none;
   padding: 12px 30px 12px 14px;
   background: #33ffff;
-  border: 1px solid magenta;
+  border: 1px solid #b300b3;
   outline: none;
   font-size: 1.2em;
   color: #333333;

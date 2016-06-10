@@ -1,4 +1,7 @@
-// border box and font smoothing
+// Main & Body Styles
+// ===================================================
+// ===================================================
+// ===================================================
 html
   box-sizing: border-box
 
@@ -9,19 +12,9 @@ html
   -webkit-font-smoothing: antialiased
   -ms-interpolation-mode: bicubic
 
-
-// selection
-::selection
-  background: lighten($primary, 10%)
-  color: white
-
-::-moz-selection
-  background: lighten($primary, 10%)
-  color: white
-
-
 body
   color: $black
+  letter-spacing: .5px
 
 main
   max-width: $max-width-large
@@ -29,6 +22,11 @@ main
   margin: 0 auto
 
 
+
+// Section styles, width restrict, and general padding
+// ===================================================
+// ===================================================
+// ===================================================
 .section
   position: relative
 
@@ -47,3 +45,30 @@ main
 .errors
   color: red
   text-align: left
+
+
+
+// base paragraph, links, ul, li, etc
+// ===================================================
+// ===================================================
+// ===================================================
+p, li
+  color: $dark
+  font-size: 14px
+  line-height: 18px
+
+a
+  color: $primary
+  text-decoration: none
+
+
+
+
+// selection
+::selection
+  background: lighten($primary, 10%)
+  color: white
+
+::-moz-selection
+  background: lighten($primary, 10%)
+  color: white

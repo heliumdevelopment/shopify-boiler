@@ -1,25 +1,33 @@
 <footer>
 
-  {% if linklists.footer.links.size > 0 %}
-  <p role="navigation">
-  {% for link in linklists.footer.links %}
-    <a href="{{ link.url }}" title="{{ link.title }}"{% if link.active %} class="active"{% endif %}>{{ link.title }}</a>
-  {% endfor %}
-  </p>
-  {% endif %}
+  <div class="width-restrict">
 
-  {% unless shop.enabled_payment_types == empty %}
-<div class="payment-types">
-    {% for type in shop.enabled_payment_types %}
-    <img width="40" src="{{ type | payment_type_img_url }}" />
-    {% endfor %}
-  </div>
-  {% endunless %}
+    <!-- Footer LinkList Navigation -->
+    {% if linklists.footer.links.size > 0 %}
+      <div class="footer-nav">
+        {% for link in linklists.footer.links %}
+          <a href="{{ link.url }}" title="{{ link.title }}"{% if link.active %} class="active"{% endif %}>{{ link.title }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
 
-  <p role="contentinfo" class="small-print">Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.</p>
+    <!-- Payment Types -->
+    {% unless shop.enabled_payment_types == empty %}
+      <div class="payment-types">
+        {% for type in shop.enabled_payment_types %}
+          <img width="40" src="{{ type | payment_type_img_url }}" />
+        {% endfor %}
+      </div>
+    {% endunless %}
 
-  <div class="social-links half column left-aligned">
-  {% include 'social-links' %}
+    <!-- Footer Copy -->
+    <p class="small">Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.</p>
+
+    <!-- Social Links Snippet -->
+    <div class="social">
+      {% include 'social-links' %}
+    </div>
+
   </div>
 
 </footer>
