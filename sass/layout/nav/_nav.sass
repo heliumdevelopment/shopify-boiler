@@ -1,0 +1,33 @@
+nav
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  text-align: center
+  background-color: $light
+
+  .top-level
+    font-size: 0
+    display: inline-block
+    padding: 7px 15px
+    position: relative
+    transition: all $base-speed ease-out
+
+    a
+      color: $primary
+      font-size: 16px
+      font-weight: 700
+      text-transform: uppercase
+      display: inline-block
+      transition: all $base-speed ease-out
+
+    &.active, &:hover
+      background-color: lighten($primary, 5%)
+
+      a
+        color: $light
+
+
+  .sub-nav
+    display: none
+    position: absolute

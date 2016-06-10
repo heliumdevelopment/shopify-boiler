@@ -514,56 +514,57 @@ main {
   max-width: 2200px;
   width: 100%;
   margin: 0 auto;
+  margin-top: 100px;
 }
 
-/* line 30, ../sass/_base.sass */
+/* line 33, ../sass/_base.sass */
 .section {
   position: relative;
 }
 
-/* line 33, ../sass/_base.sass */
+/* line 36, ../sass/_base.sass */
 .width-restrict {
   max-width: 1100px;
   width: 90%;
   margin: 0 auto;
 }
 
-/* line 38, ../sass/_base.sass */
+/* line 41, ../sass/_base.sass */
 .pad {
   padding: 60px 0;
 }
 
-/* line 41, ../sass/_base.sass */
+/* line 44, ../sass/_base.sass */
 .extra-pad {
   padding: 120px 0;
 }
 
-/* line 45, ../sass/_base.sass */
+/* line 48, ../sass/_base.sass */
 .errors {
   color: red;
   text-align: left;
 }
 
-/* line 55, ../sass/_base.sass */
+/* line 58, ../sass/_base.sass */
 p, li {
   color: #1a1a1a;
   font-size: 14px;
   line-height: 18px;
 }
 
-/* line 60, ../sass/_base.sass */
+/* line 63, ../sass/_base.sass */
 a {
   color: #b300b3;
   text-decoration: none;
 }
 
-/* line 68, ../sass/_base.sass */
+/* line 71, ../sass/_base.sass */
 ::selection {
   background: #e600e6;
   color: white;
 }
 
-/* line 72, ../sass/_base.sass */
+/* line 75, ../sass/_base.sass */
 ::-moz-selection {
   background: #e600e6;
   color: white;
@@ -612,7 +613,82 @@ footer .social a:hover {
 
 /* line 1, ../sass/layout/_header.sass */
 header {
-  border: 5px solid red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  border-bottom: #cccccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+/* line 12, ../sass/layout/_header.sass */
+header #logo {
+  position: absolute;
+  top: calc(50% - 15px);
+  transform: translate(0, -50%);
+  left: 30px;
+}
+/* line 18, ../sass/layout/_header.sass */
+header #logo img {
+  height: 40px;
+  width: auto;
+}
+/* line 22, ../sass/layout/_header.sass */
+header .customer {
+  position: absolute;
+  right: 30px;
+}
+/* line 26, ../sass/layout/_header.sass */
+header .search {
+  position: absolute;
+  right: 60px;
+}
+/* line 30, ../sass/layout/_header.sass */
+header .cart {
+  position: absolute;
+  right: 90px;
+}
+
+/* line 1, ../sass/layout/nav/_nav.sass */
+nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #e6e6e6;
+}
+/* line 9, ../sass/layout/nav/_nav.sass */
+nav .top-level {
+  font-size: 0;
+  display: inline-block;
+  padding: 7px 15px;
+  position: relative;
+  transition: all 150ms ease-out;
+}
+/* line 16, ../sass/layout/nav/_nav.sass */
+nav .top-level a {
+  color: #b300b3;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 150ms ease-out;
+}
+/* line 24, ../sass/layout/nav/_nav.sass */
+nav .top-level.active, nav .top-level:hover {
+  background-color: #cd00cd;
+}
+/* line 27, ../sass/layout/nav/_nav.sass */
+nav .top-level.active a, nav .top-level:hover a {
+  color: #e6e6e6;
+}
+/* line 31, ../sass/layout/nav/_nav.sass */
+nav .sub-nav {
+  display: none;
+  position: absolute;
 }
 
 /* line 1, ../sass/shared/_buttons.sass */

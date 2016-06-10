@@ -1,2 +1,32 @@
 header
-  border: 5px solid red
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: $header-height
+  background-color: $white
+  border-bottom: darken($light, 10%)
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3)
+  z-index: 10
+
+  #logo
+    position: absolute
+    top: calc(50% - 15px)
+    transform: translate(0, -50%)
+    left: 30px
+
+    img
+      height: 40px
+      width: auto
+
+  .customer
+    position: absolute
+    right: 30px
+
+  .search
+    position: absolute
+    right: 60px
+
+  .cart
+    position: absolute
+    right: 90px
