@@ -966,8 +966,7 @@ textarea {
   overflow: hidden;
   border: 1px solid red;
 }
-
-/* line 3, ../sass/grids/_item.sass */
+/* line 6, ../sass/grids/_grid.sass */
 .grid .grid-item {
   display: inline-block;
   float: left;
@@ -975,15 +974,34 @@ textarea {
   width: calc(33.333% - 20px);
   text-align: center;
 }
-/* line 11, ../sass/grids/_item.sass */
+/* line 14, ../sass/grids/_grid.sass */
 .grid.grid-4 .grid-item {
   width: calc(25% - 20px);
 }
-/* line 15, ../sass/grids/_item.sass */
+/* line 18, ../sass/grids/_grid.sass */
 .grid.grid-2 .grid-item {
   width: calc(50% - 20px);
 }
-/* line 23, ../sass/grids/_item.sass */
+@media(max-width:768px) {
+  /* line 23, ../sass/grids/_grid.sass */
+  .grid .grid-item {
+    width: calc(50% - 20px);
+  }
+  /* line 26, ../sass/grids/_grid.sass */
+  .grid.grid-4 .grid-item {
+    width: calc(50% - 20px);
+  }
+}
+@media(max-width:500px) {
+  /* line 31, ../sass/grids/_grid.sass */
+  .grid .grid-item {
+    width: 100% !important;
+    float: none;
+    display: block;
+    margin: 0;
+  }
+}
+/* line 7, ../sass/grids/_item.sass */
 .grid .grid-item .product-image img {
   width: 100%;
   height: auto;

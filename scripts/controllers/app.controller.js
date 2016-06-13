@@ -1,6 +1,11 @@
 (function($) {
+
   // Document ready
   $(function() {
+
+
+    // match height on the grids
+    $('.grid .grid-item').matchHeight({maxWidth:600});
 
 
     $('.grabber').on('click', function(e) {
@@ -26,4 +31,5 @@
 
 
   }); // End document ready
+
 })(Theme.jQuery);
