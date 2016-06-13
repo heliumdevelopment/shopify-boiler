@@ -516,55 +516,60 @@ main {
   margin: 0 auto;
   margin-top: 100px;
 }
-
-/* line 33, ../sass/_base.sass */
+@media(max-width:768px) {
+  /* line 19, ../sass/_base.sass */
+  main {
+    margin-top: 50px;
+  }
+}
+/* line 35, ../sass/_base.sass */
 .section {
   position: relative;
 }
 
-/* line 36, ../sass/_base.sass */
+/* line 38, ../sass/_base.sass */
 .width-restrict {
   max-width: 1100px;
   width: 90%;
   margin: 0 auto;
 }
 
-/* line 41, ../sass/_base.sass */
+/* line 43, ../sass/_base.sass */
 .pad {
   padding: 60px 0;
 }
 
-/* line 44, ../sass/_base.sass */
+/* line 46, ../sass/_base.sass */
 .extra-pad {
   padding: 120px 0;
 }
 
-/* line 48, ../sass/_base.sass */
+/* line 50, ../sass/_base.sass */
 .errors {
   color: red;
   text-align: left;
 }
 
-/* line 58, ../sass/_base.sass */
+/* line 60, ../sass/_base.sass */
 p, li {
   color: #1a1a1a;
   font-size: 14px;
   line-height: 18px;
 }
 
-/* line 63, ../sass/_base.sass */
+/* line 65, ../sass/_base.sass */
 a {
   color: #b300b3;
   text-decoration: none;
 }
 
-/* line 71, ../sass/_base.sass */
+/* line 73, ../sass/_base.sass */
 ::selection {
   background: #e600e6;
   color: white;
 }
 
-/* line 75, ../sass/_base.sass */
+/* line 77, ../sass/_base.sass */
 ::-moz-selection {
   background: #e600e6;
   color: white;
@@ -964,9 +969,8 @@ textarea {
 .grid {
   position: relative;
   overflow: hidden;
-  border: 1px solid red;
 }
-/* line 6, ../sass/grids/_grid.sass */
+/* line 5, ../sass/grids/_grid.sass */
 .grid .grid-item {
   display: inline-block;
   float: left;
@@ -974,26 +978,26 @@ textarea {
   width: calc(33.333% - 20px);
   text-align: center;
 }
-/* line 14, ../sass/grids/_grid.sass */
+/* line 13, ../sass/grids/_grid.sass */
 .grid.grid-4 .grid-item {
   width: calc(25% - 20px);
 }
-/* line 18, ../sass/grids/_grid.sass */
+/* line 17, ../sass/grids/_grid.sass */
 .grid.grid-2 .grid-item {
   width: calc(50% - 20px);
 }
 @media(max-width:768px) {
-  /* line 23, ../sass/grids/_grid.sass */
+  /* line 22, ../sass/grids/_grid.sass */
   .grid .grid-item {
     width: calc(50% - 20px);
   }
-  /* line 26, ../sass/grids/_grid.sass */
+  /* line 25, ../sass/grids/_grid.sass */
   .grid.grid-4 .grid-item {
     width: calc(50% - 20px);
   }
 }
 @media(max-width:500px) {
-  /* line 31, ../sass/grids/_grid.sass */
+  /* line 30, ../sass/grids/_grid.sass */
   .grid .grid-item {
     width: 100% !important;
     float: none;
@@ -1001,8 +1005,27 @@ textarea {
     margin: 0;
   }
 }
-/* line 7, ../sass/grids/_item.sass */
+/* line 8, ../sass/grids/_item.sass */
 .grid .grid-item .product-image img {
   width: 100%;
   height: auto;
+}
+/* line 12, ../sass/grids/_item.sass */
+.grid .grid-item .product-information {
+  margin-top: 15px;
+}
+/* line 15, ../sass/grids/_item.sass */
+.grid .grid-item .product-information .title {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  color: #b300b3;
+}
+/* line 22, ../sass/grids/_item.sass */
+.grid .grid-item .product-information .price {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #999;
 }

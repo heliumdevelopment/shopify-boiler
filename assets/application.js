@@ -1070,7 +1070,7 @@ Theme.TriggerEvents = (function($) {
 
 
     // match height on the grids
-    $('.grid .grid-item').matchHeight({maxWidth:600});
+    $('.grid .grid-item').matchHeight();
 
 
     $('.grabber').on('click', function(e) {
