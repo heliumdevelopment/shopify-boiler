@@ -1,7 +1,6 @@
 <div class="section">
   <div class="width-restrict pad">
 
-
     <h2>Buttons, Inputs, etc</h2>
 
     <a class="btn">Here's a button</a>
@@ -13,28 +12,40 @@
     <input type="password" placeholder="Pass Pass" />
     <input type="number" placeholder="123" />
 
+  </div>
+</div>
 
+<div class="section">
+  <div class="width-restrict pad">
+
+    <h2>Home Page RTE Content</h2>
+
+    <!-- Home Page content (including home page collection) -->
     {% unless settings.homepage_page == blank or pages[settings.homepage_page].empty? %}
-    {% assign page = pages[settings.homepage_page] %}
-    <div class="rte grid-margins">
-      {{ page.content }}
-    </div>
+      {% assign page = pages[settings.homepage_page] %}
+      <div class="rte page-content">
+        {{ page.content }}
+      </div>
     {% endunless %}
 
+  </div>
+</div>
+
+<div class="section">
+  <div class="width-restrict pad">
+
+    <h2>Home Page Collection</h2>
+
     {% unless settings.homepage_collection == blank or collections[settings.homepage_collection].empty? %}
-    {% assign collection = collections[settings.homepage_collection] %}
-    <ul class="grid clearfix">
-    {% for product in collection.products %}
-      {% include 'product-grid-item' with 'three-per-row' %}
-    {% else %}
-    <li>
-      <p>
-        You have no products in your {{ collections[settings.homepage_collection].title }} collection.
-        <a href="http://www.shopify.com/admin/collections">Add some.</a>
-      <p>
-    </li>
-    {% endfor %}
-    </ul>
+      {% assign collection = collections[settings.homepage_collection] %}
+      <div class="grid grid-4">
+        {% for product in collection.products %}
+          {% include 'product-grid-item' %}
+        {% else %}
+          <div class="no-products">You have no products in your {{ collections[settings.homepage_collection].title }} collection. <a href="http://www.shopify.com/admin/collections">Add some.</a>
+          </div>
+        {% endfor %}
+      </div>
     {% endunless %}
 
   </div>

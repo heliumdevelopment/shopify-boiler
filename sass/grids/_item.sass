@@ -1,0 +1,27 @@
+.grid
+
+  .grid-item
+    display: inline-block
+    float: left
+    margin: 10px
+    width: calc(33.333% - 20px)
+    text-align: center
+
+  &.grid-4
+    .grid-item
+      width: calc(25% - 20px)
+
+  &.grid-2
+    .grid-item
+      width: calc(50% - 20px)
+
+
+  // specific grid item styles
+  .grid-item
+
+    .product-image
+      img
+        width: 100%
+        height: auto
+
+    .product-information
