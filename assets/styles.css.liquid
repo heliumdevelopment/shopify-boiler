@@ -886,77 +886,68 @@ header .cart {
 }
 
 /* line 1, ../sass/shared/_input.sass */
-textarea {
-  border: 2px solid #1a001a;
-  color: black;
-  outline: none;
-  background: transparent;
-  padding: 10px;
-  transition: border-color 0.2s ease;
-}
-/* line 9, ../sass/shared/_input.sass */
-textarea:hover {
-  border-color: black;
-}
-/* line 11, ../sass/shared/_input.sass */
-textarea:focus {
-  color: black;
-  border-color: #b300b3;
-}
-
-/* line 16, ../sass/shared/_input.sass */
-input[type=text], input[type=search], input[type=email], input[type=password], input[type=number], input[type=tel] {
-  padding: 17px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+input[type=text], input[type=search], input[type=email], input[type=password], input[type=number], input[type=tel], textarea {
+  display: block;
+  padding: 10px 20px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
   border: 1px solid #1a001a;
   color: black;
   outline: none;
   background: transparent;
-  transition: border-color 0.2s ease;
+  transition: all 150ms ease-out;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
+  width: 100%;
+  margin: 5px auto;
+  font-family: "Roboto", sans-serif;
 }
-/* line 105, ../sass/_mixins.sass */
-input[type=text]:hover, input[type=search]:hover, input[type=email]:hover, input[type=password]:hover, input[type=number]:hover, input[type=tel]:hover {
+/* line 15, ../sass/shared/_input.sass */
+input[type=text]:hover, input[type=search]:hover, input[type=email]:hover, input[type=password]:hover, input[type=number]:hover, input[type=tel]:hover, textarea:hover {
   border-color: black;
 }
-/* line 108, ../sass/_mixins.sass */
-input[type=text]:focus, input[type=search]:focus, input[type=email]:focus, input[type=password]:focus, input[type=number]:focus, input[type=tel]:focus {
+/* line 18, ../sass/shared/_input.sass */
+input[type=text]:focus, input[type=search]:focus, input[type=email]:focus, input[type=password]:focus, input[type=number]:focus, input[type=tel]:focus, textarea:focus {
   color: black;
   border-color: #b300b3;
 }
 
-/* line 19, ../sass/shared/_input.sass */
-select {
+/* line 22, ../sass/shared/_input.sass */
+textarea {
+  min-height: 5em;
+}
+
+/* line 25, ../sass/shared/_input.sass */
+.btn {
+  display: inline-block;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
-  padding: 12px 30px 12px 14px;
-  background: #33ffff;
-  border: 1px solid #b300b3;
-  outline: none;
-  font-size: 1.2em;
-  color: #333333;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  background-image: url('{{ "select.svg" | asset_url }}');
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-size: auto 50%;
+  border: none;
+  background-color: #b300b3;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 12px 25px 11px 25px;
+  transition: all 150ms ease-out;
 }
-/* line 33, ../sass/shared/_input.sass */
-select:invalid {
-  box-shadow: none;
+/* line 40, ../sass/shared/_input.sass */
+.btn:hover {
+  background-color: purple;
 }
 
 /* line 2, ../sass/shared/_rte.sass */

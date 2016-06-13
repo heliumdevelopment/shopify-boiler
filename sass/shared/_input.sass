@@ -1,34 +1,58 @@
-textarea
-  border: 2px solid darken($primary, 30%)
+input[type=text], input[type=search], input[type=email], input[type=password], input[type=number], input[type=tel], textarea
+  display: block
+  padding: 10px 20px
+  @include border-radius(2px)
+  border: 1px solid darken($primary, 30%)
   color: $black
   outline: none
   background: transparent
-  padding: 10px
-  transition: border-color 0.2s ease
+  transition: all $base-speed ease-out
+  @include appearance(none)
+  width: 100%
+  margin: 5px auto
+  @include webfont
 
   &:hover
     border-color: darken($primary, 70%)
+
   &:focus
     color: black
     border-color: $primary
 
+textarea
+  min-height: 5em
 
-input[type=text], input[type=search], input[type=email], input[type=password], input[type=number], input[type=tel]
-  +text-field
+.btn
+  display: inline-block
+  @include border-radius(2px)
+  @include appearance(none)
+  border: none
+  background-color: $primary
+  color: $white
+  @include webfont
+  text-transform: uppercase
+  letter-spacing: .5px
+  font-weight: 700
+  font-size: 13px
+  padding: 12px 25px 11px 25px
+  transition: all $base-speed ease-out
 
-select
-  +appearance(none)
-  padding: 12px 30px 12px 14px
-  background: lighten($secondary, 10%)
-  border: 1px solid $primary
-  outline: none
-  font-size: 1.2em
-  color: lighten($black, 20%)
-  +border-radius(5px)
-  background-image: url('{{ "select.svg" | asset_url }}')
-  background-repeat: no-repeat
-  background-position: center right
-  background-size: auto 50%
+  &:hover
+    background-color: darken($primary, 10%)
 
-  &:invalid
-    box-shadow: none
+// select
+//   +appearance(none)
+//   padding: 12px 30px 12px 14px
+//   background: lighten($secondary, 10%)
+//   border: 1px solid $primary
+//   outline: none
+//   font-size: 1.2em
+//   color: lighten($black, 20%)
+//   +border-radius(5px)
+//   background-image: url('{{ "select.svg" | asset_url }}')
+//   background-repeat: no-repeat
+//   background-position: center right
+//   background-size: auto 50%
+//
+//   &:invalid
+//     box-shadow: none
