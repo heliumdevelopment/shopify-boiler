@@ -17,23 +17,12 @@
     });
 
     var open = function() {
-      $('nav').css('top', 0);
+      $('.mobile-nav nav').css('top', 0);
     };
 
     var close = function() {
-      $('nav').css('top', '-100%');
+      $('.mobile-nav nav').css('top', '-100%');
     };
-
-    console.log('bruh');
-    $(window).on('resize', function(e) {
-      console.log('in resize', $(window).width)
-      if($(window).width() > 768) {
-        console.log('in')
-        $('nav').css('top', 'auto');
-        return;
-      }
-    });
-
 
 
   }); // End document ready

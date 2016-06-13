@@ -1,48 +1,29 @@
-.grabber
-  $d: 36px
-  width: $d
-  height: $d
-  position: absolute
-  top: 6px
-  right: 20px
-  cursor: pointer
-  z-index: 102
+.mobile-nav
   display: none
 
-  .bars
-    position: absolute
-    top: 10px
-    left: 8px
-
-  .bar-1, .bar-2, .bar-3
-    position: absolute
-    width: $d/2
-    top: 0
-    height: 2px
-    background-color: $dark
+  nav
+    position: fixed
+    top: -100%
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 100
+    background-color: $primary
+    padding-top: 50px
+    opacity: .97
     transition: all $base-speed ease-out
 
+    .top-level
+      display: block
+      width: 100%
+      text-align: center
 
-  .bar-2
-    top: 5px
+      &:hover
+        background-color: $primary
 
-  .bar-3
-    top: 10px
-
-  &.closable
-    .bar-1, .bar-2, .bar-3
-      background-color: $white
-
-    .bar-2
-      opacity: 0
-
-    .bar-1
-      transform: rotate(45deg)
-      top: 5px
-
-    .bar-3
-      transform: rotate(-45deg)
-      top: 5px
+      a
+        color: $light
+        display: block
 
   @media(max-width:768px)
     display: block

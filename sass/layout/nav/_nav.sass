@@ -1,57 +1,39 @@
-nav
-  position: absolute
-  bottom: 0
-  left: 0
-  width: 100%
-  text-align: center
-  background-color: $light
-  transition: all $base-speed ease-out
-
-  .top-level
-    font-size: 0
-    display: inline-block
-    padding: 7px 15px
-    position: relative
-    transition: all $base-speed ease-out
-
-    a
-      color: $primary
-      font-size: 16px
-      font-weight: 700
-      text-transform: uppercase
-      display: inline-block
-      transition: all $base-speed ease-out
-
-    &.active, &:hover
-      background-color: lighten($primary, 5%)
-
-      a
-        color: $light
-
-
-  .sub-nav
-    display: none
+.main-nav
+  nav
     position: absolute
-
-
-  @media(max-width:768px)
-    position: fixed
-    top: -100%
+    bottom: 0
     left: 0
     width: 100%
-    height: 100%
-    z-index: 100
-    background-color: $primary
-    padding-top: 50px
-    opacity: .97
+    text-align: center
+    background-color: $light
+    transition: all $base-speed ease-out
+    font-size: 0
 
     .top-level
-      display: block
-      width: 100%
-      text-align: center
-
-      &:hover
-        background-color: $primary
+      display: inline-block
+      padding: 7px 15px
+      position: relative
+      transition: all $base-speed ease-out
+      cursor: pointer
 
       a
-        color: $light
+        color: $primary
+        font-size: 16px
+        font-weight: 700
+        text-transform: uppercase
+        display: inline-block
+        transition: all $base-speed ease-out
+
+      &.active, &:hover
+        background-color: lighten($primary, 5%)
+
+        a
+          color: $light
+
+
+    .sub-nav
+      display: none
+      position: absolute
+
+  @media(max-width:768px)
+    display: none
