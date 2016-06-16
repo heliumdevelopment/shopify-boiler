@@ -1,33 +1,49 @@
 module.exports = function(grunt) {
   // The order of JS files that get loaded
-  var build_files = ['scripts/app/app.js', 
-        'scripts/lib/*.js',
-        'scripts/models/*.js',
-        'scripts/plugins/*.js',
-        'scripts/controllers/*.js'
-        ];
-  
+  var jsBuildFiles = ['scripts/app/app.js',
+                     'scripts/lib/*.js',
+                     'scripts/models/*.js',
+                     'scripts/plugins/*.js',
+                     'scripts/controllers/*.js'];
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    watch: {
-      scripts: {
-        files: ['scripts/**/*.js'],
-        tasks: ['concat'],
+    sass: {
+      // Leave development CSS expanded for debugging
+      dev: {
         options: {
-          spawn: false
+          style: 'expanded',
+          sourcemap: 'none',
+          require: 'sass-globbing'
         },
+        files: {
+          'assets/styles.css.liquid' : 'sass/styles.sass'
+        }
       },
+      // Compress CSS for production
+      prod: {
+        options: {
+          style: 'compressed',
+          sourcemap: 'none',
+          require: 'sass-globbing'
+        },
+        files: {
+          'assets/styles.css.liquid' : 'sass/styles.sass'
+        }
+      }
     },
+    // Uglifies JS for production
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %>*/\n'
       },
       build: {
-        src: build_files,
+        src: jsBuildFiles,
         dest: 'assets/<%= pkg.name %>.js'
       }
     },
+    // Combines JS files for development purposes
     concat: {
       options: {
         banner: '/*! <%= pkg.name %>*/\n',
@@ -37,20 +53,32 @@ module.exports = function(grunt) {
         }
       },
       build: {
-        src: build_files,
+        src: jsBuildFiles,
         dest: 'assets/<%= pkg.name %>.js'
+      }
+    },
+    watch: {
+      scripts: {
+        files: ['scripts/**/*.js'],
+        tasks: ['concat'],
+        options: {
+          spawn: false
+        },
+      },
+      css: {
+        files: ['sass/**/*.sass', 'sass/**/*.scss', ],
+        tasks: ['sass:dev']
       }
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  
-  // Concat
-  grunt.loadNpmTasks('grunt-contrib-concat');
+  // Tasks
+  grunt.registerTask('build', ['uglify', 'sass:prod']);
 
-  // Default task(s).
-  grunt.registerTask('default', ['uglify']);
-  
+  // Plugins
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-sass-globbing');
 };
