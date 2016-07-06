@@ -1,0 +1,28 @@
+{% layout settings.customer_layout %}
+<div id="customer-login-page">
+  <div id="login" class="modal">
+
+    <h2>SIGN IN</h2>
+
+    <div class="inputs">
+
+      {% form 'customer_login' %}
+      {{ form.errors | default_errors }}
+
+
+      <input type="email" value="" name="customer[email]" id="customer_email" class="text" placeholder="Email Address" />
+
+      {% if form.password_needed %}
+      <input type="password" value="" name="customer[password]" id="customer_password" class="text" size="16" placeholder="Password" />
+      <a href="#" class="forgot-btn">Forgot your password?</a>
+      {% endif %}
+
+      <div class="action_bottom">
+        <input class="btn dark f-left" type="submit" value="Sign In" />
+        <a href="/account/register" class="btn f-right register-btn">Register</a>
+      </div>
+      {% endform %}
+    </div> <!-- /#login -->
+
+  </div>
+</div>
