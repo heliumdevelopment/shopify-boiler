@@ -17,7 +17,10 @@
             var height = this.images.standard_resolution.height;
             var width = this.images.standard_resolution.width;
 
-            var bit = '<a href="{{ link }}" data-insta-link="instagram://media?id={{id}}" class="insta-bit"><img src="{{image}}" /></a>';
+            var square = $('#square-png').attr('src');
+            console.log(square);
+
+            var bit = '<a href="{{ link }}" data-insta-link="instagram://media?id={{id}}" class="insta-bit"><img class="insta-ghost" src="'+ square +'" /><img class="insta-image" src="{{image}}" /></a>';
 
             bit = Mustache.render(bit, this);
             bit = $(bit).appendTo(instafeedContainer);

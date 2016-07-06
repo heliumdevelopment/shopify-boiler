@@ -13,8 +13,11 @@
     margin: 2px
     opacity: 1
 
-    &.icon-star
-      color: $primary !important
+  .spr-icon.spr-icon-star-empty
+    color: #ccc !important
 
-    &.icon-star-empty
-      color: #aaa !important
+  .spr-icon.spr-icon-star
+    color: $primary !important
+
+  .spr-badge[data-rating="0.0"]
+    display: none

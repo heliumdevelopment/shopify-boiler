@@ -1,0 +1,33 @@
+.section.instagrams
+
+  .instagram-wrap
+    margin: 90px 0 30px 0
+
+    #instafeed
+      overflow: hidden
+
+
+      a
+        display: inline-block
+        width: 16.6%
+        float: left
+        padding: 15px
+        position: relative
+
+        @media(max-width:768px)
+          width: 25%
+
+        @media(max-width:600px)
+          width: 50%
+
+        img.insta-ghost
+          width: 100%
+          height: auto
+          position: relative
+
+        img.insta-image
+          width: calc(100% - 30px)
+          height: auto
+          position: absolute
+          top: 15px
+          left: 15px
