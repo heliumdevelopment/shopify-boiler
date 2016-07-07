@@ -35,10 +35,15 @@
       {% include 'site-header' %}
 
 
-      {{ content_for_layout }}
+      <div class="page-content">
 
-      <!-- Snippet: site-footer -->
-      {% include 'site-footer' %}
+
+        {{ content_for_layout }}
+
+        <!-- Snippet: site-footer -->
+        {% include 'site-footer' %}
+
+      </div>
 
     </main>
 

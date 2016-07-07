@@ -486,6 +486,11 @@ main .cart-overlay {
   display: none;
 }
 
+.page-content {
+  position: relative;
+  top: 80px;
+}
+
 .section {
   position: relative;
 }
@@ -592,7 +597,7 @@ header #logo .mobile {
   display: none;
 }
 header #logo img {
-  height: 80px;
+  height: 30px;
   width: auto;
 }
 header .top-items {
@@ -643,17 +648,6 @@ header .cart {
   position: absolute;
   right: 90px;
 }
-@media(max-width:900px) {
-  header {
-    text-align: center;
-  }
-  header #logo {
-    top: -15px;
-  }
-  header #logo img {
-    height: 40px;
-  }
-}
 @media(max-width:650px) {
   header {
     position: fixed;
@@ -678,7 +672,7 @@ header .cart {
     display: none;
   }
   header #logo img {
-    height: 30px;
+    height: 15px;
   }
 }
 .grabber {
@@ -762,6 +756,10 @@ header .cart {
   .mobile-nav {
     display: block;
   }
+}
+.main-nav {
+  position: relative;
+  top: 45px;
 }
 .main-nav nav {
   position: absolute;
