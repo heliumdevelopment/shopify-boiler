@@ -18,16 +18,30 @@
   <!-- Body -->
   <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
-    <!-- Snippet: site-header -->
-    {% include 'site-header' %}
+
+    <!-- Search Modal -->
+    {% include 'search-modal' %}
+
 
     <!-- Main div to wrap all the page's content -->
     <main>
+
+      <div class="cart-overlay"></div>
+
+      <!-- Quick Cart -->
+      {% include 'quick-cart' %}
+
+      <!-- Snippet: site-header -->
+      {% include 'site-header' %}
+
+
       {{ content_for_layout }}
+
+      <!-- Snippet: site-footer -->
+      {% include 'site-footer' %}
+
     </main>
 
-    <!-- Snippet: site-footer -->
-    {% include 'site-footer' %}
 
   </body>
 </html>

@@ -1,59 +1,54 @@
 <!-- Main Header -->
 <header>
 
-  <!-- Main logo image -->
-  <a id="logo" href="/"> {{ 'logo.png' | asset_url | img_tag: shop.name }}</a>
+  <div class="header-inner">
+    <!-- Main logo image -->
+    <a id="logo" href="/">
+      <span class="desktop">{{ 'logo.svg' | asset_url | img_tag: shop.name }}</span>
+      <span class="mobile">{{ 'logo-no-text.svg' | asset_url | img_tag: shop.name }}</span>
+    </a>
 
-  <!-- TOP ITEMS (search, cart, customer) -->
-  <div class="top-items">
+    <!-- TOP ITEMS (search, cart, customer) -->
+    <div class="top-items">
 
-    <!-- Cart Link -->
-    <div class="cart">
+      <span class="icon icon-ui-search"></span>
+      {% if customer %}
+        <a href="/account"><span class="icon icon-ui-user"></span></a>
+      {% else %}
+        <a href="/account/login"><span class="icon icon-ui-user"></span></a>
+      {% endif %}
+      <span class="icon icon-ui-cart">
+        <span class="cart-count"></span>
+      </span>
+
+      <!-- Cart Link -->
+      <div class="cart">
         <a href="/cart"><img src="{{ 'cart.svg' | asset_url }}" /> {{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})</a>
-    </div>
-
-    <!-- If customer accounts, then show the sign-in/log-in links -->
-    {% if shop.customer_accounts_enabled %}
-      <div class="customer">
-        {% if customer %}
-          Logged in as <a href="/account">{{ customer.first_name }}</a> · {{ 'Log out' | customer_logout_link }}
-        {% else %}
-          {{ 'Log in' | customer_login_link }}
-          {% if shop.customer_accounts_optional %}
-          or {{ 'Create an account' | customer_register_link }}
-          {% endif %}
-        {% endif %}
       </div>
-    {% endif %}
 
-    <!-- Search Icon & form -->
-    <div class="search">
-      <form action="/search" method="get" class="search-form right" role="search">
-        <input name="q" type="search" id="search-field" placeholder="Search store..." value="{{ search.terms | escape }}" />
-        <input type="submit" id="search-submit" value="Search" />
-      </form>
     </div>
 
-  </div>
-
-  <!-- MAIN SITE NAVIGATION -->
+    <!-- MAIN SITE NAVIGATION -->
 
 
-  <!-- Mobile Nav Grabber -->
-  <div class="grabber">
-    <div class="bars">
-      <div class="bar-1"></div>
-      <div class="bar-2"></div>
-      <div class="bar-3"></div>
+    <!-- Mobile Nav Grabber -->
+    <div class="grabber">
+      <div class="bars">
+        <div class="bar-1"></div>
+        <div class="bar-2"></div>
+        <div class="bar-3"></div>
+      </div>
     </div>
-  </div>
 
-  <!-- Splitting up the nav into desktop and mobile so we don't have to manage messy states in JS. Instead we're just hiding and showing one depending on screen size -->
-  <div class="main-nav">
-    {% include 'site-nav' %}
-  </div>
-  <div class="mobile-nav">
-    {% include 'site-nav' %}
+    <!-- Splitting up the nav into desktop and mobile so we don't have to manage messy states in JS. Instead we're just hiding and showing one depending on screen size -->
+    <div class="main-nav">
+      {% include 'site-nav' %}
+    </div>
+    <div class="mobile-nav">
+      {% include 'site-nav' %}
+    </div>
+
+
   </div>
 
 </header>

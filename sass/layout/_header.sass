@@ -1,23 +1,68 @@
 header
-  position: fixed
-  top: 0
-  left: 0
-  width: 100%
-  height: $header-height
-  background-color: $white
-  border-bottom: darken($light, 10%)
-  box-shadow: 0 0 10px rgba(0, 0, 0, .3)
   z-index: 10
+  top: 20px
+  max-width: 1800px
+  margin: 0 auto
+
+  // make it absolute
+  position: absolute
+  width: 100%
+
+  .header-inner
+    width: 90%
+    margin: 0 auto
+    position: relative
 
   #logo
-    position: absolute
-    top: calc(50% - 15px)
-    transform: translate(0, -50%)
-    left: 30px
+    position: relative
+    left: 0
+    top: -5px
+    display: inline-block
+    z-index: 1
+
+    .mobile
+      display: none
 
     img
-      height: 40px
+      height: 80px
       width: auto
+
+  .top-items
+    position: absolute
+    top: 0
+    right: 0
+
+    .cart-count
+      font-size: 14px
+      font-weight: 400
+      @include webfont
+      position: relative
+      top: -5px
+      left: 0
+
+    a
+      color: $black
+
+    .icon
+      font-size: 22px
+      display: inline-block
+      margin: 0
+      margin-left: 5px
+      transition: color 200ms ease-out
+      cursor: pointer
+
+      &.icon-ui-search
+        font-size: 21px
+
+      &.icon-ui-cart
+        font-size: 23px
+
+      &:hover
+        color: $primary
+
+
+    .cart, .customer, .search
+      display: none
 
   .customer
     position: absolute
@@ -31,7 +76,38 @@ header
     position: absolute
     right: 90px
 
-  @media(max-width:768px)
-    height: $header-height-mobile
+  // first break, just have the logo & nav be centered
+  @media(max-width:900px)
+    text-align: center
+
     #logo
-      top: 50%
+      top: -15px
+
+      img
+        height: 40px
+
+
+  @media(max-width:650px)
+    position: fixed
+    width: 100%
+    padding: 10px
+    background-color: white
+    top: 0
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3)
+    text-align: left
+
+    .top-items
+      right: 30px
+      top: 2px
+
+    #logo
+      top: 0
+
+      .mobile
+        display: block
+
+      .desktop
+        display: none
+
+      img
+        height: 30px

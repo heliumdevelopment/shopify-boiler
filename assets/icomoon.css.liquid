@@ -9,6 +9,7 @@
     font-style: normal;
 }
 
+[class^="spr-icon-"]:before, [class*=" spr-icon-"]:before,
 [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
@@ -23,7 +24,42 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-star-2:before {
+    content: "\e800";
+}
+.icon-star:before {
+    content: "\e801";
+}
+.icon-left-arrow:before {
+    content: "\e90a";
+}
+.icon-step-1:before {
+    content: "\e907";
+}
+.icon-step-2:before {
+    content: "\e908";
+}
+.icon-step-3:before {
+    content: "\e909";
+}
+.icon-ui-cart:before {
+    content: "\e904";
+}
+.icon-ui-search:before {
+    content: "\e905";
+}
+.icon-ui-user:before {
+    content: "\e906";
+}
+.icon-facebook:before {
+    content: "\e900";
+}
+.icon-instagram:before {
+    content: "\e901";
+}
+.icon-twitter:before {
+    content: "\e903";
+}
 .icon-home:before {
     content: "\e902";
 }
@@ -35,15 +71,6 @@
 }
 .icon-phone:before {
     content: "\e942";
-}
-.icon-facebook:before {
-    content: "\ea91";
-}
-.icon-instagram:before {
-    content: "\ea92";
-}
-.icon-twitter:before {
-    content: "\ea96";
 }
 .icon-linkedin:before {
     content: "\eac9";

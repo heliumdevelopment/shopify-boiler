@@ -1,0 +1,25 @@
+.quick-cart.slide-left
+  position: absolute
+  width: 350px
+  top: 0
+  right: -350px
+  height: 100%
+  background-color: #f7f7f7
+  z-index: 100
+  text-align: center
+
+  .quick-cart-fixed-content
+    padding: 20px
+    max-height: 100%
+    overflow: auto
+    width: 300px
+    position: relative
+
+    .close
+      color: $black
+      font-size: 22px
+      cursor: pointer
+      transition: all $base-speed ease-out
+
+      &:hover
+        color: $primary

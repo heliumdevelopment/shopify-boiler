@@ -1,0 +1,10 @@
+<!-- Search Icon & form -->
+<div class="search-modal">
+  <div class="overlay"></div>
+  <div class="search-wrap">
+    <form action="/search" method="get" class="search-form right" role="search">
+      <input name="q" type="search" id="search-field" placeholder="what are you looking for?" value="{{ search.terms | escape }}" />
+      <span class="icon-ui-search"></span>
+    </form>
+  </div>
+</div>
