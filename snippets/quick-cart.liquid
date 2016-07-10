@@ -1,8 +1,43 @@
+<!-- Cart item template -->
+  <script type="template/mustache" id="cart-template">
+    {% raw %}
+
+      <div class="item">
+        <img src="{{ image }}" />
+        <div class="info">
+          <p class="vendor">{{ vendor }}</p>
+          <p class="title">{{ product_title }}</p>
+          <div class="price-and-quantity">
+            <input type="text" value="{{ quantity }}">
+            <span class="x">x</span>
+            <span class="price">{{ formatted_price }}</span>
+          </div>
+          <a class="edit" href="/cart">Edit</a>
+        </div>
+      </div>
+
+    {% endraw %}
+  </script>
+
+
 <div class="quick-cart slide-left">
   <div class="quick-cart-fixed-content">
     <a class="close icon-left-arrow"></a>
-    <h2>Quik Cart</h2>
+    <h2>Shopping Bag</h2>
 
+    <div class="cart-items">
+
+
+
+    </div>
+
+    <div class="cart-totals">
+
+      <p>Total</p>
+      <h3 class="subtotal">$14</h3>
+      <a class="btn" href="/checkout">Checkout</a>
+
+    </div>
 
   </div>
 </div>

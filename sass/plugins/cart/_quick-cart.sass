@@ -1,0 +1,106 @@
+.quick-cart-fixed-content
+  .close
+    color: $black
+    font-size: 16px
+    cursor: pointer
+    transition: all $base-speed ease-out
+    margin-bottom: 30px
+    display: block
+
+    &:hover
+      color: $primary
+
+
+  h2
+    font-weight: 300
+    font-size: 26px
+
+    &:after
+      display: block
+      width: 90px
+      height: 1px
+      background-color: $primary
+      content: ''
+      margin: 10px auto
+
+
+  .cart-items
+    margin: 20px 0
+
+    .item
+      border-bottom: 1px solid #ccc
+      text-align: left
+      padding: 20px 0
+      position: relative
+
+      img
+        position: absolute
+        width: 90px
+        height: auto
+        mix-blend-mode: darken
+        -webkit-backface-visibility: hidden
+        backface-visibility: hidden
+        background-color: #f7f7f7
+        top: 50%
+        -ms-transform: translate(0, -50%)
+        -webkit-transform: translate(0, -50%)
+        transform: translate(0, -50%)
+
+
+      .info
+        left: 90px
+        width: calc(100% - 90px)
+        text-align: left
+        position: relative
+        margin-bottom: 30px
+
+        p
+          margin: 0
+
+        .vendor
+          font-size: 15px
+          font-style: oblique
+          color: $light-grey
+          font-weight: 400
+          margin-bottom: 7px
+
+        .title
+          font-size: 17px
+          font-weight: 400
+          color: $black
+
+
+
+      .price-and-quantity
+        margin: 10px 0
+
+        input
+          border: 1px solid #999
+          text-align: center
+          padding: 3px 7px
+          margin: 0
+          max-width: 40px
+          color: #999
+          border-radius: 4px
+          font-size: 14px
+          font-weight: 500
+
+        .x
+          display: inline-block
+          padding: 0 10px
+          font-weight: 600
+          font-size: 14px
+          color: #999
+
+        .price
+          display: inline-block
+          font-size: 18px
+          font-weight: 500
+          color: $primary
+          position: relative
+          top: 1px
+
+
+  .cart-totals
+    .price
+    .btn

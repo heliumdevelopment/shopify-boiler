@@ -1053,6 +1053,103 @@ textarea {
   display: none;
 }
 
+.quick-cart-fixed-content .close {
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 150ms ease-out;
+  margin-bottom: 30px;
+  display: block;
+}
+.quick-cart-fixed-content .close:hover {
+  color: #b300b3;
+}
+.quick-cart-fixed-content h2 {
+  font-weight: 300;
+  font-size: 26px;
+}
+.quick-cart-fixed-content h2:after {
+  display: block;
+  width: 90px;
+  height: 1px;
+  background-color: #b300b3;
+  content: "";
+  margin: 10px auto;
+}
+.quick-cart-fixed-content .cart-items {
+  margin: 20px 0;
+}
+.quick-cart-fixed-content .cart-items .item {
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  padding: 20px 0;
+  position: relative;
+}
+.quick-cart-fixed-content .cart-items .item img {
+  position: absolute;
+  width: 90px;
+  height: auto;
+  mix-blend-mode: darken;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: #f7f7f7;
+  top: 50%;
+  -ms-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.quick-cart-fixed-content .cart-items .item .info {
+  left: 90px;
+  width: calc(100% - 90px);
+  text-align: left;
+  position: relative;
+  margin-bottom: 30px;
+}
+.quick-cart-fixed-content .cart-items .item .info p {
+  margin: 0;
+}
+.quick-cart-fixed-content .cart-items .item .info .vendor {
+  font-size: 15px;
+  font-style: oblique;
+  color: #a0a0a0;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+.quick-cart-fixed-content .cart-items .item .info .title {
+  font-size: 17px;
+  font-weight: 400;
+  color: black;
+}
+.quick-cart-fixed-content .cart-items .item .price-and-quantity {
+  margin: 10px 0;
+}
+.quick-cart-fixed-content .cart-items .item .price-and-quantity input {
+  border: 1px solid #999;
+  text-align: center;
+  padding: 3px 7px;
+  margin: 0;
+  max-width: 40px;
+  color: #999;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.quick-cart-fixed-content .cart-items .item .price-and-quantity .x {
+  display: inline-block;
+  padding: 0 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #999;
+}
+.quick-cart-fixed-content .cart-items .item .price-and-quantity .price {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  color: #b300b3;
+  position: relative;
+  top: 1px;
+}
+
 .quick-cart.slide-left {
   position: absolute;
   width: 350px;
@@ -1065,19 +1162,11 @@ textarea {
 }
 .quick-cart.slide-left .quick-cart-fixed-content {
   padding: 20px;
-  max-height: 100%;
-  overflow: auto;
   width: 300px;
+  overflow: scroll;
+  padding-bottom: 100px;
   position: relative;
-}
-.quick-cart.slide-left .quick-cart-fixed-content .close {
-  color: black;
-  font-size: 22px;
-  cursor: pointer;
-  transition: all 150ms ease-out;
-}
-.quick-cart.slide-left .quick-cart-fixed-content .close:hover {
-  color: #b300b3;
+  background-color: #f7f7f7;
 }
 
 .search-modal {
