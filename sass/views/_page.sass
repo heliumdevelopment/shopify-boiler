@@ -1,0 +1,52 @@
+body.template-page
+
+  .page-heading
+    width: 70%
+    max-width: 700px
+    text-align: center
+    margin: 0 auto
+    padding: 100px 0 40px 0
+
+    h1
+      font-size: 35px
+      letter-spacing: .5px
+      font-weight: 400
+
+      &:after
+        margin: 20px auto
+        width: 150px
+        height: 1px
+        background-color: $primary
+        display: block
+        content: ''
+
+
+    p
+      margin-top: 40px
+      font-size: 20px
+      line-height: 35px
+
+  .rte
+    overflow: hidden
+
+  // cols
+  .col-left
+    width: calc(50% - 20px)
+    float: left
+
+  .col-right
+    width: calc(50% - 20px)
+    float: right
+
+    img
+      width: 100%
+      height: auto
+
+  .col-full
+
+
+  @media(max-width:600px)
+    .col-left, .col-right
+      float: none
+      width: 100%
+      margin-bottom: 30px

@@ -512,6 +512,10 @@ main .cart-overlay {
   padding: 120px 0;
 }
 
+.pad-bottom {
+  padding-bottom: 100px;
+}
+
 .errors {
   color: red;
   text-align: left;
@@ -805,6 +809,53 @@ header .cart {
   }
   .mobile-nav .main-nav {
     display: block;
+  }
+}
+body.template-page .page-heading {
+  width: 70%;
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 100px 0 40px 0;
+}
+body.template-page .page-heading h1 {
+  font-size: 35px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+body.template-page .page-heading h1:after {
+  margin: 20px auto;
+  width: 150px;
+  height: 1px;
+  background-color: #b300b3;
+  display: block;
+  content: "";
+}
+body.template-page .page-heading p {
+  margin-top: 40px;
+  font-size: 20px;
+  line-height: 35px;
+}
+body.template-page .rte {
+  overflow: hidden;
+}
+body.template-page .col-left {
+  width: calc(50% - 20px);
+  float: left;
+}
+body.template-page .col-right {
+  width: calc(50% - 20px);
+  float: right;
+}
+body.template-page .col-right img {
+  width: 100%;
+  height: auto;
+}
+@media(max-width:600px) {
+  body.template-page .col-left, body.template-page .col-right {
+    float: none;
+    width: 100%;
+    margin-bottom: 30px;
   }
 }
 .section.instagrams .instagram-wrap {
