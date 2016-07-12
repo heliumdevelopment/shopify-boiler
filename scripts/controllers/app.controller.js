@@ -8,7 +8,7 @@
     $('.grid .grid-item').matchHeight();
 
     // sticky kit the quick cart fixed content
-    $('.quick-cart-fixed-content').stick_in_parent();
+    //$('.quick-cart-fixed-content').stick_in_parent();
 
     $('.icon-ui-cart').on('click', function(e) {
       openQuickCart();
@@ -56,14 +56,18 @@
     };
 
     var openQuickCart = function() {
+
+      console.log($(window).height());
       $('.cart-overlay').fadeIn(200);
       $('body').addClass('slide');
-      $('.quick-cart-fixed-content').trigger('sticky_kit:recalc');
+      $('body').css('overflow', 'hidden');
+      $('.quick-cart-fixed-content').css('height', $(window).height());
     }
 
     var closeQuickCart = function() {
       $('.cart-overlay').fadeOut(200);
       $('body').removeClass('slide');
+      $('body').css('overflow', 'auto');
     };
 
     var openSearch = function() {

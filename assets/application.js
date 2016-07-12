@@ -1078,7 +1078,7 @@ Theme.TriggerEvents = (function($) {
     $('.grid .grid-item').matchHeight();
 
     // sticky kit the quick cart fixed content
-    $('.quick-cart-fixed-content').stick_in_parent();
+    //$('.quick-cart-fixed-content').stick_in_parent();
 
     $('.icon-ui-cart').on('click', function(e) {
       openQuickCart();
@@ -1126,14 +1126,18 @@ Theme.TriggerEvents = (function($) {
     };
 
     var openQuickCart = function() {
+
+      console.log($(window).height());
       $('.cart-overlay').fadeIn(200);
       $('body').addClass('slide');
-      $('.quick-cart-fixed-content').trigger('sticky_kit:recalc');
+      $('body').css('overflow', 'hidden');
+      $('.quick-cart-fixed-content').css('height', $(window).height());
     }
 
     var closeQuickCart = function() {
       $('.cart-overlay').fadeOut(200);
       $('body').removeClass('slide');
+      $('body').css('overflow', 'auto');
     };
 
     var openSearch = function() {
@@ -1191,35 +1195,11 @@ Theme.TriggerEvents = (function($) {
 //------ scripts/controllers/cart.controller.js
 (function($) {
 
-  // Document ready
-  $(function() {
-
-    Theme.Cart.get(function(r) {
-
-      CartJS.init(r);
-
-      var qty = CartJS.cart.item_count;
-
-      if(qty > 0) {
-        $('.cart-count').html('('+CartJS.cart.item_count+')');
-      }
-
-    });
-  }); // End document ready
-
-})(Theme.jQuery);
-
-
-(function($) {
-
 
     //cache
-    // $showcartbtn = $('.cart-btn');
-    // $modal = $('#cart');
-    // $addform = $('#add-to-cart-form');
-    // $addbtn = $('#product-add');
     var $quickcart = $('.quick-cart'),
-        $wrap = $quickcart.find('.cart-items');
+        $wrap = $quickcart.find('.cart-items'),
+        $addbtn = $('.btn-add');
 
     // render cart. This is intended to both draw the cart
     // on page load, and then re-draw the cart whenever
@@ -1232,8 +1212,6 @@ Theme.TriggerEvents = (function($) {
 
       cart = Theme.Cart.get(function(r) {
         var $template = $('#cart-template').html();
-
-        console.log('CART: ', r);
 
         // empty whatever is currently there
         $wrap.empty();
@@ -1257,55 +1235,46 @@ Theme.TriggerEvents = (function($) {
 
         // if we're calling renderCart from the add button
         // then show the cart right away
-        // if(isAdded) {
-        //   showCart();
-        //   updateCartQuantity(r.item_count);
-        // }
+        if(isAdded) {
+          showCart();
+        }
+
+        updateCartQuantity(r.item_count)
 
       }, true);
     };
 
     // show the modal window
     var showCart = function() {
-      // $modal.fadeIn('fast');
-      // $('.grabber').removeClass('closable');
-      // $('.mobile-nav').removeClass('show');
-      // $('.mobile-nav-overlay').removeClass('show');
+      $('.cart-overlay').fadeIn(200);
+      $('body').addClass('slide');
+      $('body').css('overflow', 'hidden');
+      $('.quick-cart-fixed-content').css('height', $(window).height());
     }
 
     // update the cart quantity in the header
     var updateCartQuantity = function(qty) {
-      //$('.cart-qty').empty().html(qty);
+      $('.cart-count').empty().html("(" + qty + ")");
     }
 
     // on page load, call render cart
     renderCart();
 
-    // this shows the modal window
-    // $showcartbtn.on('click', function(e) {
-    //   showCart();
-    // });
-    //
-    // // close the modal when the overlay is clicked on
-    // $modal.find('.overlay').on('click', function(e) {
-    //   $modal.fadeOut('fast');
-    // });
-
     // on add-to-cart click, capture that click and then add the product
     // to the cart via ajax
-    // $addbtn.on('click', function(e) {
-    //   var cur = $(e.currentTarget);
-    //   cur.addClass('disabled');
-    //   Theme.Cart.add($('#add-to-cart-form')[0], function(r) {
-    //
-    //     // call renderCart
-    //     setTimeout(function() {
-    //       renderCart('added');
-    //       cur.removeClass('disabled');
-    //     }, 1000);
-    //
-    //   });
-    // });
+    $addbtn.on('click', function(e) {
+      var cur = $(e.currentTarget);
+      cur.addClass('disabled');
+      Theme.Cart.add($('#add-to-cart-form')[0], function(r) {
+
+        // call renderCart
+        setTimeout(function() {
+          renderCart('added');
+          cur.removeClass('disabled');
+        }, 1000);
+
+      });
+    });
 
 })(Theme.jQuery, Theme.Cart);
 
