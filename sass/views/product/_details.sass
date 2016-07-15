@@ -1,0 +1,58 @@
+.template-product
+
+  .product-details
+    position: relative
+
+    h1
+      margin: 0
+      margin-bottom: 10px
+      padding-right: 160px
+      font-size: 35px
+      font-weight: 300
+      color: $black
+
+    h2
+      color: $med-grey
+      font-weight: 400
+      font-style: oblique
+      text-transform: uppercase
+      font-size: 16px
+      margin: 0
+
+      a
+        color: $med-grey
+        font-size: 16px
+
+
+    #product-price
+      position: absolute
+      top: 40px
+      right: 20px
+      color: $primary
+      font-size: 35px
+      font-weight: 300
+      letter-spacing: -1.5px
+
+    #product-description
+      margin: 30px 0
+
+
+    @media(max-width:650px)
+      text-align: center
+
+      h1
+        font-size: 30px
+        padding-right: 0px
+
+      h2, h2 a
+        font-size: 14px
+
+      #product-price
+        width: 100%
+        text-align: center
+        top: 0
+        left: 0
+        right: 0
+        font-size: 25px
+
+      #product-description

@@ -1,0 +1,54 @@
+.template-product
+
+  .width-restrict
+    padding-top: 60px
+    padding-bottom: 60px
+
+  .product-info-wrap
+    position: relative
+    overflow: hidden
+
+  .product-photos, .product-details
+    display: block
+    float: left
+    position: relative
+
+  .product-photos
+    width: 40%
+    padding: 0 20px
+
+  .product-details
+    width: 60%
+    padding: 40px 20px
+
+
+  .product-photos-wrap
+    overflow: hidden
+    position: relative
+    width: 100%
+
+  .product-photo
+    display: block
+    float: left
+    height: 100%
+    position: relative
+    display: none
+
+    img
+      display: block
+      width: 100%
+      height: auto
+
+  @media(max-width:650px)
+    .width-restrict
+      padding-top: 30px
+      padding-bottom: 30px
+
+    .product-photos, .product-details
+      width: 100%
+      float: none
+      margin-bottom: 30px
+
+    .product-photos
+      max-width: 400px
+      margin: 30px auto
