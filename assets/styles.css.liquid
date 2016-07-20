@@ -517,6 +517,10 @@ main .cart-overlay {
   padding-bottom: 100px;
 }
 
+.no-top-pad {
+  padding-top: 0;
+}
+
 .errors {
   color: red;
   text-align: left;
@@ -1229,6 +1233,32 @@ textarea {
   background-color: purple;
 }
 
+.page-heading {
+  width: 70%;
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 40px 0 60px 0;
+}
+.page-heading h1 {
+  font-size: 35px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+.page-heading h1:after {
+  margin: 20px auto;
+  width: 150px;
+  height: 1px;
+  background-color: #b300b3;
+  display: block;
+  content: "";
+}
+.page-heading p {
+  margin-top: 40px;
+  font-size: 20px;
+  line-height: 35px;
+}
+
 .rte img {
   max-width: 100%;
 }
@@ -1310,6 +1340,13 @@ textarea {
 }
 .grid-item .spr-icon.spr-icon-star {
   color: #b300b3 !important;
+}
+.grid-item .spr-icon.spr-icon-star-half-alt {
+  color: #b300b3 !important;
+  opacity: 0.6;
+}
+.grid-item .spr-icon.spr-icon-star-half-alt:before {
+  content: "";
 }
 .grid-item .spr-badge[data-rating="0.0"] {
   display: none;
@@ -1500,4 +1537,161 @@ textarea {
   .search-modal .search-wrap #search-field {
     font-size: 16px;
   }
+}
+#add_address, .edit_address {
+  background-color: #E8E8E8;
+  padding: 70px 140px;
+  margin: 40px 0;
+  text-align: center;
+}
+@media(max-width:768px) {
+  #add_address, .edit_address {
+    padding: 60px 100px;
+  }
+}
+@media(max-width:650px) {
+  #add_address, .edit_address {
+    padding: 40px;
+  }
+}
+#add_address table, .edit_address table {
+  width: 100%;
+}
+#add_address table tr, #add_address table td, .edit_address table tr, .edit_address table td {
+  margin: 5px 0;
+  position: relative;
+  display: inline-block;
+}
+#add_address table input, #add_address table select, .edit_address table input, .edit_address table select {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#add_address table input[type=checkbox], .edit_address table input[type=checkbox] {
+  width: auto;
+  display: inline-block;
+}
+#add_address table td, .edit_address table td {
+  width: 500px;
+  margin: 10px auto;
+}
+#add_address h4, .edit_address h4 {
+  font-weight: 300;
+  font-size: 30px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+#add_address .action_bottom, .edit_address .action_bottom {
+  margin-top: 30px;
+}
+
+#customer-account .customer-page-wrap, #customer-addresses .customer-page-wrap {
+  position: relative;
+  min-height: 400px;
+}
+#customer-account #customer_logout_link, #customer-addresses #customer_logout_link {
+  font-size: 11px;
+  font-weight: 500;
+  color: #ccc;
+}
+#customer-account .customer-columns-wrap, #customer-addresses .customer-columns-wrap {
+  position: relative;
+  overflow: hidden;
+}
+#customer-account #customer_sidebar, #customer-addresses #customer_sidebar {
+  padding: 20px;
+  position: relative;
+  width: 250px;
+  float: left;
+  background-color: #E8E8E8;
+  word-wrap: break-word;
+}
+#customer-account #customer_sidebar h2, #customer-addresses #customer_sidebar h2 {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+#customer-account #customer_sidebar .email, #customer-addresses #customer_sidebar .email {
+  font-weight: 400;
+  font-size: 14px;
+}
+#customer-account #customer_orders, #customer-addresses #customer_orders {
+  width: calc(100% - 280px);
+  float: right;
+}
+#customer-account #customer_orders h2, #customer-addresses #customer_orders h2 {
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 40px;
+  margin: 0;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+@media(max-width:650px) {
+  #customer-account #customer_sidebar, #customer-addresses #customer_sidebar {
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  #customer-account #customer_orders, #customer-addresses #customer_orders {
+    width: 100%;
+  }
+}
+#customer-account .view_address, #customer-account .address.note, #customer-addresses .view_address, #customer-addresses .address.note {
+  margin: 20px 0;
+}
+#customer-account .view_address p, #customer-account .address.note p, #customer-addresses .view_address p, #customer-addresses .address.note p {
+  margin: 0;
+}
+#customer-account .view_address #view_address, #customer-account .address.note #view_address, #customer-addresses .view_address #view_address, #customer-addresses .address.note #view_address {
+  margin-top: 20px;
+}
+
+#customer-login-page #login {
+  width: 80%;
+  position: relative;
+  margin: 0 auto;
+}
+#customer-login-page .customer-login, #customer-login-page .customer-register {
+  width: 70%;
+  max-width: 700px;
+  padding: 50px 70px;
+  margin: 0 auto 100px auto;
+  background-color: #f2f2f2;
+  margin-bottom: 150px;
+  text-align: center;
+}
+#customer-login-page .customer-login .forgot-btn, #customer-login-page .customer-login input.text, #customer-login-page .customer-login .action_bottom, #customer-login-page .customer-register .forgot-btn, #customer-login-page .customer-register input.text, #customer-login-page .customer-register .action_bottom {
+  display: block;
+  margin: 35px 0;
+}
+#customer-login-page .customer-login input.text, #customer-login-page .customer-register input.text {
+  width: 80%;
+  margin: 35px auto;
+  background-color: transparent;
+}
+#customer-login-page .customer-login .forgot-btn, #customer-login-page .customer-register .forgot-btn {
+  font-size: 11px;
+  font-weight: 500;
+  color: #ccc;
+}
+#customer-login-page .customer-login .errors, #customer-login-page .customer-register .errors {
+  display: block;
+  background-color: #b300b3;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  width: 80%;
+  margin: 15px auto;
+}
+#customer-login-page .customer-login .errors li, #customer-login-page .customer-register .errors li {
+  list-style-type: none;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  color: white;
 }

@@ -1,24 +1,29 @@
 {% layout settings.customer_layout %}
 <div id="customer-login-page">
-  <div id="register" class="modal">
+  <div id="register" class="page">
 
-    <h2>Create an account</h2>
+    <div class="page-heading">
+      <h1>Create an account</h1>
+    </div>
 
-    <div class="inputs">
+    <div class="section customer-register">
+      <div class="inputs">
 
-      {% form 'create_customer' %}
-        {{ form.errors | default_errors }}
+        {% form 'create_customer' %}
+          {{ form.errors | default_errors }}
 
-        <input type="text" value="" name="customer[first_name]" id="first_name" placeholder="First Name" />
-        <input type="text" value="" name="customer[last_name]" id="last_name" placeholder="Last Name" />
-        <input type="email" value="" name="customer[email]" id="email" placeholder="Email Address" />
-        <input type="password" value="" name="customer[password]" id="password" class="password" placeholder="Password" />
+          <input type="text" value="" class="text" name="customer[first_name]" id="first_name" placeholder="First Name" />
+          <input type="text" value="" class="text" name="customer[last_name]" id="last_name" placeholder="Last Name" />
+          <input type="email" value="" class="text" name="customer[email]" id="email" placeholder="Email Address" />
+          <input type="password" value="" class="text" name="customer[password]" id="password" class="password" placeholder="Password" />
 
 
-        <div class="action_bottom">
-          <input class="btn dark f-left" type="submit" value="Create Account" />
-        </div>
-      {% endform %}
+          <div class="action_bottom">
+            <input class="btn dark f-left" type="submit" value="Create Account" />
+          </div>
+        {% endform %}
+
+      </div>
 
     </div>
 </div>

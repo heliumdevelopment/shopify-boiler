@@ -2,16 +2,18 @@
 
 {% layout settings.customer_layout %}
 <div id="customer-addresses" class="page">
-  <h1>Account Details</h1>
 
-  <div class="logout centered">
-    <a class="btn" href="/account">Back to Profile</a>
-    {{ 'Logout' | customer_logout_link }}
+  <div class="page-heading">
+    <h1>Addresses</h1>
+    <div class="logout centered">
+      <a id="customer_logout_link" href="/account">Back to Profile</a>
+      <span style="display: inline-block; padding: 0 10px; color: #f0f0f0;">|</span>
+      {{ 'Logout' | customer_logout_link }}
+    </div>
   </div>
-  <hr />
 
-  <div class="row">
-    <div class="span6">
+  <div class="section customer-page-wrap">
+    <div class="width-restrict centered pad no-top-pad">
       <div id="address_tables">
         {% paginate customer.addresses by 10 %}
 
@@ -90,8 +92,7 @@
         <div id="address_pagination">{{ paginate | default_pagination }}</div>
         {% endpaginate %}
       </div><!-- end #address_tables -->
-    </div> <!-- /.span6 -->
-    <div class="span6">
+
       <a href="#" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;" class="add-new-address btn">Add a new address</a>
       <div id="add_address" class="customer_address edit_address" style="display: none;">
         {% form 'customer_address', customer.new_address %}
@@ -118,14 +119,14 @@
           <tr>
             <td class="value">
               <label for="address_country_new">Country</label>
-              <select id="address_country_new" name="address[country]" data-default="{{form.country}}" style="background-image: url({{ 'arrow-down.svg' | asset_url }})">{{ country_option_tags }}</select>
+              <select id="address_country_new" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
             </td>
           </tr>
           <tr id="address_province_container_new" style="display:none">
 
             <td class="value">
               <label for="address_province_new">Province</label>
-              <select id="address_province_new" class="address_form" name="address[province]" data-default="{{form.province}}" style="background-image: url({{ 'arrow-down.svg' | asset_url }})"></select>
+              <select id="address_province_new" class="address_form" name="address[province]" data-default="{{form.province}}"></select>
             </td>
           </tr>
           <tr>

@@ -1,0 +1,62 @@
+#customer-account, #customer-addresses
+  .customer-page-wrap
+    position: relative
+    min-height: 400px
+
+  #customer_logout_link
+    font-size: 11px
+    font-weight: 500
+    color: #ccc
+
+  .customer-columns-wrap
+    position: relative
+    overflow: hidden
+
+  #customer_sidebar
+    padding: 20px
+    position: relative
+    width: 250px
+    float: left
+    background-color: $border
+    word-wrap: break-word
+
+    h2
+      font-size: 24px
+      font-weight: 300
+      margin: 0
+      margin-bottom: 15px
+      text-transform: uppercase
+
+    .email
+      font-weight: 400
+      font-size: 14px
+
+  #customer_orders
+    width: calc(100% - 280px)
+    float: right
+
+    h2
+      font-weight: 300
+      letter-spacing: 2px
+      font-size: 40px
+      margin: 0
+      margin-bottom: 30px
+      text-transform: uppercase
+
+  @media(max-width:650px)
+    #customer_sidebar
+      width: 100%
+      position: relative
+      margin-bottom: 30px
+
+    #customer_orders
+      width: 100%
+
+  .view_address, .address.note
+    margin: 20px 0
+
+    p
+      margin: 0
+
+    #view_address
+      margin-top: 20px
