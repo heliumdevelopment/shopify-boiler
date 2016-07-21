@@ -1,4 +1,17 @@
 #customer-account, #customer-addresses
+
+  .address_actions
+    a
+      display: inline-block
+      padding: 4px 10px
+      font-size: 12px
+      background-color: #d0d0d0
+      color: $white
+
+      &:hover
+        background-color: #ccc
+
+
   .customer-page-wrap
     position: relative
     min-height: 400px
@@ -24,12 +37,13 @@
       font-size: 24px
       font-weight: 300
       margin: 0
-      margin-bottom: 15px
+      margin-bottom: 0
       text-transform: uppercase
 
     .email
       font-weight: 400
       font-size: 14px
+      margin: 0
 
   #customer_orders
     width: calc(100% - 280px)

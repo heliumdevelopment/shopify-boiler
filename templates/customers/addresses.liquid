@@ -61,13 +61,13 @@
               <tr>
                 <td class="value">
                   <label for="address_country_{{form.id}}">Country</label>
-                  <select id="address_country_{{form.id}}" name="address[country]" data-default="{{form.country}}" style="background-image: url({{ 'arrow-down.svg' | asset_url }})">{{ country_option_tags }}</select>
+                  <select id="address_country_{{form.id}}" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
                 </td>
               </tr>
               <tr id="address_province_container_{{form.id}}" style="display:none">
                 <td class="value">
                   <label for="address_province_{{form.id}}">Province</label>
-                  <select id="address_province_{{form.id}}" class="address_form" name="address[province]" data-default="{{form.province}}" style="background-image: url({{ 'arrow-down.svg' | asset_url }})"></select>
+                  <select id="address_province_{{form.id}}" class="address_form" name="address[province]" data-default="{{form.province}}"></select>
                 </td>
               </tr>
               <tr>

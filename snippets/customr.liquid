@@ -1,0 +1,82 @@
+{% if template contains 'register' %}
+  {% assign submit_button = "Create Account" %}
+{% else %}
+  {% assign submit_button = "Save Account" %}
+{% endif %}
+{% assign customr_url = "https://customr.heliumdev.com" %}
+{% assign customr_cdn_url = "https://cdn-customr.heliumdev.com" %}
+<script>
+  var Customr = {
+    page_template: "{{ template }}",
+    base_url: "{{ customr_url }}"
+  };
+</script>
+{% assign token = customer.metafields.customr_auth.token %}
+{% unless template contains 'register' %}
+  {% unless token %}
+    <form id="customr-token-create" action="{{ customr_url }}/customers/token" method="post">
+      <input type="hidden" name="shop" value="{{ shop.permanent_domain }}">
+      <input type="hidden" name="id" value="{{customer.id}}">
+    </form>
+    <script>document.getElementById('customr-token-create').submit();</script>
+  {% endunless %}
+{% endunless %}
+<script id="customr-script" data-shop="{{ shop.permanent_domain }}" data-id="{{ customer.id }}" src="{{ customr_cdn_url }}/js/1.0/customr.js"></script>
+{% form 'customer_login' %}
+  <input name="customer[email]" type="hidden">
+  <input name="customer[password]" type="hidden">
+{% endform %}
+<form id="customr-form" action="{{ customr_url }}/customers/{% if token %}{{ customer.id }}{% endif %}" method="post">
+  {% if token %}
+    <input type="hidden" name="_method" value="patch">
+    <input type="hidden" name="auth_token" value="{{ token }}">
+    <input type="hidden" name="customer[id]" value="{{ customer.id }}">
+  {% endif %}
+  <input type="hidden" name="shop" value="{{ shop.permanent_domain }}">
+  <div class="customr-fields"></div>
+  <div class="customr-actionable">
+    <input type="submit" value="{{ submit_button }}" class="btn">
+  </div>
+  <div>
+    <p class="customr-success">Your account has been updated.</p>
+  </div>
+</form>
+<style>
+  #customr-form {
+    display: none;
+  }
+
+  #customr-form.loaded {
+    display: block;
+  }
+
+  #customr-form .customr-success {
+    display: none;
+    background: #45b36c;
+    color: white;
+    padding: 10px;
+  }
+
+   #customr-form .customr-success.active {
+    display: inline-block;
+  }
+
+  .customr-container-item .radio input {
+    margin-right: 5px;
+  }
+
+  .customr-control-label {
+    display: block;
+    margin: 10px 0 2px 0;
+  }
+
+  .customr-actionable {
+    margin: 15px 0;
+  }
+
+  {% if template contains 'register' %}
+    .customr-hide-registration {
+      display: none
+    }
+  {% endif %}
+</style>

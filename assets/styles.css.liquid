@@ -1539,10 +1539,17 @@ textarea {
   }
 }
 #add_address, .edit_address {
-  background-color: #E8E8E8;
+  background-color: #f9f9f9;
   padding: 70px 140px;
   margin: 40px 0;
   text-align: center;
+}
+#add_address label, .edit_address label {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  color: #555;
 }
 @media(max-width:768px) {
   #add_address, .edit_address {
@@ -1586,6 +1593,16 @@ textarea {
   margin-top: 30px;
 }
 
+#customer-account .address_actions a, #customer-addresses .address_actions a {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  background-color: #d0d0d0;
+  color: white;
+}
+#customer-account .address_actions a:hover, #customer-addresses .address_actions a:hover {
+  background-color: #ccc;
+}
 #customer-account .customer-page-wrap, #customer-addresses .customer-page-wrap {
   position: relative;
   min-height: 400px;
@@ -1611,12 +1628,13 @@ textarea {
   font-size: 24px;
   font-weight: 300;
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 0;
   text-transform: uppercase;
 }
 #customer-account #customer_sidebar .email, #customer-addresses #customer_sidebar .email {
   font-weight: 400;
   font-size: 14px;
+  margin: 0;
 }
 #customer-account #customer_orders, #customer-addresses #customer_orders {
   width: calc(100% - 280px);
@@ -1650,35 +1668,45 @@ textarea {
   margin-top: 20px;
 }
 
-#customer-login-page #login {
+#customer-login-page #login, #customer-reset-password #login {
   width: 80%;
   position: relative;
   margin: 0 auto;
 }
-#customer-login-page .customer-login, #customer-login-page .customer-register {
+#customer-login-page #recover-password, #customer-reset-password #recover-password {
+  display: none;
+}
+#customer-login-page .account-form, #customer-login-page .customer-register, #customer-reset-password .account-form, #customer-reset-password .customer-register {
   width: 70%;
   max-width: 700px;
   padding: 50px 70px;
   margin: 0 auto 100px auto;
-  background-color: #f2f2f2;
+  background-color: #f9f9f9;
   margin-bottom: 150px;
   text-align: center;
 }
-#customer-login-page .customer-login .forgot-btn, #customer-login-page .customer-login input.text, #customer-login-page .customer-login .action_bottom, #customer-login-page .customer-register .forgot-btn, #customer-login-page .customer-register input.text, #customer-login-page .customer-register .action_bottom {
+#customer-login-page .account-form .forgot-password, #customer-login-page .account-form input.text, #customer-login-page .account-form .action_bottom, #customer-login-page .customer-register .forgot-password, #customer-login-page .customer-register input.text, #customer-login-page .customer-register .action_bottom, #customer-reset-password .account-form .forgot-password, #customer-reset-password .account-form input.text, #customer-reset-password .account-form .action_bottom, #customer-reset-password .customer-register .forgot-password, #customer-reset-password .customer-register input.text, #customer-reset-password .customer-register .action_bottom {
   display: block;
   margin: 35px 0;
 }
-#customer-login-page .customer-login input.text, #customer-login-page .customer-register input.text {
+#customer-login-page .account-form input.text, #customer-login-page .customer-register input.text, #customer-reset-password .account-form input.text, #customer-reset-password .customer-register input.text {
   width: 80%;
   margin: 35px auto;
   background-color: transparent;
 }
-#customer-login-page .customer-login .forgot-btn, #customer-login-page .customer-register .forgot-btn {
+#customer-login-page .account-form .forgot-password, #customer-login-page .customer-register .forgot-password, #customer-reset-password .account-form .forgot-password, #customer-reset-password .customer-register .forgot-password {
   font-size: 11px;
   font-weight: 500;
   color: #ccc;
 }
-#customer-login-page .customer-login .errors, #customer-login-page .customer-register .errors {
+#customer-login-page .account-form .secondary-wrap, #customer-login-page .customer-register .secondary-wrap, #customer-reset-password .account-form .secondary-wrap, #customer-reset-password .customer-register .secondary-wrap {
+  margin-top: 15px;
+}
+#customer-login-page .account-form .secondary-wrap p, #customer-login-page .customer-register .secondary-wrap p, #customer-reset-password .account-form .secondary-wrap p, #customer-reset-password .customer-register .secondary-wrap p {
+  font-size: 12px;
+  color: #666;
+}
+#customer-login-page .account-form .errors, #customer-login-page .customer-register .errors, #customer-reset-password .account-form .errors, #customer-reset-password .customer-register .errors {
   display: block;
   background-color: #b300b3;
   font-size: 12px;
@@ -1688,7 +1716,7 @@ textarea {
   width: 80%;
   margin: 15px auto;
 }
-#customer-login-page .customer-login .errors li, #customer-login-page .customer-register .errors li {
+#customer-login-page .account-form .errors li, #customer-login-page .customer-register .errors li, #customer-reset-password .account-form .errors li, #customer-reset-password .customer-register .errors li {
   list-style-type: none;
   display: block;
   padding: 10px;

@@ -1,30 +1,81 @@
-{% layout settings.customer_layout %}
 <div id="customer-login-page">
-  <div id="login" class="modal">
+  <div id="login">
 
     <div class="page-heading">
       <h1>SIGN IN</h1>
     </div>
 
-    <div class="section customer-login">
+    <div id="customer-login" class="account-form">
+      {% form 'customer_login' %}
 
-      <div class="inputs">
-
-        {% form 'customer_login' %}
-        {{ form.errors | default_errors }}
-
-        <input type="email" value="" name="customer[email]" id="customer_email" class="text" placeholder="Email Address" />
-
-        {% if form.password_needed %}
-        <input type="password" value="" name="customer[password]" id="customer_password" class="text" size="16" placeholder="Password" />
-        <a href="#recover" class="forgot-btn">Forgot your password?</a>
+        {% if form.errors %}
+          <div class="error-message"><span>Sorry! Please try that again.</span></div>
         {% endif %}
 
-        <div class="action_bottom">
-          <input class="btn dark f-left" type="submit" value="Sign In" />
-          <a href="/account/register" class="btn f-right register-btn">Register</a>
+        <div class="field-wrap email">
+          <input type="text" placeholder="your@email.com" value="" name="customer[email]" class="field text">
         </div>
+
+        <div class="field-wrap password">
+          <input type="password" placeholder="password" name="customer[password]" class="field text">
+        </div>
+
+        <a class="forgot-password helper" href="#recover" onclick="showRecoverPasswordForm()">Forgot your password?</a>
+
+        <input type="submit" class="btn red" value="Submit">
+
+      {% endform %}
+
+      {% if shop.checkout.guest_login %}
+        <div class="secondary-wrap">
+        {% form 'guest_login' %}
+          <p class="guest-login"><a href="#">Continue checkout as a guest.</a> No login required.</p>
         {% endform %}
-      </div>
+        </div>
+      {% else %}
+        <div class="secondary-wrap">
+          <p>New Customer? <a href="/account/register">Sign up for an account</a></p>
+        </div>
+      {% endif %}
+    </div>
+
+    <div id="recover-password" class="account-form">
+      {% form 'recover_customer_password' %}
+
+        <p class="message">We’ll send you an email to reset your password.</p>
+
+        {% if form.errors %}
+          <div class="error-message"><span>{{ form.errors | default_errors }}</span></div>
+        {% endif %}
+
+        <div class="field-wrap email">
+          <input type="text" placeholder="your@email.com" value="" name="email" class="field text">
+        </div>
+
+        <input type="submit" class="btn red" value="Submit">
+        <a class="forgot-password helper" href="#recover" onclick="hideRecoverPasswordForm()">Cancel</a>
+
+      {% endform %}
+    </div>
+
+    <script type="text/javascript">
+
+      if (window.location.hash == '#recover') { showRecoverPasswordForm() }
+
+      function showRecoverPasswordForm() {
+        document.getElementById('recover-password').style.display = 'block';
+        document.getElementById('customer-login').style.display='none';
+        window.location.hash = '#recover';
+        return false;
+      }
+
+      function hideRecoverPasswordForm() {
+        document.getElementById('recover-password').style.display = 'none';
+        document.getElementById('customer-login').style.display = 'block';
+        return false;
+      }
+
+    </script>
+
   </div>
 </div>
