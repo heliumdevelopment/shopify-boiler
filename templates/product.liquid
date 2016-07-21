@@ -15,11 +15,7 @@
         <!-- PHOTOS -->
         <div class="product-photos">
 
-          {% if product.images.size == 0 %}
-            <div class="product-photo-container">
-              <img src="{{ '' | img_url: 'grande' }}" alt="" />
-            </div>
-          {% else %}
+          {% unless product.images.size == 0 %}
             <div class="product-photos-wrap clearfix">
               {% for image in product.images %}
                 <div class="product-photo">
@@ -27,7 +23,8 @@
                 </div>
               {% endfor %}
             </div>
-          {% endif %}
+          {% endunless %}
+
 
         </div><!-- .product-photos -->
 
