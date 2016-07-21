@@ -1,0 +1,29 @@
+select
+  +appearance(none)
+  border: 1px solid #3b3b3b
+  border-radius: 3px
+  position: relative
+  display: inline-block
+  padding: 10px 50px 10px 20px
+  box-shadow: none
+  background: transparent
+  background-image: none
+  -webkit-appearance: none
+  color: #3b3b3b
+  font-weight: 600
+  font-size: 16px
+  letter-spacing: .5px
+  text-transform: uppercase
+  cursor: pointer
+  padding: 10px 50px 10px 20px
+  outline: none
+  background-image: url('{{ "dropdown.svg" | asset_url }}')
+  background-repeat: no-repeat
+  background-position: center right
+  background-size: auto 25%
+
+  .lt-ie9 &
+    background-image: none
+
+  &:focus
+    outline: none
