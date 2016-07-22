@@ -1,19 +1,32 @@
-{% include 'collection-listing' %}
+<!-- Loop through each collection in the link list -->
+{% assign featured_collections = linklists.shop %}
 
-{% comment %}
-<!-- Alternatively, if not using a snippet, use the code below. 
-To use the code below, get rid of the above 'include', and get rid of the comment tags, and you're in business. -->
-{% paginate collections by 6 %}
-  <h1>Collections</h1>
-  <ul class="grid clearfix">
-  {% for collection in collections %}
-    {% include 'collection-grid-item' with 'three-per-row' %}
-  {% endfor %}
-  </ul>
-  {% if paginate.pages > 1 %}
-  <div id="pagination">
-    {{ paginate | default_pagination }}
+{% for link in featured_collections.links %}
+
+  {% assign collection = link.object %}
+
+  <div class="page-heading">
+    <h1>{{ link.title }}</h1>
+    {% if collection.description.size > 0 %}
+      <p>{{ collection.description }}</div>
+    {% endif %}
   </div>
-  {% endif %}
-{% endpaginate %}
-{% endcomment %}
+
+  <div class="section border-bottom">
+    <div class="width-restrict pad-bottom centered">
+      <div class="grid grid-4 no-slick">
+        {% assign limit = settings.collection-listing-limit %}
+        {% for product in collection.products limit:{{limit}} %}
+          {% include 'product-grid-item' %}
+        {% else %}
+          <p>There are no products in this view.</p>
+        {% endfor %}
+      </div>
+
+      <a class="btn" href="{{ collection.url }}">Shop All</a>
+
+    </div>
+  </div>
+
+
+{% endfor %}

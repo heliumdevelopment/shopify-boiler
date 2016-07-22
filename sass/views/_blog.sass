@@ -1,0 +1,71 @@
+.section.articles
+
+  .article
+    padding: 30px 0
+    border-bottom: 1px solid $border
+    max-width: 800px
+    margin: 0 auto
+    text-align: left
+    overflow: hidden
+
+    &:first-child
+      padding-top: 0
+
+    h2
+      font-weight: 300
+      text-transform: uppercase
+      color: $primary
+      font-size: 30px
+      letter-spacing: 1px
+      margin-bottom: 0
+      margin-top: 0
+
+
+    h3.date
+      font-size: 14px
+      color: $med-grey
+      font-weight: 400
+      font-style: oblique
+      margin-top: 7px
+
+    .rte
+      font-size: 12px
+      line-height: 15px
+      color: $black
+
+
+    .img-wrap, .content-wrap
+      float: left
+
+    .img-wrap
+      max-width: 200px
+
+      img
+        width: 100%
+        height: auto
+
+    .content-wrap.has-image
+      float: right
+      width: calc(100% - 240px)
+
+
+    @media(max-width:700px)
+      .img-wrap
+        max-width: 100px
+
+      .content-wrap.has-image
+        width: calc(100% - 140px)
+
+    @media(max-width:500px)
+      .img-wrap, .content-wrap
+        float: none
+        display: block
+        width: 100%
+
+      .content-wrap.has-image
+        width: 100%
+
+      .img-wrap
+        max-width: 200px
+        text-align: center
+        margin: 0 auto 30px auto

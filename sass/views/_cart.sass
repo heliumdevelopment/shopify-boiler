@@ -1,0 +1,100 @@
+.cart-items
+
+  $bdr: #333
+
+  .right-aligned
+    text-align: right
+
+  .instructions
+    background-color: #efefef
+    padding: 10px 20px
+    display: inline-block
+    margin-top: 30px
+
+    textarea
+      border: none
+      background-color: $white
+      text-align: left
+
+  table
+    width: 100%
+    border: 1px solid $bdr
+    margin-bottom: 30px
+
+    th, td
+      padding: 10px 20px
+      border: 1px solid $bdr
+      text-align: center
+
+      &.image-col
+        width: 130px
+
+      &.product-info
+        text-align: left
+        h2
+          font-size: 20px
+          font-weight: 300
+          text-transform: uppercase
+          margin: 0
+
+        h3
+          color: #666
+          margin: 5px 0
+          font-weight: 500
+          font-style: oblique
+          font-size: 14px
+
+      &.item-qty
+        text-align: center
+
+        input
+          border: 1px solid #999
+          text-align: center
+          padding: 10px 0px 10px 12px
+          margin: 0
+          max-width: 40px
+          color: #999
+          border-radius: 4px
+          font-size: 14px
+          font-weight: 500
+
+
+    th
+      background-color: $bdr
+      color: $white
+      text-transform: uppercase
+      font-weight: 400
+      letter-spacing: 1px
+
+    .img-wrap
+      display: block
+
+      img
+        width: 100%
+        height: auto
+
+  @media(max-width:800px)
+    table
+
+      th, td
+        padding: 10px
+
+        &.image-col
+          display: none
+
+        &.product-info
+          text-align: left
+
+          h2
+            font-size: 14px
+
+          h3
+            font-size: 11px
+
+
+  @media(max-width:800px)
+    table
+
+      th, td
+        &.hide-on-small
+          display: none

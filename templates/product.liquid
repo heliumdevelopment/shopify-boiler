@@ -3,7 +3,7 @@
 {% assign unavailable = 'Unavailable' %}
 
 <div class="product" itemscope itemtype="http://schema.org/Product">
-  <div class="width-restrict">
+  <div class="width-restrict pad">
 
     <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
     <meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
@@ -24,7 +24,6 @@
               {% endfor %}
             </div>
           {% endunless %}
-
 
         </div><!-- .product-photos -->
 
@@ -58,37 +57,40 @@
           {% else %}
             {% assign vendor_url = product.vendor | url_for_vendor %}
           {% endif %}
-          <h2 itemprop="brand">{{ product.vendor | link_to: vendor_url }}</h2>
-
-          <div id="product-description" class="rte" itemprop="description">
-            {{ product.description }}
-          </div>
-
-
+          <h2 itemprop="brand">{{ product.vendor }}</h2>
 
           {% assign hide_default_title = false %}
           {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
             {% assign hide_default_title = true %}
           {% endif %}
 
-          <div id="product-variants" class="{% if hide_default_title %} hidden{% endif %}">
-            <select id="product-select" name="id">
-            {% for variant in product.variants %}
-              <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}">
-              {{ variant.title }} - {{ variant.price | money_without_trailing_zeros }}
-              </option>
-            {% endfor %}
-            </select>
-          </div>
+          {% unless product.variants.size < 2 %}
+            <div id="product-variants" class="{% if hide_default_title %} hidden{% endif %}">
+              <select id="product-select" name="id">
+              {% for variant in product.variants %}
+                <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}">
+                {{ variant.title }} - {{ variant.price | money_without_trailing_zeros }}
+                </option>
+              {% endfor %}
+              </select>
+            </div>
+          {% endunless %}
 
-          <div id="backorder" class="hidden">
-            <p>{{ '%s is back-ordered. We will ship it separately in 10 to 15 days.' | replace: '%s', '<span id="selected-variant"></span>' }}</p>
-          </div>
+          {% if product.available %}
+            <div id="product-add">
+              <a class="btn-add btn red">
+                {{ add_to_cart | escape }}
+              </a>
+            </div>
+          {% else %}
+            <div id="product-add">
+              <a class="disabled-btn btn">Sold Out</a>
+            </div>
+          {% endif %}
 
-          <div id="product-add">
-            <a class="btn-add btn red">
-              {{ add_to_cart | escape }}
-            </a>
+
+          <div id="product-description" class="rte" itemprop="description">
+            {{ product.description }}
           </div>
 
         </div><!-- .product-details -->
@@ -158,13 +160,15 @@ var selectCallback = function(variant, selector) {
 
 jQuery(function($) {
 
-  new Shopify.OptionSelectors('product-select', { product: {{ product | json }}, onVariantSelected: selectCallback, enableHistoryState: true });
+  {% unless product.variants.size < 2 %}
+    new Shopify.OptionSelectors('product-select', { product: {{ product | json }}, onVariantSelected: selectCallback, enableHistoryState: true });
 
-  // Add label if only one product option and it isn't 'Title'.
-  {% if product.options.size == 1 and product.options.first != 'Title' %}
-    $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first }}</label>');
-  {% endif %}
+    // Add label if only one product option and it isn't 'Title'.
+    {% if product.options.size == 1 and product.options.first != 'Title' %}
+      $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first }}</label>');
+    {% endif %}
 
+  {% endunless %}
 });
 
 Shopify.Image.preload({{ product.images | json }}, 'grande');
