@@ -7,12 +7,12 @@
         <div class="info">
           <p class="vendor">{{ vendor }}</p>
           <p class="title">{{ product_title }}</p>
-          <div class="price-and-quantity">
-            <input type="text" value="{{ quantity }}">
-            <span class="x">x</span>
-            <span class="price">{{ formatted_price }}</span>
+          <div class="quantity">
+            <span>Quantity</span>
+            <input class="qty-input" data-variant-id="{{ variant_id }}" type="text" value="{{ quantity }}">
           </div>
-          <a class="edit" href="/cart">Edit</a>
+          <div class="price">{{ formatted_price }}</div>
+          <a class="remove" data-variant-id="{{ variant_id }}">Remove</a>
         </div>
       </div>
 
@@ -25,18 +25,24 @@
     <a class="close icon-left-arrow"></a>
     <h2>Shopping Bag</h2>
 
-    <div class="cart-items">
+    <div class="cart-has-items">
 
+      <!-- populated by mustache -->
+      <div class="cart-items"></div>
 
+      <div class="cart-totals">
+
+        <p>Total</p>
+        <h3 class="subtotal">$14</h3>
+        <a class="btn" href="/checkout">Checkout</a>
+
+      </div>
 
     </div>
 
-    <div class="cart-totals">
-
-      <p>Total</p>
-      <h3 class="subtotal">$14</h3>
-      <a class="btn" href="/checkout">Checkout</a>
-
+    <!-- when no items are in the cart, show this -->
+    <div class="cart-no-items">
+      <h3>There are no items in your cart.</h3>
     </div>
 
   </div>

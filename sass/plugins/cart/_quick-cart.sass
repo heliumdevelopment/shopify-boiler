@@ -10,7 +10,6 @@
     &:hover
       color: $primary
 
-
   h2
     font-weight: 300
     font-size: 26px
@@ -23,6 +22,12 @@
       content: ''
       margin: 10px auto
 
+  .cart-no-items
+    h3
+      color: #999
+      font-weight: 300
+      font-size: 26px
+      padding: 20px
 
   .cart-items
     margin: 20px 0
@@ -68,39 +73,59 @@
           font-size: 17px
           font-weight: 400
           color: $black
+          width: calc(100% - 50px)
 
 
 
-      .price-and-quantity
+      .quantity
         margin: 10px 0
 
+        span
+          display: inline-block
+
         input
-          border: 1px solid #999
+          display: inline-block
+          border: 1px solid $light-grey
           text-align: center
-          padding: 3px 7px
+          padding: 5px 3px
           margin: 0
           max-width: 40px
-          color: #999
+          color: $light-grey
           border-radius: 4px
           font-size: 14px
           font-weight: 500
 
-        .x
-          display: inline-block
-          padding: 0 10px
-          font-weight: 600
-          font-size: 14px
-          color: #999
+      .price
+        font-size: 18px
+        font-weight: 500
+        color: $primary
+        position: relative
+        top: 1px
+        position: absolute
+        top: 23px
+        right: 0
+        width: 50px
+        text-align: right
 
-        .price
-          display: inline-block
-          font-size: 18px
-          font-weight: 500
-          color: $primary
-          position: relative
-          top: 1px
-
+      .remove
+        margin-top: 10px
+        text-transform: uppercase
+        font-weight: 400
+        letter-spacing: .5px
+        font-size: 12px
+        color: $black
+        cursor: pointer
 
   .cart-totals
-    .price
+
+    p
+      font-size: 18px
+      color: $med-grey
+      margin-bottom: 0
+
+    .subtotal
+      margin: 10px 0 20px 0
+      font-weight: 400
+      font-size: 30px
+
     .btn
