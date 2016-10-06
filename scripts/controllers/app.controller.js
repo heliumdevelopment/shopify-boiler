@@ -56,18 +56,16 @@
     };
 
     var openQuickCart = function() {
-
-      console.log($(window).height());
       $('.cart-overlay').fadeIn(200);
       $('body').addClass('slide');
-      $('body').css('overflow', 'hidden');
+      $('.quick-cart').addClass('slide');
       $('.quick-cart-fixed-content').css('height', $(window).height());
     }
 
     var closeQuickCart = function() {
       $('.cart-overlay').fadeOut(200);
+      $('.quick-cart').removeClass('slide');
       $('body').removeClass('slide');
-      $('body').css('overflow', 'auto');
     };
 
     var openSearch = function() {

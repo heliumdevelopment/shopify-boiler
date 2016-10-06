@@ -1,5 +1,5 @@
 .quick-cart.slide-left
-  position: absolute
+  position: fixed
   width: 400px
   top: 0
   right: -400px
@@ -7,10 +7,15 @@
   background-color: #f7f7f7
   z-index: 100
   text-align: center
+  transition: all 600ms cubic-bezier(0.58, -0.19, 0, 1)
+
+  &.slide
+    right: 0
 
   .quick-cart-fixed-content
     padding: 40px 20px 100px 20px
     width: 400px
+    height: 100%
     overflow: scroll
     position: relative
     background-color: #f7f7f7
