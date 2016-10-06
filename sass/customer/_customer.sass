@@ -26,19 +26,18 @@
     overflow: hidden
 
   #customer_sidebar
-    padding: 20px
-    position: relative
-    width: 250px
     float: left
-    background-color: $border
-    word-wrap: break-word
+    +customersidebar
+
+    ul
+      margin-left: 15px
+      padding: 0
+
+      a
+        font-weight: bold
 
     h2
-      font-size: 24px
-      font-weight: 300
-      margin: 0
-      margin-bottom: 0
-      text-transform: uppercase
+      +customersidebarheading
 
     .email
       font-weight: 400
@@ -49,13 +48,8 @@
     width: calc(100% - 280px)
     float: right
 
-    h2
-      font-weight: 300
-      letter-spacing: 2px
-      font-size: 40px
-      margin: 0
-      margin-bottom: 30px
-      text-transform: uppercase
+    h1, h2
+      +customerheading
 
   @media(max-width:650px)
     #customer_sidebar

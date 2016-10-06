@@ -1707,6 +1707,7 @@ textarea {
   letter-spacing: 0.5px;
   font-size: 12px;
   color: black;
+  cursor: pointer;
 }
 .quick-cart-fixed-content .cart-totals p {
   font-size: 18px;
@@ -1887,12 +1888,21 @@ textarea {
   overflow: hidden;
 }
 #customer-account #customer_sidebar, #customer-addresses #customer_sidebar {
-  padding: 20px;
-  position: relative;
-  width: 250px;
   float: left;
-  background-color: #E8E8E8;
+  background-color: #e8e8e8;
+  width: 250px;
+  padding: 20px;
+  margin-bottom: 40px;
+  position: relative;
   word-wrap: break-word;
+  text-align: left;
+}
+#customer-account #customer_sidebar ul, #customer-addresses #customer_sidebar ul {
+  margin-left: 15px;
+  padding: 0;
+}
+#customer-account #customer_sidebar ul a, #customer-addresses #customer_sidebar ul a {
+  font-weight: bold;
 }
 #customer-account #customer_sidebar h2, #customer-addresses #customer_sidebar h2 {
   font-size: 24px;
@@ -1910,13 +1920,14 @@ textarea {
   width: calc(100% - 280px);
   float: right;
 }
-#customer-account #customer_orders h2, #customer-addresses #customer_orders h2 {
+#customer-account #customer_orders h1, #customer-account #customer_orders h2, #customer-addresses #customer_orders h1, #customer-addresses #customer_orders h2 {
   font-weight: 300;
   letter-spacing: 2px;
-  font-size: 40px;
+  font-size: 22px;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   text-transform: uppercase;
+  text-align: center;
 }
 @media(max-width:650px) {
   #customer-account #customer_sidebar, #customer-addresses #customer_sidebar {
@@ -2008,4 +2019,66 @@ textarea {
 }
 #customer_orders table td {
   border-left: 1px solid #222;
+}
+
+#ReCharge {
+  padding: 60px 0 130px 0;
+  margin-bottom: 60px;
+  display: block;
+}
+#ReCharge #customer_tab_nav, #ReCharge .rc_layout__sidebar {
+  background-color: #e8e8e8;
+  width: 250px;
+  padding: 20px;
+  margin-bottom: 40px;
+  position: relative;
+  word-wrap: break-word;
+  text-align: left;
+}
+#ReCharge #customer_tab_nav h2, #ReCharge .rc_layout__sidebar h2 {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+#ReCharge #customer_tab_nav .nav-stacked, #ReCharge .rc_layout__sidebar .nav-stacked {
+  padding: 0;
+  padding-left: 20px;
+}
+#ReCharge #customer_tab_nav .nav-stacked li, #ReCharge .rc_layout__sidebar .nav-stacked li {
+  font-weight: bold;
+  margin: 5px 0;
+}
+#ReCharge #customer_tab_content, #ReCharge .rc_layout__content {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+#ReCharge #customer_tab_content h2, #ReCharge #customer_tab_content .page-title, #ReCharge #customer_tab_content .rc_title-bar__title, #ReCharge .rc_layout__content h2, #ReCharge .rc_layout__content .page-title, #ReCharge .rc_layout__content .rc_title-bar__title {
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 22px;
+  margin: 0;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+#ReCharge #customer_tab_content table, #ReCharge .rc_layout__content table {
+  width: 100%;
+  border: 1px solid #222;
+}
+#ReCharge #customer_tab_content table th, #ReCharge #customer_tab_content table td, #ReCharge .rc_layout__content table th, #ReCharge .rc_layout__content table td {
+  padding: 10px;
+  font-size: 14px;
+}
+#ReCharge #customer_tab_content table th, #ReCharge .rc_layout__content table th {
+  background-color: #222;
+  color: #fff;
+}
+#ReCharge #customer_tab_content table td, #ReCharge .rc_layout__content table td {
+  border: 1px solid #222;
+}
+#ReCharge #ReCharge-Mobile-Nav {
+  margin-top: 20px;
+  height: auto;
 }

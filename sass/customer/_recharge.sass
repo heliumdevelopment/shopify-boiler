@@ -1,0 +1,51 @@
+#ReCharge
+  padding: 60px 0 130px 0
+  margin-bottom: 60px
+  display: block
+
+  .main-padder
+    overflow: hidden
+
+  #customer_tab_nav, .rc_layout__sidebar
+    +customersidebar
+
+    h2
+      +customersidebarheading
+
+    .nav-stacked
+      padding: 0
+      padding-left: 20px
+
+      li
+        font-weight: bold
+        margin: 5px 0
+
+
+  #customer_tab_content, .rc_layout__content
+    padding-left: 30px
+    padding-right: 30px
+    width: calc(100% - 250px)
+
+    h2, .page-title, .rc_title-bar__title
+      +customerheading
+
+    table
+      width: 100%
+      border: 1px solid #222
+
+      th, td
+        padding: 10px
+        font-size: 14px
+
+      th
+        background-color: #222
+        color: #fff
+
+      td
+        border: 1px solid #222
+
+
+
+  #ReCharge-Mobile-Nav
+    margin-top: 20px
+    height: auto
