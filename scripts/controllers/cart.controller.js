@@ -152,6 +152,7 @@ Theme.jQuery(function($) {
   var showCart = function() {
     $('.cart-overlay').fadeIn(200);
     $('body').addClass('slide');
+    $('.quick-cart').addClass('slide');
     $('body').css('overflow', 'hidden');
     $('.quick-cart-fixed-content').css('height', $(window).height());
   }
