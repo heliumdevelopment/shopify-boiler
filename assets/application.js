@@ -1137,11 +1137,11 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 
     // Methods
     var openNav = function() {
-      $('.mobile-nav nav').css('top', 0);
+      $('.mobile-nav').addClass('show')
     };
 
     var closeNav = function() {
-      $('.mobile-nav nav').css('top', '-100%');
+      $('.mobile-nav').removeClass('show')
     };
 
     var openQuickCart = function() {
