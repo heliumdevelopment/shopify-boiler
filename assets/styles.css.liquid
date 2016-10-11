@@ -978,6 +978,39 @@ header .cart {
     display: none;
   }
 }
+.collection-heading {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  margin: 0;
+  margin-bottom: 50px;
+}
+.collection-heading h1 {
+  font-size: 30px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.no-products {
+  text-align: center;
+  margin: 200px auto;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #d0d0d0;
+}
+@media (max-width: 768px) {
+  .no-products {
+    margin: 150px auto;
+  }
+}
+@media (max-width: 600px) {
+  .no-products {
+    margin: 100px auto;
+  }
+}
+
 body.template-page .page-heading {
   width: 70%;
   max-width: 700px;
@@ -1503,6 +1536,10 @@ textarea {
   line-height: 35px;
 }
 
+.rte {
+  font-size: 14px;
+  line-height: 18px;
+}
 .rte img {
   max-width: 100%;
 }
@@ -1563,6 +1600,11 @@ textarea {
   margin-top: 5px;
   font-size: 12px;
   color: #999;
+}
+@media (max-width: 600px) {
+  .grid .grid-item .product-information .title {
+    font-size: 12px;
+  }
 }
 
 .grid-item .shopify-product-reviews-badge {

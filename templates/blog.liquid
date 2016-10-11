@@ -61,13 +61,9 @@
 </div>
 
 {% if paginate.pages > 1 %}
-<div class="pagination">
-{% comment %}
-  When paginating blog articles, a previous article is actually a newer article, not an older one,
-  because blog articles are shown and paginated in a reversed chronological order.
-  The word 'previous' can be confusing, hence we'll change it.
-{% endcomment %}
-{{ paginate | default_pagination | replace: 'Previous', 'Newer articles' | replace: 'Next', 'Older articles' }}
+<div class="pagination centered">
+  {{ paginate | default_pagination }}
+</div>
 {% endif %}
 
 {% endpaginate %}
