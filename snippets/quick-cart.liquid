@@ -32,9 +32,18 @@
 
       <div class="cart-totals">
 
-        <p>Total</p>
-        <h3 class="subtotal">$14</h3>
-        <a class="btn" href="/checkout">Checkout</a>
+        <form action="/cart" method="post">
+
+          <p>Total</p>
+          <h3 class="subtotal">$14</h3>
+          <button type="submit" name="checkout" class="btn dark" href="/checkout"><span>Checkout</span></button>
+
+          <div class="instructions">
+            <p>Additional Notes</p>
+            <textarea name="note">{{ cart.note }}</textarea>
+          </div>
+
+        </form>
 
       </div>
 
