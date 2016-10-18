@@ -9,6 +9,10 @@
   <!-- The Image -->
   <a class="product-image" href="{{ product.url | within: collection }}">
     <img src="{{ product | img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}" />
+
+    {% unless product.available %}
+      <img class="sold-out" src="{{ 'sold-out-badge.png' | asset_url }}" />
+    {% endunless %}
   </a>
 
   <!-- The Information -->

@@ -3,31 +3,41 @@
   // specific grid item styles
   .grid-item
 
-    .product-image
+    .sold-out
+      position: absolute
+      width: 80px
+      height: auto
+      z-index: 2
+      +center
 
-      img
-        width: 100%
+    .product-image
+      position: relative
+      display: block
+
+      .main-product-image
+        width: 70%
         height: auto
+        max-width: 175px
 
     .product-information
       margin-top: 15px
 
       .title
         display: block
-        text-transform: uppercase
-        letter-spacing: .5px
-        font-size: 16px
-        color: $primary
+        font-size: 15px
+        color: $black
 
       .price
         display: block
         margin-top: 5px
-        font-size: 12px
-        color: #999
-
+        font-size: 18px
+        color: $primary
 
   @media (max-width:$mobile)
     .grid-item
       .product-information
         .title
           font-size: 12px
+
+        .price
+          font-size: 14px
