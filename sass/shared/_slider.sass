@@ -1,0 +1,121 @@
+.marquee-slider
+  position: relative
+  margin-top: 60px
+
+  .width-restrict
+    position: relative
+
+  .ghost, .mobile-ghost
+    position: relative
+    width: 100%
+    height: auto
+
+  .mobile-ghost
+    display: none
+
+  .slick-list, .slick-track
+    height: 100%
+
+  .slides
+    +absolute
+    background-color: #333
+
+    .slide
+      position: relative
+      height: 100%
+      +cover
+      display: inline-block
+
+  @media (max-width:$mobile)
+    margin-top: 0
+
+    .mobile-ghost
+      display: block
+
+    .ghost
+      display: none
+
+  &.home-marquee
+    .copy
+      position: absolute
+      bottom: 50px
+      left: 50px
+      width: 55%
+
+      &.overlay
+        padding: 20px
+        background-color: rgba(#333, .5)
+
+        &.dark
+          background-color: rgba(#fff, .5)
+
+      h1
+        font-size: 60px
+        line-height: 60px
+        text-transform: uppercase
+        color: $white
+        margin: 0 0 10px 0
+        font-weight: 700
+        letter-spacing: 3px
+
+      h2
+        font-size: 45px
+        line-height: 50px
+        color: $white
+        margin: 0 0 30px 0
+        font-weight: 500
+        letter-spacing: 2px
+
+      .btn
+        padding: 10px 25px
+        font-size: 16px
+
+      @media (max-width:$tablet-landscape)
+        width: 80%
+
+        h1
+          font-size: 50px
+          line-height: 50px
+
+        h2
+          font-size: 35px
+          line-height: 40px
+
+      @media (max-width:$tablet)
+        width: calc(100% - 50px)
+        bottom: 25px
+        left: 25px
+
+        h1
+          font-size: 40px
+          line-height: 40px
+
+        h2
+          font-size: 20px
+          line-height: 25px
+
+      @media (max-width:$mobile)
+        width: 100%
+        position: relative
+        bottom: auto
+        left: auto
+        padding: 30px
+        text-align: center
+        +center
+
+        h1
+          font-size: 20px
+          line-height: 20px
+
+        h2
+          font-size: 15px
+          line-height: 20px
+          margin: 0 0 10px 0
+
+        .btn
+          font-size: 12px
+
+  .slide.dark
+    .copy
+      h1, h2
+        color: $black !important

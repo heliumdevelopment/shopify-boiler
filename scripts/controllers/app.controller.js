@@ -3,6 +3,17 @@
   // Document ready
   $(function() {
 
+    $('.slick-marquee .slides').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: false,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 6000
+    });
+
+
     // if we're NOT using slick slider, then
     // match the height of the grid items
     $('.grid .grid-item').matchHeight();

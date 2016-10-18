@@ -1,3 +1,57 @@
+<div class="section marquee-slider home-marquee slick-marquee">
+  <div class="width-restrict-large">
+
+    <img class="ghost" src="{{ 'slideshow-ghost.png' | asset_url }}" />
+    <img class="mobile-ghost" src="{{ 'mobile-ghost.png' | asset_url }}" />
+
+    <div class="slides">
+      {% if settings.show-home-slide-1 %}
+        <div class="slide {% if settings.home-slide-1-dark %} dark {% endif %}" style="background-image: url({{ 'home-slide-1.jpg' | asset_url }})">
+          {% unless settings.home-slide-1-hide-text %}
+            <div class="copy {% if settings.home-slide-1-dark %} dark {% endif %} {% if settings.home-slide-1-overlay %} overlay {% endif %}">
+              <h1>{{ settings.home-slide-1-title }}</h1>
+              <h2>{{ settings.home-slide-1-subtitle }}</h2>
+              {% if settings.home-slide-1-url %}
+                <a class="btn  {% if settings.home-slide-1-dark %} dark {% else %} light {% endif %}" href="{{ settings.home-slide-1-url }}"><span>{{ settings.home-slide-1-btn-text }}</span></a>
+              {% endif %}
+            </div>
+          {% endunless %}
+        </div>
+      {% endif %}
+
+      {% if settings.show-home-slide-2 %}
+        <div class="slide {% if settings.home-slide-2-dark %} dark {% endif %}" style="background-image: url({{ 'home-slide-2.jpg' | asset_url }})">
+          {% unless settings.home-slide-2-hide-text %}
+            <div class="copy {% if settings.home-slide-2-dark %} dark {% endif %}{% if settings.home-slide-2-overlay %} overlay {% endif %}">
+              <h1>{{ settings.home-slide-2-title }}</h1>
+              <h2>{{ settings.home-slide-2-subtitle }}</h2>
+              {% if settings.home-slide-2-url %}
+                <a class="btn  {% if settings.home-slide-2-dark %} dark {% else %} light {% endif %}" href="{{ settings.home-slide-2-url }}"><span>{{ settings.home-slide-2-btn-text }}</span></a>
+              {% endif %}
+            </div>
+          {% endunless %}
+        </div>
+      {% endif %}
+
+      {% if settings.show-home-slide-3 %}
+        <div class="slide {% if settings.home-slide-3-dark %} dark {% endif %}" style="background-image: url({{ 'home-slide-3.jpg' | asset_url }})">
+          {% unless settings.home-slide-3-hide-text %}
+            <div class="copy {% if settings.home-slide-3-dark %} dark {% endif %}{% if settings.home-slide-3-overlay %} overlay {% endif %}">
+              <h1>{{ settings.home-slide-3-title }}</h1>
+              <h2>{{ settings.home-slide-3-subtitle }}</h2>
+              {% if settings.home-slide-3-url %}
+                <a class="btn  {% if settings.home-slide-3-dark %} dark {% else %} light {% endif %}" href="{{ settings.home-slide-3-url }}"><span>{{ settings.home-slide-3-btn-text }}</span></a>
+              {% endif %}
+            </div>
+          {% endunless %}
+        </div>
+      {% endif %}
+    </div>
+
+
+  </div>
+</div>
+
 <div class="section">
   <div class="width-restrict pad">
 
