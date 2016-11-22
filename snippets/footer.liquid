@@ -1,0 +1,21 @@
+<footer>
+
+  {% if linklists.footer.links.size > 0 %}
+  <p role="navigation">
+  {% for link in linklists.footer.links %}
+    <a href="{{ link.url }}" title="{{ link.title }}"{% if link.active %} class="active"{% endif %}>{{ link.title }}</a>
+  {% endfor %}
+  </p>
+  {% endif %}
+  
+  {% unless shop.enabled_payment_types == empty %}
+<div class="payment-types">
+    {% for type in shop.enabled_payment_types %}
+    <img width="40" src="{{ type | payment_type_img_url }}" />
+    {% endfor %}
+  </div>
+  {% endunless %}
+  
+  <p role="contentinfo" class="small-print">Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.</p>
+
+</footer>

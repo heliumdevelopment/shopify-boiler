@@ -1,193 +1,191 @@
 [
-  {
-    "name":"Theme Settings",
-    "settings":[
-      {
-          "type":"image",
-          "id":"logo.png",
-          "label":"Main Logo (png)"
-       },
-       {
-           "type":"image",
-           "id":"sold-out-badge.png",
-           "label":"Sold Out Badge (for the collection grids)"
-        }
-    ]
-  },
-  {
-    "name":"Home Page",
-    "settings":[
-      {
-        "type":"header",
-        "content":"Home Page Slides"
-      },
-      {
-          "type":"image",
-          "id":"home-slide-1.jpg",
-          "label":"Slide 1 Image"
-       },
-       {
-           "type":"checkbox",
-           "id":"show-home-slide-1",
-           "label":"Show Slide 1"
-        },
-        {
-            "type":"checkbox",
-            "id":"home-slide-1-dark",
-            "label":"Slide 1 Dark Text?"
-         },
-         {
-             "type":"checkbox",
-             "id":"home-slide-1-overlay",
-             "label":"Slide 1 Text Overlay?"
-          },
-         {
-             "type":"checkbox",
-             "id":"home-slide-1-hide-text",
-             "label":"Slide 1 Hide All Text?"
-          },
-
-        {
-            "type":"text",
-            "id":"home-slide-1-title",
-            "label":"Slide 1 Title"
-         },
-         {
-           "type":"text",
-           "id":"home-slide-1-subtitle",
-           "label":"Slide 1 Subtitle"
-        },
-        {
-          "type":"text",
-          "id":"home-slide-1-url",
-          "label":"Slide 1 Link URL"
-       },
-       {
-         "type":"text",
-         "id":"home-slide-1-btn-text",
-         "label":"Slide 1 Link Text"
-      },
-      {
-          "type":"image",
-          "id":"home-slide-2.jpg",
-          "label":"Slide 2 Image"
-       },
-       {
-           "type":"checkbox",
-           "id":"show-home-slide-2",
-           "label":"Show Slide 2"
-        },
-        {
-            "type":"checkbox",
-            "id":"home-slide-2-dark",
-            "label":"Slide 2 Dark Text?"
-         },
-         {
-             "type":"checkbox",
-             "id":"home-slide-2-overlay",
-             "label":"Slide 2 Text Overlay?"
-          },
-         {
-             "type":"checkbox",
-             "id":"home-slide-2-hide-text",
-             "label":"Slide 2 Hide All Text?"
-          },
-        {
-            "type":"text",
-            "id":"home-slide-2-title",
-            "label":"Slide 2 Title"
-         },
-         {
-           "type":"text",
-           "id":"home-slide-2-subtitle",
-           "label":"Slide 2 Subtitle"
-        },
-        {
-          "type":"text",
-          "id":"home-slide-2-url",
-          "label":"Slide 2 Link URL"
-       },
-
-       {
-         "type":"text",
-         "id":"home-slide-2-btn-text",
-         "label":"Slide 2 Link Text"
-      },
-      {
-          "type":"image",
-          "id":"home-slide-3.jpg",
-          "label":"Slide 3 Image"
-       },
-       {
-           "type":"checkbox",
-           "id":"show-home-slide-3",
-           "label":"Show Slide 3"
-        },
-        {
-            "type":"checkbox",
-            "id":"home-slide-3-dark",
-            "label":"Slide 3 Dark Text?"
-         },
-         {
-             "type":"checkbox",
-             "id":"home-slide-3-overlay",
-             "label":"Slide 3 Text Overlay?"
-          },
-         {
-             "type":"checkbox",
-             "id":"home-slide-3-hide-text",
-             "label":"Slide 3 Hide All Text?"
-          },
-        {
-            "type":"text",
-            "id":"home-slide-3-title",
-            "label":"Slide 3 Title"
-         },
-         {
-           "type":"text",
-           "id":"home-slide-3-subtitle",
-           "label":"Slide 3 Subtitle"
-        },
-        {
-          "type":"text",
-          "id":"home-slide-3-url",
-          "label":"Slide 3 Link URL"
-       },
-       {
-         "type":"text",
-         "id":"home-slide-3-btn-text",
-         "label":"Slide 3 Link Text"
-      }
-    ]
-  },
-  {
-    "name":"Social Network Links",
-    "settings":[
-      {
-        "type":"text",
-        "id":"facebook_url",
-        "label":"Facebook"
-      },
-      {
-        "type":"text",
-        "id":"twitter_url",
-        "label":"Twitter"
-      },
-      {
-        "type":"text",
-        "id":"pinterest_url",
-        "label":"Pinterest"
-      },
-      {
-        "type":"text",
-        "id":"instagram_url",
-        "label":"Instagram"
-      },
-      {
-        "type":"text",
-        "id":"linkedin_url",
-        "label":"LinkedIn"
-      }
-    ]
-  }
+	{
+		"name": "Theme Settings",
+		"settings": [
+			{
+				"type": "image",
+				"id": "logo.png",
+				"label": "Main Logo (png)"
+			},
+			{
+				"type": "image",
+				"id": "sold-out-badge.png",
+				"label": "Sold Out Badge (for the collection grids)"
+			}
+		]
+	},
+	{
+		"name": "Home Page",
+		"settings": [
+			{
+				"type": "header",
+				"content": "Home Page Slides"
+			},
+			{
+				"type": "image",
+				"id": "home-slide-1.jpg",
+				"label": "Slide 1 Image"
+			},
+			{
+				"type": "checkbox",
+				"id": "show-home-slide-1",
+				"label": "Show Slide 1"
+			},
+			{
+				"type": "checkbox",
+				"id": "home-slide-1-dark",
+				"label": "Slide 1 Dark Text?"
+			},
+			{
+				"type": "checkbox",
+				"id": "home-slide-1-overlay",
+				"label": "Slide 1 Text Overlay?"
+			},
+			{
+				"type": "checkbox",
+				"id": "home-slide-1-hide-text",
+				"label": "Slide 1 Hide All Text?"
+			},
+			{
+				"type": "text",
+				"id": "home-slide-1-title",
+				"label": "Slide 1 Title"
+			},
+			{
+				"type": "text",
+				"id": "home-slide-1-subtitle",
+				"label": "Slide 1 Subtitle"
+			},
+			{
+				"type": "text",
+				"id": "home-slide-1-url",
+				"label": "Slide 1 Link URL"
+			},
+			{
+				"type": "text",
+				"id": "home-slide-1-btn-text",
+				"label": "Slide 1 Link Text"
+			},
+			{
+				"type": "image",
+				"id": "home-slide-2.jpg",
+				"label": "Slide 2 Image"
+			},
+			{
+				"type": "checkbox",
+				"id": "show-home-slide-2",
+				"label": "Show Slide 2"
+			},
+			{
+				"type": "checkbox",
+				"id": "home-slide-2-dark",
+				"label": "Slide 2 Dark Text?"
+			},
+			{
+				"type": "checkbox",
+				"id": "home-slide-2-overlay",
+				"label": "Slide 2 Text Overlay?"
+			},
+			{
+				"type": "checkbox",
+				"id": "home-slide-2-hide-text",
+				"label": "Slide 2 Hide All Text?"
+			},
+			{
+				"type": "text",
+				"id": "home-slide-2-title",
+				"label": "Slide 2 Title"
+			},
+			{
+				"type": "text",
+				"id": "home-slide-2-subtitle",
+				"label": "Slide 2 Subtitle"
+			},
+			{
+				"type": "text",
+				"id": "home-slide-2-url",
+				"label": "Slide 2 Link URL"
+			},
+			{
+				"type": "text",
+				"id": "home-slide-2-btn-text",
+				"label": "Slide 2 Link Text"
+			},
+			{
+				"type": "image",
+				"id": "home-slide-3.jpg",
+				"label": "Slide 3 Image"
+			},
+			{
+				"type": "checkbox",
+				"id": "show-home-slide-3",
+				"label": "Show Slide 3"
+			},
+			{
+				"type": "checkbox",
+				"id": "home-slide-3-dark",
+				"label": "Slide 3 Dark Text?"
+			},
+			{
+				"type": "checkbox",
+				"id": "home-slide-3-overlay",
+				"label": "Slide 3 Text Overlay?"
+			},
+			{
+				"type": "checkbox",
+				"id": "home-slide-3-hide-text",
+				"label": "Slide 3 Hide All Text?"
+			},
+			{
+				"type": "text",
+				"id": "home-slide-3-title",
+				"label": "Slide 3 Title"
+			},
+			{
+				"type": "text",
+				"id": "home-slide-3-subtitle",
+				"label": "Slide 3 Subtitle"
+			},
+			{
+				"type": "text",
+				"id": "home-slide-3-url",
+				"label": "Slide 3 Link URL"
+			},
+			{
+				"type": "text",
+				"id": "home-slide-3-btn-text",
+				"label": "Slide 3 Link Text"
+			}
+		]
+	},
+	{
+		"name": "Social Network Links",
+		"settings": [
+			{
+				"type": "text",
+				"id": "facebook_url",
+				"label": "Facebook"
+			},
+			{
+				"type": "text",
+				"id": "twitter_url",
+				"label": "Twitter"
+			},
+			{
+				"type": "text",
+				"id": "pinterest_url",
+				"label": "Pinterest"
+			},
+			{
+				"type": "text",
+				"id": "instagram_url",
+				"label": "Instagram"
+			},
+			{
+				"type": "text",
+				"id": "linkedin_url",
+				"label": "LinkedIn"
+			}
+		]
+	}
 ]
