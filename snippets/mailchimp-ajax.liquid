@@ -1,0 +1,73 @@
+{% if settings.show_top_banner %}
+
+  <div class="top_banner">
+
+    <p class="form_message">{{ settings.banner_message }}</p>
+    <p class="form_success">{{ settings.banner_success_message }} <span>{{ settings.banner_code }}</span></p>
+    <p class="form_error">{{ settings.banner_error_message }}</p>
+
+    <!-- FORM -->
+    <form id="mailchimp_form" action="https://d-marie-interiors.us14.list-manage.com/subscribe/post-json?u=38a2b33bbf1f823f05efb126f&id=be500ea9fd">
+      <input type="email" placeholder="Email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+      <input type="submit" value="Sign Up" name="submit" id="mc-embedded-subscribe">
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_38a2b33bbf1f823f05efb126f_be500ea9fd" tabindex="-1" value=""></div>
+    </form>
+
+  </div>
+
+
+  <!-- post to mailchimp and get a response -->
+  <script>
+    $(document).ready(function() {
+      var $form = $('#mailchimp_form'),
+          $success = $('.form_success'),
+          $error = $('.form_error');
+
+      function register($form) {
+
+        $.ajax({
+          type: 'GET',
+          url: $form.attr('action'),
+          data: $form.serialize(),
+          dataType : 'jsonp',
+          cache: false,
+          jsonp: 'c', // trigger MailChimp to return a JSONP response
+          contentType: 'application/json; charset=utf-8',
+
+          error: function(error){
+            // According to jquery docs, this is never called for cross-domain JSONP requests
+            $form.hide();
+            $error.css('display', 'inline-block');
+
+          },
+
+          success: function(data){
+
+            if (data.result != "success") {
+              if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+                alert('You are already subscribed to the list.');
+              }
+            } else {
+              // hide the input area and show the success message
+              $form.hide();
+              $success.css('display', 'inline-block');
+            }
+          }
+        });
+      }
+
+      $form.find('input[type="submit"]').on('click', function (e) {
+        e.preventDefault();
+        register($form);
+      });
+
+      // on submit, register the form
+      $form.submit(function(e){
+        e.preventDefault();
+        register($form);
+      });
+
+    });
+  </script>
+
+{% endif %}
