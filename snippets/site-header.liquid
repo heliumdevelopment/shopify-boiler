@@ -3,10 +3,15 @@
 
   <div class="header-inner">
     <!-- Main logo image -->
-    <a id="logo" href="/">
-      <span class="desktop">{{ 'logo.png' | asset_url | img_tag: shop.name }}</span>
-      <span class="mobile">{{ 'logo-mobile.png' | asset_url | img_tag: shop.name }}</span>
-    </a>
+
+    {% if settings.show_logo %}
+      <a id="logo" href="/">
+        <span class="desktop">{{ 'logo.png' | asset_url | img_tag: shop.name }}</span>
+        <span class="mobile">{{ 'logo-mobile.png' | asset_url | img_tag: shop.name }}</span>
+      </a>
+    {% else %}
+      <a id="logo" href="/">{{ shop.name }}</a>
+    {% endif %}
 
     <!-- TOP ITEMS (search, cart, customer) -->
     <div class="top-items">

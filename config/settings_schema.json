@@ -4,13 +4,23 @@
 		"settings": [
 			{
 				"type": "image",
-				"id": "logo.png",
-				"label": "Main Logo (png)"
-			},
-			{
-				"type": "image",
 				"id": "sold-out-badge.png",
 				"label": "Sold Out Badge (for the collection grids)"
+			}
+		]
+	},
+  {
+		"name": "Header",
+		"settings": [
+      {
+				"type": "checkbox",
+				"id": "show_logo",
+				"label": "Show Logo?"
+			},
+      {
+				"type": "image",
+				"id": "logo.png",
+				"label": "Main Header Logo"
 			}
 		]
 	},
