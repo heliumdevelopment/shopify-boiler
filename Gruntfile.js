@@ -18,7 +18,7 @@ module.exports = function(grunt) {
           require: 'sass-globbing'
         },
         files: {
-          'assets/styles.css.liquid' : 'sass/styles.sass'
+          'assets/helium.css.liquid' : 'sass/styles.sass'
         }
       },
       // Compress CSS for production
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
           require: 'sass-globbing'
         },
         files: {
-          'assets/styles.css.liquid' : 'sass/styles.sass'
+          'assets/helium.css.liquid' : 'sass/styles.sass'
         }
       }
     },
