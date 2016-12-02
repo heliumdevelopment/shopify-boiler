@@ -6,6 +6,11 @@
 				"type": "image",
 				"id": "sold-out-badge.png",
 				"label": "Sold Out Badge (for the collection grids)"
+			},
+      {
+				"type": "image",
+				"id": "favicon.png",
+				"label": "Favicon PNG"
 			}
 		]
 	},
