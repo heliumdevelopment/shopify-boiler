@@ -11,7 +11,13 @@
 				"type": "image",
 				"id": "favicon.png",
 				"label": "Favicon PNG"
-			}
+			},
+      {
+				"type": "checkbox",
+				"id": "enable-newsletter",
+				"label": "Enable newsletter for first time visitors",
+				"default": true
+			},
 		]
 	},
 	{
