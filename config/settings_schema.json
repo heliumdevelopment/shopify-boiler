@@ -7,22 +7,22 @@
 				"id": "sold-out-badge.png",
 				"label": "Sold Out Badge (for the collection grids)"
 			},
-      {
+			{
 				"type": "image",
 				"id": "favicon.png",
 				"label": "Favicon PNG"
 			}
 		]
 	},
-  {
+	{
 		"name": "Header",
 		"settings": [
-      {
+			{
 				"type": "checkbox",
 				"id": "show_logo",
 				"label": "Show Logo?"
 			},
-      {
+			{
 				"type": "image",
 				"id": "logo.png",
 				"label": "Main Header Logo"
