@@ -16,7 +16,7 @@
 
     // if we're NOT using slick slider, then
     // match the height of the grid items
-    $('.grid .grid-item').matchHeight();
+    // $('.grid .grid-item').matchHeight();
 
     // sticky kit the quick cart fixed content
     //$('.quick-cart-fixed-content').stick_in_parent();

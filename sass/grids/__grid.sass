@@ -1,0 +1,33 @@
+.grid
+  position: relative
+
+  .grid-item
+    display: inline-block
+    box-sizing: border-box
+    width: 33.33%
+    text-align: center
+
+  &.grid-4
+    .grid-item
+      width: 25%
+
+  &.grid-2
+    .grid-item
+      width: 50%
+
+
+  @media(max-width:768px)
+    .grid-item
+      width: 50%
+
+    &.grid-4
+      .grid-item
+        width: 50%
+
+
+  @media(max-width:500px)
+    &.grid-2, &.grid-3, &.grid-4
+      .grid-item
+        width: 100%
+        display: block
+        margin: 0

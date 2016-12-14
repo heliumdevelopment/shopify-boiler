@@ -1105,7 +1105,7 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 
     // if we're NOT using slick slider, then
     // match the height of the grid items
-    $('.grid .grid-item').matchHeight();
+    // $('.grid .grid-item').matchHeight();
 
     // sticky kit the quick cart fixed content
     //$('.quick-cart-fixed-content').stick_in_parent();
