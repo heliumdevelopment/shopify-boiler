@@ -17,7 +17,56 @@
 				"id": "enable-newsletter",
 				"label": "Enable newsletter for first time visitors",
 				"default": true
+			}
+		]
+	},
+  {
+		"name": "Currency",
+		"settings": [
+			{
+				"type": "paragraph",
+				"content": "To offer multiple currencies on your online store, you must first [edit your store's currency formatting](https:\/\/docs.shopify.com\/manual\/using-themes\/troubleshooting\/help-script-find-money-formats)."
 			},
+			{
+				"type": "paragraph",
+				"content": "Although you will be able to display prices on your storefront in different currencies, Shopify will still process orders in your shop's currency."
+			},
+			{
+				"type": "checkbox",
+				"id": "show_multiple_currencies",
+				"label": "Enable currency conversion",
+				"default": true,
+				"info": "Even though prices are displayed in different currencies, orders will still be processed in your store's currency."
+			},
+			{
+				"type": "select",
+				"id": "currency_format",
+				"label": "Format",
+				"options": [
+					{
+						"value": "money_format",
+						"label": "Without currency ($10.00)"
+					},
+					{
+						"value": "money_with_currency_format",
+						"label": "With currency ($10.00 CAD)"
+					}
+				],
+				"default": "money_with_currency_format"
+			},
+			{
+				"type": "text",
+				"id": "supported_currencies",
+				"label": "Supported currencies",
+				"default": "USD CAD INR GBP AUD EUR JPY",
+				"info": "Use the country's ISO [currency code](http:\/\/www.xe.com\/iso4217.php). Separate your currency codes with a space."
+			},
+			{
+				"type": "text",
+				"id": "default_currency",
+				"label": "Default currency",
+				"default": "USD"
+			}
 		]
 	},
 	{

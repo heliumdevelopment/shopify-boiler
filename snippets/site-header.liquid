@@ -33,6 +33,10 @@
         <a href="/cart"><img src="{{ 'cart.svg' | asset_url }}" /> {{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})</a>
       </div>
 
+      <!-- Currency switcher -->
+      {% include 'currency-switcher' %}
+      
+
     </div>
 
     <!-- MAIN SITE NAVIGATION -->
