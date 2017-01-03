@@ -1,7 +1,3 @@
-// Main & Body Styles
-// ===================================================
-// ===================================================
-// ===================================================
 html
   box-sizing: border-box
 
@@ -41,17 +37,10 @@ main
     z-index: 200
     display: none
 
-
-
 .page-content
   position: relative
   top: 80px
 
-
-// Section styles, width restrict, and general padding
-// ===================================================
-// ===================================================
-// ===================================================
 .section
   position: relative
 
@@ -76,19 +65,13 @@ main
   color: red
   text-align: left
 
-
-
-// base paragraph, links, ul, li, etc
-// ===================================================
-// ===================================================
-// ===================================================
 p, li
   color: $dark
   font-size: 14px
   line-height: 18px
 
 a
-  color: $primary
+  color: $link-color
   text-decoration: none
 
 
@@ -97,30 +80,24 @@ a
 
 // selection
 ::selection
-  background: lighten($primary, 10%)
+  background: $primary
   color: white
 
 ::-moz-selection
-  background: lighten($primary, 10%)
+  background: $primary
   color: white
 
 
-.page404
-  padding: 200px 80px
+// hide and show on mobile
+.show-on-mobile
+  display: none
 
-  h1
-    font-size: 3em
-    color: #666
-    font-weight: 300
+.hide-on-moible
+  display: inherit
 
-  h2
-    font-style: oblique
-    margin-top: 20px
-    color: #aaa
-    font-weight: 300
+@media (max-width:$mobile)
+  .show-on-mobile
+    display: inherit
 
-  @media (max-width:$tablet)
-    padding: 150px 60px
-
-  @media (max-width:$mobile)
-    padding: 100px 30px
+  .hide-on-moible
+    display: none
