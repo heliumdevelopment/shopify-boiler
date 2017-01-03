@@ -1459,8 +1459,8 @@ Theme.jQuery(function($) {
         var instafeed = new Instafeed({
             get: 'user',
             mock: true,
-            userId: 1650298879,
-            accessToken: '1650298879.6070f30.d6212fe5488f4645afdf3136612b9f45',
+            userId: 3298275066,
+            accessToken: '3298275066.1677ed0.8e136827b5b34a69ad5d31be9c3f7f68',
             limit: 12,
             resolution: 'low_resolution',
             success: function(response) {
