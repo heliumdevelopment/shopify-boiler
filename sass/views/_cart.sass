@@ -73,11 +73,14 @@
         width: 100%
         height: auto
 
-  @media(max-width:800px)
+  @media (max-width:$tablet)
     table
 
       th, td
         padding: 10px
+
+        &.hide-on-small
+          display: none
 
         &.image-col
           display: none
@@ -90,11 +93,3 @@
 
           h3
             font-size: 11px
-
-
-  @media(max-width:800px)
-    table
-
-      th, td
-        &.hide-on-small
-          display: none
