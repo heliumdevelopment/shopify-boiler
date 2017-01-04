@@ -3,7 +3,7 @@
   Loop through all collections and show them
   as grids (with a limit to each one)
 {% endcomment %}
-{% assign featured_collections = linklists.shop %}
+{% assign featured_collections = linklists.all-collections %}
 
 {% for link in featured_collections.links %}
   {% assign collection = link.object %}
