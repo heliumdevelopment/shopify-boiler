@@ -17,7 +17,18 @@
 				"id": "enable-newsletter",
 				"label": "Enable newsletter for first time visitors",
 				"default": true
+			},
+      {
+				"type": "page",
+				"id": "homepage_page",
+				"label": "Home page content"
+			},
+      {
+				"type": "collection",
+				"id": "homepage_collection",
+				"label": "Home page collection"
 			}
+
 		]
 	},
   {
