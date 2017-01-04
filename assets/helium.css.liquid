@@ -1829,25 +1829,33 @@ select:focus {
 .grid .grid-item {
   display: inline-block;
   box-sizing: border-box;
-  width: 33.33%;
   text-align: center;
+}
+.grid.grid-2 .grid-item {
+  width: 50%;
+}
+.grid.grid-3 .grid-item {
+  width: 33.333%;
 }
 .grid.grid-4 .grid-item {
   width: 25%;
 }
-.grid.grid-2 .grid-item {
-  width: 50%;
+.grid.grid-5 .grid-item {
+  width: 20%;
+}
+.grid.grid-6 .grid-item {
+  width: 16%;
 }
 @media (max-width: 768px) {
   .grid .grid-item {
     width: 50%;
   }
-  .grid.grid-4 .grid-item {
+  .grid.grid-2 .grid-item, .grid.grid-3 .grid-item, .grid.grid-4 .grid-item, .grid.grid-5 .grid-item, .grid.grid-6 .grid-item {
     width: 50%;
   }
 }
 @media (max-width: 600px) {
-  .grid.grid-2 .grid-item, .grid.grid-3 .grid-item, .grid.grid-4 .grid-item {
+  .grid.grid-2 .grid-item, .grid.grid-3 .grid-item, .grid.grid-4 .grid-item, .grid.grid-5 .grid-item, .grid.grid-6 .grid-item {
     width: 100%;
     display: block;
     margin: 0;

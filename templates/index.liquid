@@ -98,7 +98,7 @@
       {% endif %}
 
       <!-- The main product grid -->
-      <div class="grid grid-4">
+      <div class="grid grid-{{ settings.max-grid-cols }}">
         {% for product in collection.products %}
           {% include 'product-grid-item' %}
         {% else %}

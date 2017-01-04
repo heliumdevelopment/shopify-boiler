@@ -20,7 +20,7 @@
         <p>{{ collection.description }}</p>
       {% endif %}
 
-      <div class="grid grid-4">
+      <div class="grid grid-{{ settings.max-grid-cols }}">
         {% assign limit = settings.collection-listing-limit %}
         {% for product in collection.products limit:{{limit}} %}
           {% include 'product-grid-item' %}

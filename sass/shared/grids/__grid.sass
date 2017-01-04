@@ -5,29 +5,40 @@
   .grid-item
     display: inline-block
     box-sizing: border-box
-    width: 33.33%
     text-align: center
+
+  &.grid-2
+    .grid-item
+      width: 50%
+
+  &.grid-3
+    .grid-item
+      width: 33.333%
 
   &.grid-4
     .grid-item
       width: 25%
 
-  &.grid-2
+  &.grid-5
     .grid-item
-      width: 50%
+      width: 20%
+
+  &.grid-6
+    .grid-item
+      width: 16%
 
 
   @media (max-width:$tablet)
     .grid-item
       width: 50%
 
-    &.grid-4
+    &.grid-2, &.grid-3, &.grid-4, &.grid-5, &.grid-6
       .grid-item
         width: 50%
 
 
   @media (max-width:$mobile)
-    &.grid-2, &.grid-3, &.grid-4
+    &.grid-2, &.grid-3, &.grid-4, &.grid-5, &.grid-6
       .grid-item
         width: 100%
         display: block

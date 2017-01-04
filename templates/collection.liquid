@@ -3,13 +3,13 @@
 <div class="page-heading">
   <h1>{{ collection.title }}</h1>
   {% if collection.description.size > 0 %}
-    <p>{{ collection.description }}</div>
+    <p>{{ collection.description }}</p>
   {% endif %}
 </div>
 
 <div class="section">
-  <div class="width-restrict pad-bottom">
-    <div class="grid grid-4 no-slick">
+  <div class="width-restrict pad">
+    <div class="grid grid-{{ settings.max-grid-cols }}">
       {% for product in collection.products %}
         {% include 'product-grid-item' %}
       {% else %}
