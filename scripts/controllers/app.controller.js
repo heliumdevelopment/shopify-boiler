@@ -22,6 +22,13 @@
       autoplay: false
     });
 
+    // zoom the product images
+    $(".zoomer").elevateZoom({
+      zoomType: "lens",
+      lensShape: "round",
+      lensSize: 200
+    });
+
     $('.icon-ui-cart').on('click', function(e) {
       openQuickCart();
     });

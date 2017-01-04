@@ -19,7 +19,7 @@
             <div class="product-photos-wrap clearfix">
               {% for image in product.images %}
                 <div class="product-photo">
-                  <img src="{{ image | img_url: 'large' }}" alt="{{ image.alt | escape }}" />
+                  <img class="zoomer" src="{{ image | img_url: 'large' }}" alt="{{ image.alt | escape }}" data-zoom-image="{{ image | img_url: '1200x' }}" />
                 </div>
               {% endfor %}
             </div>
