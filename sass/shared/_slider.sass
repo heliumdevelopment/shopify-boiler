@@ -13,15 +13,20 @@
   .mobile-ghost
     display: none
 
-  .slick-list, .slick-track
+  .slick-list, .slick-track, #shopify-section-slider
     height: 100%
+    position: relative
+
+  #shopify-section-slider
+    +absolute
+    width: 100%
 
   .slides
     +absolute
     background-color: #333
 
     .slide
-      display: none
+      display: inline-block
       position: relative
       height: 100%
       +cover

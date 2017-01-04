@@ -4,37 +4,9 @@
     <img class="ghost" src="{{ 'slideshow-ghost.png' | asset_url }}" />
     <img class="mobile-ghost" src="{{ 'mobile-ghost.png' | asset_url }}" />
 
-    <div class="slides">
-
-      {% for i in (1..3) %}
-
-        {% comment %} Get the unique data {% endcomment %}
-        {% capture show %}show-home-slide-{{ i }}{% endcapture %}
-        {% capture dark %} home-slide-{{i}}-dark {% endcapture %}
-        {% capture img %}home-slide-{{i}}.jpg{% endcapture %}
-        {% capture hide_text %}home-slide-{{i}}-hide-text{% endcapture %}
-        {% capture overlay %}home-slide-{{i}}-overlay{% endcapture %}
-        {% capture title %}home-slide-{{i}}-title{% endcapture %}
-        {% capture subtitle %}home-slide-{{i}}-subtitle{% endcapture %}
-        {% capture url %}home-slide-{{i}}-url{% endcapture %}
-        {% capture btntext %}home-slide-{{i}}-btn-text{% endcapture %}
-
-        {% if settings[show] %}
-          <div class="slide {% if settings[dark] %} dark {% endif %}" style="background-image: url(https://www.placecage.com/g/1600/800)">
-            {% unless settings[hide_text] %}
-              <div class="copy {% if settings[dark] %} dark {% endif %} {% if settings[overlay] %} overlay {% endif %}">
-                <h1>{{ settings[title] }}</h1>
-                <h2>{{ settings[subtitle] }}</h2>
-                {% if settings[url] %}
-                  <a class="btn  {% if settings[dark] %} dark {% else %} light {% endif %}" href="{{ settings[url] }}"><span>{{ settings[btntext] }}</span></a>
-                {% endif %}
-              </div>
-            {% endunless %}
-          </div>
-        {% endif %}
-      {% endfor %}
+    <div class="marquee-slides slides">
+      {% section 'slider' %}
     </div>
-
 
   </div>
 </div>

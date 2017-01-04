@@ -1,0 +1,69 @@
+{% for block in section.blocks %}
+  <div class="slide {% if block.settings.dark %} dark {% endif %}" style="background-image: url({{ block.settings.image | img_url: '1800x'}})">
+    {% unless block.settings.hide_text %}
+      <div class="copy {% if block.settings.dark %} dark {% endif %} {% if block.settings.overlay %} overlay {% endif %}">
+        <h1>{{ block.settings.title }}</h1>
+        <h2>{{ block.settings.body }}</h2>
+        {% if block.settings.url %}
+          <a class="btn  {% if block.settings.dark %} dark {% else %} light {% endif %}" href="{{ block.settings.url }}"><span>{{ block.settings.btn_text }}</span></a>
+        {% endif %}
+      </div>
+    {% endunless %}
+  </div>
+
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Home Marquee Slider",
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Slider Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Slide Title"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Text Beneath Title"
+        },
+        {
+          "type": "text",
+          "id": "url",
+          "label": "Button URL"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "dark",
+          "label": "Dark Slide?"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_text",
+          "label": "Hide Text?"
+        },
+        {
+          "type": "checkbox",
+          "id": "overlay",
+          "label": "Overlay?"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

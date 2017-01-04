@@ -3,7 +3,7 @@
   // Document ready
   $(function() {
 
-    $('.slick-marquee .slides').slick({
+    $('#shopify-section-slider').slick({
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -12,14 +12,6 @@
       autoplay: true,
       autoplaySpeed: 6000
     });
-
-
-    // if we're NOT using slick slider, then
-    // match the height of the grid items
-    // $('.grid .grid-item').matchHeight();
-
-    // sticky kit the quick cart fixed content
-    //$('.quick-cart-fixed-content').stick_in_parent();
 
     $('.icon-ui-cart').on('click', function(e) {
       openQuickCart();
@@ -91,40 +83,6 @@
     var closeSearch = function() {
       $('.search-modal').fadeOut(200);
     };
-
-    // slick all instances of the grids that
-    // have a class of slick-slider-x
-    // $('.slick-slider-4').slick({
-    //   infinite: false,
-    //   slidesToShow: 4,
-    //   slidesToScroll: 4,
-    //   dots: true,
-    //   responsive: [
-    //   {
-    //     breakpoint: 768,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 2
-    //     }
-    //   },
-    //   {
-    //     breakpoint: 600,
-    //     settings: {
-    //       slidesToShow: 1,
-    //       slidesToScroll: 1
-    //     }
-    //   }
-    // ]
-    // });
-    //
-    // // quotes on the home page
-    // $('.quotes-wrap').slick({
-    //   infinite: true,
-    //   slidesToShow: 1,
-    //   slidesToScroll: 1,
-    //   autoplay: true,
-    //   autoplaySpeed: 10000
-    // });
 
 
   }); // End document ready
