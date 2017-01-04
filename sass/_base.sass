@@ -37,12 +37,13 @@ main
     z-index: 200
     display: none
 
-.page-content
-  position: relative
-  top: 80px
-
 .section
   position: relative
+
+.section-heading
+  text-align: center
+  font-size: 3em
+  padding: 30px 0
 
 .width-restrict
   max-width: $max-width
@@ -67,13 +68,29 @@ main
 
 p, li
   color: $dark
-  font-size: 14px
-  line-height: 18px
+  font-size: 1em
+  line-height: 1.2em
+  margin: 20px 0
+
+li
+  margin: 5px 0
 
 a
   color: $link-color
   text-decoration: none
 
+
+h1
+  font-size: 3em
+
+h2
+  font-size: 2.5em
+
+h3
+  font-size: 2em
+
+h4
+  font-size: 1.5em
 
 .centered
   text-align: center
@@ -95,7 +112,32 @@ a
 .hide-on-moible
   display: inherit
 
+@media (max-width:$tablet)
+  h1
+    font-size: 2.5em
+
+  h2
+    font-size: 2em
+
+  h3
+    font-size: 1.5em
+
+  h4
+    font-size: 1.3em
+
 @media (max-width:$mobile)
+  h1
+    font-size: 2em
+
+  h2
+    font-size: 1.6em
+
+  h3
+    font-size: 1.4em
+
+  h4
+    font-size: 1.2em
+
   .show-on-mobile
     display: inherit
 
