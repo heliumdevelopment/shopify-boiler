@@ -26,7 +26,7 @@
         {% for product in collection.products limit:{{limit}} %}
           {% include 'product-grid-item' %}
         {% else %}
-          <p>There are no products in this view.</p>
+          <p class="nothing-here">There are no products in this view.</p>
         {% endfor %}
       </div>
       <a class="btn" href="{{ collection.url }}">Shop All</a>

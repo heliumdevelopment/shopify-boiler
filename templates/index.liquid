@@ -102,7 +102,7 @@
         {% for product in collection.products %}
           {% include 'product-grid-item' %}
         {% else %}
-          <div class="no-products">You have no products in your <span>{{ collections[settings.homepage_collection].title }}</span> collection. <a href="http://www.shopify.com/admin/collections">Add some.</a>
+          <div class="nothing-here">You have no products in your <span>{{ collections[settings.homepage_collection].title }}</span> collection. <a href="http://www.shopify.com/admin/collections">Add some.</a>
           </div>
         {% endfor %}
       </div>
