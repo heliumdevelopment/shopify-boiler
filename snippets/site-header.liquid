@@ -1,65 +1,66 @@
+{% comment %}
+  NEWSLETTER MODAL
+  New visitors will see this newsletter
+  popup window. Could contain anything, but
+  most likely will be a newsletter signup.
+{% endcomment %}
 {% include 'newsletter' %}
 
 <!-- Main Header -->
 <header>
 
-  <div class="header-inner">
-    <!-- Main logo image -->
 
-    {% if settings.show_logo %}
-      <a id="logo" href="/">
-        <span class="desktop">{{ 'logo.png' | asset_url | img_tag: shop.name }}</span>
-        <span class="mobile">{{ 'logo-mobile.png' | asset_url | img_tag: shop.name }}</span>
-      </a>
-    {% else %}
-      <a id="logo" href="/">{{ shop.name }}</a>
-    {% endif %}
+  {% comment %}
+    MAIN LOGO
+    This will be whatever image is uploaded within the schema,
+    otherwise it will be just the name of the store.
+  {% endcomment %}
+  {% if settings.show_logo %}
+    <a id="logo" href="/">
+      <span class="desktop">{{ 'logo.png' | asset_url | img_tag: shop.name }}</span>
+      <span class="mobile">{{ 'logo-mobile.png' | asset_url | img_tag: shop.name }}</span>
+    </a>
+  {% else %}
+    <a id="logo" href="/">{{ shop.name }}</a>
+  {% endif %}
 
-    <!-- TOP ITEMS (search, cart, customer) -->
-    <div class="top-items">
 
-      <span class="icon icon-ui-search"></span>
-      {% if customer %}
-        <a href="/account"><span class="icon icon-ui-user"></span></a>
-      {% else %}
-        <a href="/account/login"><span class="icon icon-ui-user"></span></a>
-      {% endif %}
-      <span class="icon icon-ui-cart">
-        <span class="cart-count"></span>
-      </span>
+  {% comment %}
+    TOP ITEMS
+    These are utilities that live in the header above the nav,
+    such as cart, account, search, currency, etc
+  {% endcomment %}
+  <div class="top-items">
 
-      <!-- Cart Link -->
-      <div class="cart">
-        <a href="/cart"><img src="{{ 'cart.svg' | asset_url }}" /> {{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})</a>
-      </div>
+    <span class="icon icon-ui-search"></span>
+    <a href="/account{% unless customer %}/login{% endunless %}"><span class="icon icon-ui-user"></span></a>
+    <span class="icon icon-ui-cart">
+      <span class="cart-count"></span>
+    </span>
 
-      <!-- Currency switcher -->
-      {% include 'currency-switcher' %}
-      
-
+    <!-- Cart Link -->
+    <div class="cart">
+      <a href="/cart"><img src="{{ 'cart.svg' | asset_url }}" /> {{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})</a>
     </div>
 
-    <!-- MAIN SITE NAVIGATION -->
+    <!-- Currency switcher -->
+    {% include 'currency-switcher' %}
 
+  </div>
 
-    <!-- Mobile Nav Grabber -->
-    <div class="grabber">
-      <div class="bars">
-        <div class="bar-1"></div>
-        <div class="bar-2"></div>
-        <div class="bar-3"></div>
-      </div>
-    </div>
+  <!-- Mobile Nav Menu Button -->
+  <div class="icon-menu"></div>
 
-    <!-- Splitting up the nav into desktop and mobile so we don't have to manage messy states in JS. Instead we're just hiding and showing one depending on screen size -->
-    <div class="main-nav">
-      {% include 'site-nav' %}
-    </div>
-    <div class="mobile-nav">
-      {% include 'site-nav' %}
-    </div>
+  <!-- Splitting up the nav into desktop and mobile so we don't have to manage messy states in JS. Instead we're just hiding and showing one depending on screen size -->
+  <div class="main-nav">
+    {% include 'site-nav' %}
+  </div>
+  <div class="mobile-nav">
 
+    <!-- The close button -->
+    <div class="close"></div>
 
+    {% include 'site-nav' %}
   </div>
 
 </header>

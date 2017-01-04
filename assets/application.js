@@ -1123,18 +1123,13 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
       closeQuickCart();
     });
 
-    // The mobile nav grabber
-    $('.grabber').on('click', function(e) {
-      var cur = $(e.currentTarget);
+    // The mobile nav menu button
+    $('.icon-menu').on('click', function(e) {
+      openNav();
+    });
 
-      if(!cur.hasClass('closable')) {
-        cur.addClass('closable');
-        openNav();
-      } else {
-        cur.removeClass('closable');
-        closeNav();
-      }
-
+    $('.mobile-nav .close').on('click', function(e) {
+      closeNav();
     });
 
     // The search modal window

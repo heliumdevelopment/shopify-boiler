@@ -1,8 +1,11 @@
-<!-- Loop through each collection in the link list -->
+{% comment %}
+  ALL COLLECTIONS
+  Loop through all collections and show them
+  as grids (with a limit to each one)
+{% endcomment %}
 {% assign featured_collections = linklists.shop %}
 
 {% for link in featured_collections.links %}
-
   {% assign collection = link.object %}
 
   <div class="page-heading">
@@ -22,11 +25,8 @@
           <p>There are no products in this view.</p>
         {% endfor %}
       </div>
-
       <a class="btn" href="{{ collection.url }}">Shop All</a>
-
     </div>
   </div>
-
 
 {% endfor %}

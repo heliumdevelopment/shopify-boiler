@@ -1151,22 +1151,16 @@ footer .social a:hover {
 
 header {
   z-index: 10;
-  top: 20px;
-  max-width: 1800px;
   margin: 0 auto;
-  position: absolute;
-  width: 100%;
-}
-header .header-inner {
-  width: 90%;
-  margin: 0 auto;
-  position: relative;
+  background-color: white;
+  overflow: hidden;
+  padding: 10px;
 }
 header #logo {
   position: relative;
   left: 0;
-  top: -5px;
   display: inline-block;
+  float: left;
   z-index: 1;
 }
 header #logo .mobile {
@@ -1177,16 +1171,15 @@ header #logo img {
   width: auto;
 }
 header .top-items {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: relative;
+  display: inline-block;
+  float: right;
 }
 header .top-items .cart-count {
   font-size: 14px;
   font-weight: 400;
   font-family: "Roboto", sans-serif;
   position: relative;
-  top: -5px;
   left: 0;
 }
 header .top-items a {
@@ -1200,29 +1193,8 @@ header .top-items .icon {
   transition: color 200ms ease-out;
   cursor: pointer;
 }
-header .top-items .icon.icon-ui-search {
-  font-size: 21px;
-}
-header .top-items .icon.icon-ui-cart {
-  font-size: 23px;
-}
 header .top-items .icon:hover {
   color: purple;
-}
-header .top-items .cart, header .top-items .customer, header .top-items .search {
-  display: none;
-}
-header .customer {
-  position: absolute;
-  right: 30px;
-}
-header .search {
-  position: absolute;
-  right: 60px;
-}
-header .cart {
-  position: absolute;
-  right: 90px;
 }
 @media (max-width: 600px) {
   header {
@@ -1233,13 +1205,6 @@ header .cart {
     top: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     text-align: left;
-  }
-  header .top-items {
-    right: 30px;
-    top: 2px;
-  }
-  header #logo {
-    top: 0;
   }
   header #logo .mobile {
     display: block;
@@ -2047,55 +2012,6 @@ select:focus {
   display: none;
 }
 
-.grabber {
-  width: 36px;
-  height: 36px;
-  position: absolute;
-  top: 6px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 102;
-  display: none;
-}
-.grabber .bars {
-  position: absolute;
-  top: 10px;
-  left: 8px;
-}
-.grabber .bar-1, .grabber .bar-2, .grabber .bar-3 {
-  position: absolute;
-  width: 18px;
-  top: 0;
-  height: 2px;
-  background-color: #1a1a1a;
-  transition: all 150ms ease-out;
-}
-.grabber .bar-2 {
-  top: 5px;
-}
-.grabber .bar-3 {
-  top: 10px;
-}
-.grabber.closable .bar-1, .grabber.closable .bar-2, .grabber.closable .bar-3 {
-  background-color: white;
-}
-.grabber.closable .bar-2 {
-  opacity: 0;
-}
-.grabber.closable .bar-1 {
-  transform: rotate(45deg);
-  top: 5px;
-}
-.grabber.closable .bar-3 {
-  transform: rotate(-45deg);
-  top: 5px;
-}
-@media (max-width: 768px) {
-  .grabber {
-    display: block;
-  }
-}
-
 .mobile-nav {
   display: none;
 }
@@ -2134,40 +2050,33 @@ select:focus {
   }
 }
 
+.icon-menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  .icon-menu {
+    display: block;
+  }
+}
+
 .main-nav {
   position: relative;
-  top: 45px;
+  clear: both;
 }
 .main-nav nav {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   text-align: center;
-  background-color: #e6e6e6;
-  transition: all 150ms ease-out;
-  font-size: 0;
 }
 .main-nav nav .top-level {
   display: inline-block;
-  padding: 7px 15px;
+  padding: 5px 10px;
   position: relative;
   transition: all 150ms ease-out;
   cursor: pointer;
 }
 .main-nav nav .top-level a {
   color: purple;
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
   display: inline-block;
   transition: all 150ms ease-out;
-}
-.main-nav nav .top-level.active, .main-nav nav .top-level:hover {
-  background-color: #9a009a;
-}
-.main-nav nav .top-level.active a, .main-nav nav .top-level:hover a {
-  color: #e6e6e6;
 }
 .main-nav nav .sub-nav {
   display: none;
