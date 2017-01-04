@@ -39,16 +39,11 @@
       <!-- Snippet: site-header -->
       {% include 'site-header' %}
 
+      <!-- CONTENT -->
+      {{ content_for_layout }}
 
-      <div class="page-content">
-
-
-        {{ content_for_layout }}
-
-        <!-- Snippet: site-footer -->
-        {% include 'site-footer' %}
-
-      </div>
+      <!-- Snippet: site-footer -->
+      {% include 'site-footer' %}
 
     </main>
 

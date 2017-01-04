@@ -1,23 +1,41 @@
-<div class="section marquee-slider home-marquee slick-marquee">
-  <div class="width-restrict-large">
+{% comment %}
+  HOME PAGE MARQUEE
+  This is a slick-slider maruqee powered by
+  sections. This is a full-width marquee
+  slider that only lives on the home page.
+{% endcomment %}
+<div class="section marquee-slider">
 
-    <img class="ghost" src="{{ 'slideshow-ghost.png' | asset_url }}" />
-    <img class="mobile-ghost" src="{{ 'mobile-ghost.png' | asset_url }}" />
+  <!-- Ghost images to force the height of the marquee & maintian aspect ratio -->
+  <img class="ghost" src="{{ 'slideshow-ghost.png' | asset_url }}" />
+  <img class="mobile-ghost" src="{{ 'mobile-ghost.png' | asset_url }}" />
 
-    <div class="marquee-slides slides">
-      {% section 'slider' %}
-    </div>
-
+  <!-- The wrap for the actual marquee slides -->
+  <div class="slides">
+    {% section 'slider' %}
   </div>
+
 </div>
 
+{% comment %}
+  ELEMENT EXAMPLES
+  These are examples of various elements
+  commonly found on the site, like inputs,
+  buttons, links, lists, paragraphs, headings, etc.
+{% endcomment %}
 <div class="section">
   <div class="width-restrict pad">
 
-    <h2>Buttons, Inputs, etc</h2>
+    <h2 class="section-heading">Element Examples</h2>
 
-    <a class="btn">Here's a button</a>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+
+    <a class="btn">A Button</a>
     <input class="btn" type="submit" value="test submit here">
+    <button class="btn">A Button Element</button>
 
     <textarea>Hey it's a textarea!</textarea>
     <input type="text" placeholder="Text Field Bruh!" />
@@ -25,64 +43,77 @@
     <input type="password" placeholder="Pass Pass" />
     <input type="number" placeholder="123" />
 
+    <p>Lorem ipsum dolor sit amet, usu ea senserit voluptaria, no mei decore argumentum. Veniam incorrupte no cum, quando postulant omittantur ius in. Ea populo feugiat erroribus cum. At eam accumsan dissentiunt deterruisset. Dicam offendit interesset ut est, unum nobis duo no. Pri eros facete elaboraret an, an vel idque tempor pertinax, habemus definitiones est no.</p>
+
+    <p>In aeterno contentiones interpretaris qui. Tempor populo ex mea, no graece dignissim est. Cu possit similique eum, te solet imperdiet vim, choro appareat no mel. Ei vide assueverit has, mel ei etiam iriure rationibus.</p>
+
+    <p>Ad usu hinc omnis recteque, ea iudicabit inciderint eam. Id ius minim feugait accommodare, sint adhuc constituto vim eu, sint feugait iracundia nam ad. Ea vim eros rebum inermis. Ius et soleat accusata. Dolore maluisset interpretaris eu sed.</p>
+
+    <p>Cu ius clita nostro dolores, elitr tation nemore id mel. Eu cibo facer etiam his, quo ea inermis copiosae corrumpit. At quem diceret nec. Modus discere nusquam ut quo. Facilis maiestatis vix ea. Sumo tritani in eam, alii probo vix ne, ut vim dictas moderatius.</p>
+
+    <p>Gloriatur maiestatis at duo. Te singulis assueverit nec, ius labitur repudiare te. Magna iriure necessitatibus ne est, tritani singulis delicata ad sea, animal gloriatur ei his. Per doctus dolorem ei.</p>
+
+    <ul>
+      <li>unordered list item 1</li>
+      <li>unordered list item 2</li>
+      <li>unordered list item 3</li>
+      <li>unordered list item 4</li>
+    </ul>
+
+    <ol>
+      <li>ordered list item 1</li>
+      <li>ordered list item 2</li>
+      <li>ordered list item 3</li>
+      <li>ordered list item 4</li>
+    </ol>
+
   </div>
 </div>
 
-<div class="section">
-  <div class="width-restrict pad">
-
-    <h2>Home Page RTE Content</h2>
-
-    <!-- Home Page content (including home page collection) -->
-    {% unless settings.homepage_page == blank or pages[settings.homepage_page].empty? %}
-      {% assign page = pages[settings.homepage_page] %}
-      <div class="rte page-content">
-        {{ page.content }}
-      </div>
-    {% endunless %}
-
+{% comment %}
+  HOME PAGE CONTENT
+  If there's a home page set in the schema's
+  theme settings, then display the RTE content
+{% endcomment %}
+{% unless settings.homepage_page == blank or pages[settings.homepage_page].empty? %}
+  {% assign page = pages[settings.homepage_page] %}
+  <div class="section">
+    <div class="width-restrict pad">
+        <h2 class="section-heading">{{ page.title }}</h2>
+        <div class="rte">
+          {{ page.content }}
+        </div>
+    </div>
   </div>
-</div>
+{% endunless %}
 
-<div class="section">
-  <div class="width-restrict pad">
+{% unless settings.homepage_collection == blank or collections[settings.homepage_collection].empty? %}
+  {% assign collection = collections[settings.homepage_collection] %}
+  <div class="section">
+    <div class="width-restrict pad">
 
-    <h2>Home Page Collection</h2>
+      <h2 class="section-heading">{{ collection.title }}</h2>
+      {% if collection.description %}
+        <p>{{ collection.description }}</p>
+      {% endif %}
 
-    {% unless settings.homepage_collection == blank or collections[settings.homepage_collection].empty? %}
-      {% assign collection = collections[settings.homepage_collection] %}
+      <!-- The main product grid -->
       <div class="grid grid-4">
         {% for product in collection.products %}
           {% include 'product-grid-item' %}
         {% else %}
-          <div class="no-products">You have no products in your {{ collections[settings.homepage_collection].title }} collection. <a href="http://www.shopify.com/admin/collections">Add some.</a>
+          <div class="no-products">You have no products in your <span>{{ collections[settings.homepage_collection].title }}</span> collection. <a href="http://www.shopify.com/admin/collections">Add some.</a>
           </div>
         {% endfor %}
       </div>
-    {% endunless %}
-
-  </div>
-</div>
-
-<!-- Instagram Feed -->
-<div class="section">
-  <div class="width-restrict pad">
-
-    <h2>Home Page Collection</h2>
-
-    <!-- Make the ghost png -->
-    <img id="square-png" src="{{ 'square.png' | asset_url }}" style="display: none;" />
 
 
-    <div class="instagram-wrap">
-      <div id="instafeed"></div>
     </div>
   </div>
-</div>
+{% endunless %}
+
+<!-- Instagram -->
+{% include 'instagram' %}
 
 <!-- Quote Slider -->
-<div class="section quotes">
-  <div class="quotes-wrap">
-    {% section 'quote' %}
-  </div>
-</div>
+{% include 'quotes' %}
