@@ -1102,6 +1102,15 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
       autoplaySpeed: 6000
     });
 
+    $('#shopify-section-quote').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      arrows: true,
+      autoplay: false
+    });
+
     $('.icon-ui-cart').on('click', function(e) {
       openQuickCart();
     });

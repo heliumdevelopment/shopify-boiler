@@ -13,6 +13,15 @@
       autoplaySpeed: 6000
     });
 
+    $('#shopify-section-quote').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      arrows: true,
+      autoplay: false
+    });
+
     $('.icon-ui-cart').on('click', function(e) {
       openQuickCart();
     });

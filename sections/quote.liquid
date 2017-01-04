@@ -1,0 +1,34 @@
+{% for block in section.blocks %}
+  <div class="quote">
+    <div class="copy">
+      <p class="quote-text">{{ block.settings.quote }}</p>
+      <p class="quote-attribution">{{ block.settings.attribution }}</p>
+    </div>
+  </div>
+
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Quote Slider",
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Quote Item",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "attribution",
+          "label": "Quote Attribution"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
