@@ -101,7 +101,14 @@
 			{
 				"type": "number",
 				"id": "collection-listing-limit",
-				"label": "Limit of collection items on the collection listing pages."
+				"label": "Limit of collection items on the collection listing pages.",
+        "default": 4
+			},
+      {
+				"type": "number",
+				"id": "collection-page-limit",
+				"label": "Limit of items on the individual collection pages",
+        "default": 24
 			}
 		]
 	},
