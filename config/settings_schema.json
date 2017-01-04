@@ -95,6 +95,16 @@
 			}
 		]
 	},
+  {
+		"name": "Collections",
+		"settings": [
+			{
+				"type": "number",
+				"id": "collection-listing-limit",
+				"label": "Limit of collection items on the collection listing pages."
+			}
+		]
+	},
 	{
 		"name": "Social Network Links",
 		"settings": [

@@ -3,21 +3,25 @@
   Loop through all collections and show them
   as grids (with a limit to each one)
 {% endcomment %}
+
+<div class="page-heading">
+  <h1>All Collections</h1>
+</div>
+
 {% assign featured_collections = linklists.all-collections %}
 
 {% for link in featured_collections.links %}
   {% assign collection = link.object %}
 
-  <div class="page-heading">
-    <h1>{{ link.title }}</h1>
-    {% if collection.description.size > 0 %}
-      <p>{{ collection.description }}</div>
-    {% endif %}
-  </div>
-
   <div class="section border-bottom">
     <div class="width-restrict pad-bottom centered">
-      <div class="grid grid-4 no-slick">
+
+      <h2 class="section-heading">{{ collection.title }}</h2>
+      {% if collection.description %}
+        <p>{{ collection.description }}</p>
+      {% endif %}
+
+      <div class="grid grid-4">
         {% assign limit = settings.collection-listing-limit %}
         {% for product in collection.products limit:{{limit}} %}
           {% include 'product-grid-item' %}
