@@ -148,27 +148,27 @@
 		"name": "Social Network Links",
 		"settings": [
 			{
-				"type": "text",
+				"type": "url",
 				"id": "facebook_url",
 				"label": "Facebook"
 			},
 			{
-				"type": "text",
+				"type": "url",
 				"id": "twitter_url",
 				"label": "Twitter"
 			},
 			{
-				"type": "text",
+				"type": "url",
 				"id": "pinterest_url",
 				"label": "Pinterest"
 			},
 			{
-				"type": "text",
+				"type": "url",
 				"id": "instagram_url",
 				"label": "Instagram"
 			},
 			{
-				"type": "text",
+				"type": "url",
 				"id": "linkedin_url",
 				"label": "LinkedIn"
 			}
